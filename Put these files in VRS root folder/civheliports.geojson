@@ -1,0 +1,997 @@
+var civheliport = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": 1,
+      "properties": {
+        "_id": "6261520c0e8346dfd9252906",
+        "approved": true,
+        "name": "ANDOVER",
+        "icaoCode": "EGWA",
+        "type": 7,
+        "trafficType": [
+          0
+        ],
+        "magneticDeclination": 0.038,
+        "country": "GB",
+        "elevation": {
+          "value": 76,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "ppr": false,
+        "private": false,
+        "skydiveActivity": false,
+        "winchOnly": false,
+        "createdAt": "2022-04-21T12:46:04.318Z",
+        "updatedAt": "2022-04-21T12:46:04.352Z",
+        "createdBy": "AUTO-IMPORTER",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 47.506172160000034,
+          "hae": 123.50617216000003
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.528,
+          51.208
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 2,
+      "properties": {
+        "_id": "6261520ccb27f42509468a08",
+        "approved": true,
+        "name": "ALDENHAM GRANGE",
+        "type": 7,
+        "trafficType": [
+          0
+        ],
+        "magneticDeclination": 0.399,
+        "country": "GB",
+        "elevation": {
+          "value": 87,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "ppr": false,
+        "private": false,
+        "skydiveActivity": false,
+        "winchOnly": false,
+        "createdAt": "2022-04-21T12:46:04.292Z",
+        "updatedAt": "2022-04-21T12:46:04.372Z",
+        "createdBy": "AUTO-IMPORTER",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 46.65497066666694,
+          "hae": 133.65497066666694
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.34444444444444,
+          51.667777777778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 3,
+      "properties": {
+        "_id": "6261520ccb27f42509468a1b",
+        "approved": true,
+        "name": "ASCOT",
+        "icaoCode": "EGLT",
+        "type": 7,
+        "trafficType": [
+          0
+        ],
+        "magneticDeclination": 0.314,
+        "country": "GB",
+        "elevation": {
+          "value": 80,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "ppr": false,
+        "private": false,
+        "skydiveActivity": false,
+        "winchOnly": false,
+        "createdAt": "2022-04-21T12:46:04.783Z",
+        "updatedAt": "2022-04-21T12:46:04.801Z",
+        "createdBy": "AUTO-IMPORTER",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 46.59928982399995,
+          "hae": 126.59928982399995
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.659,
+          51.426
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 4,
+      "properties": {
+        "_id": "626152125e9ded5710453af0",
+        "approved": true,
+        "name": "CARDIFF/TREMORFA FORESHORE",
+        "icaoCode": "EGFC",
+        "type": 7,
+        "trafficType": [
+          0
+        ],
+        "magneticDeclination": -0.554,
+        "country": "GB",
+        "elevation": {
+          "value": 10,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "ppr": false,
+        "private": false,
+        "skydiveActivity": false,
+        "winchOnly": false,
+        "frequencies": [
+          {
+            "value": "120.655",
+            "unit": 2,
+            "type": 10,
+            "name": "Cardiff Tremorfa A/G",
+            "primary": true,
+            "publicUse": true,
+            "_id": "626152125e9ded5710453af1"
+          }
+        ],
+        "createdAt": "2022-04-21T12:46:10.284Z",
+        "updatedAt": "2022-04-21T12:46:10.321Z",
+        "createdBy": "AUTO-IMPORTER",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 51.41073772799999,
+          "hae": 61.41073772799999
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.138,
+          51.468
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 5,
+      "properties": {
+        "_id": "62615213cb27f42509468bb9",
+        "approved": true,
+        "name": "CHETWYND",
+        "type": 7,
+        "trafficType": [
+          0
+        ],
+        "magneticDeclination": -0.451,
+        "country": "GB",
+        "elevation": {
+          "value": 85,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "ppr": false,
+        "private": false,
+        "skydiveActivity": false,
+        "winchOnly": false,
+        "createdAt": "2022-04-21T12:46:11.036Z",
+        "updatedAt": "2022-04-21T12:46:11.059Z",
+        "createdBy": "AUTO-IMPORTER",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 51.73542440000023,
+          "hae": 136.73542440000023
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.4066666666667,
+          52.813055555556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 6,
+      "properties": {
+        "_id": "626152134b027aab592b5fbc",
+        "approved": true,
+        "name": "CHELTENHAM",
+        "icaoCode": "EGBC",
+        "type": 7,
+        "trafficType": [
+          0
+        ],
+        "magneticDeclination": -0.222,
+        "country": "GB",
+        "elevation": {
+          "value": 65,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "ppr": false,
+        "private": false,
+        "skydiveActivity": false,
+        "winchOnly": false,
+        "createdAt": "2022-04-21T12:46:11.148Z",
+        "updatedAt": "2022-04-21T12:46:11.177Z",
+        "createdBy": "AUTO-IMPORTER",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 49.45064759999974,
+          "hae": 114.45064759999974
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.0544444444444,
+          51.925833333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 7,
+      "properties": {
+        "_id": "62615215cb27f42509468c96",
+        "approved": true,
+        "name": "CULTER",
+        "icaoCode": "EGEA",
+        "type": 7,
+        "trafficType": [
+          0
+        ],
+        "magneticDeclination": -0.985,
+        "country": "GB",
+        "elevation": {
+          "value": 91,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "ppr": false,
+        "private": false,
+        "skydiveActivity": false,
+        "winchOnly": false,
+        "createdAt": "2022-04-21T12:46:13.696Z",
+        "updatedAt": "2022-04-21T12:46:13.713Z",
+        "createdBy": "AUTO-IMPORTER",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 50.661727008000014,
+          "hae": 141.661727008
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.317,
+          57.116
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 8,
+      "properties": {
+        "_id": "6261521acb27f42509468dba",
+        "approved": true,
+        "name": "FALCON",
+        "type": 7,
+        "trafficType": [
+          0
+        ],
+        "magneticDeclination": 0.523,
+        "country": "GB",
+        "elevation": {
+          "value": 1,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "ppr": false,
+        "private": false,
+        "skydiveActivity": false,
+        "winchOnly": false,
+        "frequencies": [
+          {
+            "value": "131.965",
+            "unit": 2,
+            "type": 10,
+            "primary": true,
+            "publicUse": true,
+            "_id": "6261521acb27f42509468dbb"
+          }
+        ],
+        "createdAt": "2022-04-21T12:46:18.335Z",
+        "updatedAt": "2022-04-21T12:46:18.369Z",
+        "createdBy": "AUTO-IMPORTER",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 45.94074720000063,
+          "hae": 46.94074720000063
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.025555555555556,
+          51.490555555556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 9,
+      "properties": {
+        "_id": "6261521b5e9ded5710453d63",
+        "approved": true,
+        "name": "FLEETLANDS",
+        "icaoCode": "EGVF",
+        "type": 7,
+        "trafficType": [
+          0
+        ],
+        "magneticDeclination": 0.196,
+        "country": "GB",
+        "elevation": {
+          "value": 9,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "ppr": false,
+        "private": false,
+        "skydiveActivity": false,
+        "winchOnly": false,
+        "frequencies": [
+          {
+            "value": "135.700",
+            "unit": 2,
+            "type": 10,
+            "name": "Fleetlands Information",
+            "primary": true,
+            "publicUse": true,
+            "_id": "6261521b5e9ded5710453d64"
+          }
+        ],
+        "createdAt": "2022-04-21T12:46:19.571Z",
+        "updatedAt": "2022-04-21T12:46:19.643Z",
+        "createdBy": "AUTO-IMPORTER",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 46.35792528000002,
+          "hae": 55.35792528000002
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.169,
+          50.835
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 10,
+      "properties": {
+        "_id": "6261521ccb27f42509468e12",
+        "approved": true,
+        "name": "GLASGOW CITY",
+        "icaoCode": "EGEG",
+        "type": 7,
+        "trafficType": [
+          0
+        ],
+        "magneticDeclination": -1.612,
+        "country": "GB",
+        "elevation": {
+          "value": 1,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "ppr": false,
+        "private": false,
+        "skydiveActivity": false,
+        "winchOnly": false,
+        "createdAt": "2022-04-21T12:46:20.400Z",
+        "updatedAt": "2022-04-21T12:46:20.479Z",
+        "createdBy": "AUTO-IMPORTER",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 54.76259323200003,
+          "hae": 55.76259323200003
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.297,
+          55.861
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 11,
+      "properties": {
+        "_id": "6261521d5e9ded5710453dc7",
+        "approved": true,
+        "name": "GOODWOOD RACECOURSE",
+        "icaoCode": "EGKG",
+        "type": 7,
+        "trafficType": [
+          0
+        ],
+        "magneticDeclination": 0.335,
+        "country": "GB",
+        "elevation": {
+          "value": 155,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "ppr": false,
+        "private": false,
+        "skydiveActivity": false,
+        "winchOnly": false,
+        "createdAt": "2022-04-21T12:46:21.362Z",
+        "updatedAt": "2022-04-21T12:46:21.399Z",
+        "createdBy": "AUTO-IMPORTER",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 45.96845904000003,
+          "hae": 200.96845904000003
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.74,
+          50.901
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 12,
+      "properties": {
+        "_id": "6261521dcb27f42509468e68",
+        "approved": true,
+        "name": "GREAT YARMOUTH - NORTH DENES HELIPORT",
+        "icaoCode": "EGSD",
+        "type": 7,
+        "trafficType": [
+          0
+        ],
+        "magneticDeclination": 1.023,
+        "country": "GB",
+        "elevation": {
+          "value": 2,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "ppr": false,
+        "private": false,
+        "skydiveActivity": false,
+        "winchOnly": false,
+        "frequencies": [
+          {
+            "value": "123.400",
+            "unit": 2,
+            "type": 17,
+            "name": "Gt.Yarmouth North Denes A/G",
+            "primary": false,
+            "publicUse": true,
+            "_id": "6261521dcb27f42509468e69"
+          }
+        ],
+        "createdAt": "2022-04-21T12:46:21.739Z",
+        "updatedAt": "2022-04-21T12:46:21.824Z",
+        "createdBy": "AUTO-IMPORTER",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 44.801993952000004,
+          "hae": 46.801993952000004
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.723,
+          52.634
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 13,
+      "properties": {
+        "_id": "6261521f4b027aab592b635e",
+        "approved": true,
+        "name": "HEREFORD",
+        "icaoCode": "EGVH",
+        "type": 7,
+        "trafficType": [
+          0
+        ],
+        "magneticDeclination": -0.506,
+        "country": "GB",
+        "elevation": {
+          "value": 72,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "ppr": false,
+        "private": false,
+        "skydiveActivity": false,
+        "winchOnly": false,
+        "frequencies": [
+          {
+            "value": "128.555",
+            "unit": 2,
+            "type": 13,
+            "name": "Gloster Radar",
+            "primary": false,
+            "publicUse": true,
+            "_id": "6261521f4b027aab592b635f"
+          },
+          {
+            "value": "134.150",
+            "unit": 2,
+            "type": 10,
+            "name": "Hereford Ops",
+            "primary": true,
+            "publicUse": true,
+            "_id": "6261521f4b027aab592b6360"
+          }
+        ],
+        "createdAt": "2022-04-21T12:46:23.159Z",
+        "updatedAt": "2022-04-21T12:46:23.176Z",
+        "createdBy": "AUTO-IMPORTER",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 51.79360599999927,
+          "hae": 123.79360599999927
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.7988888888889,
+          52.080833333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 14,
+      "properties": {
+        "_id": "62615223cb27f42509468f9e",
+        "approved": true,
+        "name": "LEEDS",
+        "icaoCode": "EGNP",
+        "type": 7,
+        "trafficType": [
+          0
+        ],
+        "magneticDeclination": -0.304,
+        "country": "GB",
+        "elevation": {
+          "value": 200,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "ppr": false,
+        "private": false,
+        "skydiveActivity": false,
+        "winchOnly": false,
+        "createdAt": "2022-04-21T12:46:27.564Z",
+        "updatedAt": "2022-04-21T12:46:27.624Z",
+        "createdBy": "AUTO-IMPORTER",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 50.2899141333335,
+          "hae": 250.2899141333335
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.6622222222222,
+          53.878055555556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 15,
+      "properties": {
+        "_id": "626152254b027aab592b657e",
+        "approved": true,
+        "name": "LONDON",
+        "icaoCode": "EGLW",
+        "type": 7,
+        "trafficType": [
+          0
+        ],
+        "magneticDeclination": 0.473,
+        "country": "GB",
+        "elevation": {
+          "value": 5,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "ppr": false,
+        "private": false,
+        "skydiveActivity": false,
+        "winchOnly": false,
+        "frequencies": [
+          {
+            "value": "134.280",
+            "unit": 2,
+            "type": 14,
+            "name": "BATTERSEA TWR",
+            "primary": true,
+            "publicUse": true,
+            "_id": "626152254b027aab592b657f"
+          }
+        ],
+        "createdAt": "2022-04-21T12:46:29.246Z",
+        "updatedAt": "2022-04-21T12:46:29.264Z",
+        "createdBy": "AUTO-IMPORTER",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 46.10282639999991,
+          "hae": 51.10282639999991
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.17944444444444,
+          51.47
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 16,
+      "properties": {
+        "_id": "626152270e8346dfd9252b16",
+        "approved": true,
+        "name": "MANSTON HELI",
+        "icaoCode": "EGMH",
+        "type": 7,
+        "trafficType": [
+          0
+        ],
+        "magneticDeclination": 0.991,
+        "country": "GB",
+        "elevation": {
+          "value": 54,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "ppr": false,
+        "private": false,
+        "skydiveActivity": false,
+        "winchOnly": false,
+        "createdAt": "2022-04-21T12:46:31.130Z",
+        "updatedAt": "2022-04-21T12:46:31.170Z",
+        "createdBy": "AUTO-IMPORTER",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 44.87706969600001,
+          "hae": 98.877069696
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.346,
+          51.342
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 17,
+      "properties": {
+        "_id": "6261522c5e9ded571045423d",
+        "approved": true,
+        "name": "PENZANCE",
+        "icaoCode": "EGHK",
+        "type": 7,
+        "trafficType": [
+          0
+        ],
+        "magneticDeclination": -1.238,
+        "country": "GB",
+        "elevation": {
+          "value": 6,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "ppr": false,
+        "private": false,
+        "skydiveActivity": false,
+        "winchOnly": false,
+        "frequencies": [
+          {
+            "value": "120.060",
+            "unit": 2,
+            "type": 10,
+            "name": "Penzance Radio",
+            "primary": true,
+            "publicUse": true,
+            "_id": "6261522c5e9ded571045423e"
+          }
+        ],
+        "createdAt": "2022-04-21T12:46:36.568Z",
+        "updatedAt": "2022-04-21T12:46:36.604Z",
+        "createdBy": "AUTO-IMPORTER",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 53.5454133333335,
+          "hae": 59.5454133333335
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.5138888888889,
+          50.130277777778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 18,
+      "properties": {
+        "_id": "6261522d5e9ded571045427d",
+        "approved": true,
+        "name": "PETERHEAD/LONGSIDE",
+        "icaoCode": "EGPS",
+        "type": 7,
+        "trafficType": [
+          0
+        ],
+        "magneticDeclination": -0.851,
+        "country": "GB",
+        "elevation": {
+          "value": 46,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "ppr": false,
+        "private": false,
+        "skydiveActivity": false,
+        "winchOnly": false,
+        "createdAt": "2022-04-21T12:46:37.409Z",
+        "updatedAt": "2022-04-21T12:46:37.496Z",
+        "createdBy": "AUTO-IMPORTER",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 49.86542572800005,
+          "hae": 95.86542572800005
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.861,
+          57.518
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 19,
+      "properties": {
+        "_id": "6261522dcb27f425094691eb",
+        "approved": true,
+        "name": "PORTLAND",
+        "icaoCode": "EGDP",
+        "type": 7,
+        "trafficType": [
+          0
+        ],
+        "magneticDeclination": -0.213,
+        "country": "GB",
+        "elevation": {
+          "value": 2,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "ppr": false,
+        "private": false,
+        "skydiveActivity": false,
+        "winchOnly": false,
+        "createdAt": "2022-04-21T12:46:37.818Z",
+        "updatedAt": "2022-04-21T12:46:37.835Z",
+        "createdBy": "AUTO-IMPORTER",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 49.17047039999994,
+          "hae": 51.17047039999994
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.45,
+          50.568
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 20,
+      "properties": {
+        "_id": "62615232cb27f4250946926c",
+        "approved": true,
+        "name": "SEMINGTON",
+        "type": 7,
+        "trafficType": [
+          0
+        ],
+        "magneticDeclination": -0.19,
+        "country": "GB",
+        "elevation": {
+          "value": 35,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "ppr": false,
+        "private": false,
+        "skydiveActivity": false,
+        "winchOnly": false,
+        "createdAt": "2022-04-21T12:46:42.474Z",
+        "updatedAt": "2022-04-21T12:46:42.631Z",
+        "createdBy": "AUTO-IMPORTER",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 48.99048999999937,
+          "hae": 83.99048999999937
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.1413888888889,
+          51.351944444444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 21,
+      "properties": {
+        "_id": "62615233cb27f425094692a0",
+        "approved": true,
+        "name": "SILVERSTONE",
+        "icaoCode": "EGBV",
+        "type": 7,
+        "trafficType": [
+          0
+        ],
+        "magneticDeclination": 0.128,
+        "country": "GB",
+        "elevation": {
+          "value": 153,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "ppr": false,
+        "private": false,
+        "skydiveActivity": false,
+        "winchOnly": false,
+        "frequencies": [
+          {
+            "value": "123.330",
+            "unit": 2,
+            "type": 14,
+            "name": "TWR",
+            "primary": true,
+            "publicUse": true,
+            "_id": "62615233cb27f425094692a1"
+          },
+          {
+            "value": "130.280",
+            "unit": 2,
+            "type": 17,
+            "name": "Silverstone A/G",
+            "primary": false,
+            "publicUse": true,
+            "_id": "62615233cb27f425094692a2"
+          }
+        ],
+        "createdAt": "2022-04-21T12:46:43.802Z",
+        "updatedAt": "2022-04-21T12:46:43.838Z",
+        "createdBy": "AUTO-IMPORTER",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 48.21902054399996,
+          "hae": 201.21902054399996
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.017,
+          52.071
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 22,
+      "properties": {
+        "_id": "626152385e9ded57104545c9",
+        "approved": true,
+        "name": "TRESCO",
+        "icaoCode": "EGHT",
+        "type": 7,
+        "trafficType": [
+          0
+        ],
+        "magneticDeclination": -1.509,
+        "country": "GB",
+        "elevation": {
+          "value": 6,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "ppr": false,
+        "private": false,
+        "skydiveActivity": false,
+        "winchOnly": false,
+        "frequencies": [
+          {
+            "value": "118.205",
+            "unit": 2,
+            "type": 10,
+            "name": "Tresco Radio",
+            "primary": true,
+            "publicUse": true,
+            "_id": "626152385e9ded57104545ca"
+          }
+        ],
+        "createdAt": "2022-04-21T12:46:48.425Z",
+        "updatedAt": "2022-04-21T12:46:48.460Z",
+        "createdBy": "AUTO-IMPORTER",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 54.23659186666717,
+          "hae": 60.23659186666717
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3313888888889,
+          49.945555555556
+        ]
+      }
+    }
+  ]
+}
