@@ -1,0 +1,1127 @@
+var milairport = {
+   "type": "FeatureCollection",
+   "features": [
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 32.98778,34.59028 ]
+    },
+    "properties": {
+    "title":"RAF Akrotiri",
+    "icao":"LCRA",
+    "iata":"None",
+    "runways":"10, 28",
+    "chart":"airports/LCRA.pdf",
+    "approach":"123.600, 235.050",
+    "tower":"130.075, 339.805",
+    "radar":"125.700, 355.000",
+    "ground":"122.100, 240.100",
+    "atis":"125.000",
+    "ops":"None",
+    "other":"234.050",
+    "note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -6.2158,54.6575 ]
+    },
+    "properties": {
+    "title":"Flying Station Aldergrove",
+    "icao":"EGAA",
+    "iata":"None",
+    "runways":"07, 25, 17, 35",
+    "chart":"airports/EGAA.pdf",
+    "approach":"133.125",
+    "tower":"118.300",
+    "radar":"120.905",
+    "ground":"121.755",
+    "atis":"126.130",
+    "ops":"None",
+    "other":"234.050",
+    "note":"Co-located with Belfast International Airport - see Civ Airfields"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -0.560322,52.962778 ]
+    },
+    "properties": {
+    "title":"RAF Barkston Heath",
+    "icao":"EGYE",
+    "iata":"None",
+    "runways":"06, 24, 10, 28, 18, 36",
+    "chart":"airports/EGYE.pdf",
+    "approach":"124.450, 388.775",
+    "tower":"120.425, 277.725",
+    "radar":"123.300, 264.900, 240.950, 355.570",
+    "ground":"389.625",
+    "atis":"132.125, 290.650",
+    "ops":"None",
+    "other":"234.050",
+    "note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -1.0958,51.6164 ]
+    },
+    "properties": {
+    "title":"RAF Benson",
+    "icao":"EGUB",
+    "iata":"BEX",
+    "runways":"01, 19",
+    "chart":"airports/EGUB.pdf",
+    "approach":"136.450, 343.5250",
+    "tower":"127.150, 233.9500",
+    "radar":"123.300, 136.450, 246.6500, 277.675, 342.1000",
+    "ground":"121.800, 343.5750",
+    "atis":"397.575",
+    "ops":"None",
+    "other":"(Zone) 120.900",
+    "note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -1.7474,51.1522 ]
+    },
+    "properties": {
+    "title":"MOD Boscombe Down",
+    "icao":"EGDM",
+    "iata":"None",
+    "runways":"05, 23, 05N, 23N, 05SG, 23SG",
+    "chart":"airports/EGDM.pdf",
+    "approach":"126.700, 130.000, 340.250",
+    "tower":"130.750, 369.425",
+    "radar":"130.00, 292.275, 362.050, 373.150",
+    "ground":"130.750, 374.450",
+    "atis":"232.805",
+    "ops":"376.720",
+    "other":"(Zone) 126.700, 256.5005",
+    "note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -1.5836,51.75 ]
+    },
+    "properties": {
+    "title":"RAF Brize Norton",
+    "icao":"EGVN",
+    "iata":"BZZ",
+    "runways":"07, 25",
+    "chart":"airports/EGVN.pdf",
+    "approach":"127.250, 231.9500, 362.300",
+    "tower":"123.725, 257.800, 269.1750",
+    "radar":"133.750, 123.550, 362.2550, 399.0250",
+    "ground":"121.725, 341.2000",
+    "atis":"126.500, 284.9750",
+    "ops":"130.750, 369.900, 373.100",
+    "other":"(LARS) 124.275, 278.3500, (Zone) 119.000",
+    "note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -2.406739,52.80611 ]
+    },
+    "properties": {
+    "title":"Chetwynd",
+    "icao":"  ",
+    "iata":"None",
+    "runways":"N/A",
+    "chart":"",
+    "approach":"369.175",
+    "tower":"307.300",
+    "radar":"None",
+    "ground":"None",
+    "atis":"None",
+    "ops":"None",
+    "other":"None",
+    "note":"Grass field assocaited with RAF Shawberry"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -0.166,53.093 ]
+    },
+    "properties": {
+    "title":"RAF Coningsby",
+    "icao":"EGXC",
+    "iata":"QCY",
+    "runways":"07, 25",
+    "chart":"airports/EGXC.pdf",
+    "approach":"119.200, 122.100, 234.6750 (ICF) 255.9500, 259.600, 362.300",
+    "tower":"122.100, 124.675, 298.9750",
+    "radar":"123.300, 234.5750, 276.7750, 397.9500",
+    "ground":"121.850, 357.1250",
+    "atis":"278.800",
+    "ops":"379.350",
+    "other":"None",
+    "note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -2.3056,52.64 ]
+    },
+    "properties": {
+    "title":"RAF Cosford",
+    "icao":"EGWC",
+    "iata":"None",
+    "runways":"06, 24, 06G, 24G",
+    "chart":"airports/EGWC.pdf",
+    "approach":"135.875 (ICF), 306.7000",
+    "tower":"128.650, 278.6750",
+    "radar":"None",
+    "ground":"128.650, 278.9750",
+    "atis":"None",
+    "ops":"None",
+    "other":"None",
+    "note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -0.49917,53.02973 ]
+    },
+    "properties": {
+    "title":"RAF Cranwell",
+    "icao":"EGYD",
+    "iata":"None",
+    "runways":"01, 19, 08, 26, 08NG, 26NG",
+    "chart":"airports/EGDY.pdf",
+    "approach":"123.300, 124.450, 388.775 (ICF)",
+    "tower":"125.050, 370.850",
+    "radar":"123.300, 124.450, 240.9500, 255.6750, 355.5750, 369.4500",
+    "ground":"121.775, 344.1250",
+    "atis":"126.325, 279.2750",
+    "ops":"None",
+    "other":"(MAS) 259.600",
+    "note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -0.4975,53.04944 ]
+    },
+    "properties": {
+    "title":"RAF Cranwell North",
+    "icao":"",
+    "iata":"None",
+    "runways":"03, 21, 06, 24",
+    "chart":"airports/EGDYN.pdf",
+    "approach":"None",
+    "tower":"None",
+    "radar":"None",
+    "ground":"None",
+    "atis":"None",
+    "ops":"None",
+    "other":"129.980",
+    "note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -5.2557,50.0861 ]
+    },
+    "properties": {
+    "title":"RNAS Culdrose",
+    "icao":"EGDR",
+    "iata":"N/A",
+    "runways":"06, 24, 11, 29, 18, 36",
+    "chart":"airports/EGDR.pdf",
+    "approach":"134.050, 282.575",
+    "tower":"122.100, 370.650",
+    "radar":"123.300, 231.775, 366.300, 366.525",
+    "ground":"241.925",
+    "atis":"278.900",
+    "ops":"None",
+    "other":"None",
+    "note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -1.79,51.6822 ]
+    },
+    "properties": {
+    "title":"RAF Fairford",
+    "icao":"EGVA",
+    "iata":"FFD",
+    "runways":"09, 27",
+    "chart":"airports/EGVA.jpg",
+    "approach":"119.000, 122.100, 124.275 (ICF) 127.250, 231.9500, 362.300, 389.575 (ICF)",
+    "tower":"124.800, 246.350",
+    "radar":"133.750, 399.0250",
+    "ground":"339.700",
+    "atis":"135.455, 292.300",
+    "ops":"233.475",
+    "other":"(PMSV) 284.425",
+    "note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -4.5944,55.5094 ]
+    },
+    "properties": {
+    "title":"HMS Gannet",
+    "icao":"EGPK",
+    "iata":"None",
+    "runways":"03, 21, 12, 20",
+    "chart":"airports/EGPK.pdf",
+    "approach":"129.450",
+    "tower":"118.150, 127.155",
+    "radar":"124.630, 129.450",
+    "ground":"",
+    "atis":"121.130",
+    "ops":"None",
+    "other":"None",
+    "note":"Co-located with Prestwick Airport - see Civ Airfields"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -5.34975,36.151169 ]
+    },
+    "properties": {
+    "title":"RAF Gibraltar",
+    "icao":"LXGB",
+    "iata":"None",
+    "runways":"09, 27",
+    "chart":"airports/LXGB.pdf",
+    "approach":"130.4, 123.300, 235.050",
+    "tower":"131.200, 240.575",
+    "radar":"122.800, 264.875",
+    "ground":"None",
+    "atis":"None",
+    "ops":"327.900",
+    "other":"None",
+    "note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -737833,51.7925 ]
+    },
+    "properties": {
+    "title":"RAF Halton",
+    "icao":"EGWN",
+    "iata":"None",
+    "runways":"02G, 20G, 07G, 25G",
+    "chart":"airports/EGWN.pdf",
+    "approach":"None",
+    "tower":"None",
+    "radar":"None",
+    "ground":"None",
+    "atis":"None",
+    "ops":"None",
+    "other":"130.425",
+    "note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -0.093436,51.30596 ]
+    },
+    "properties": {
+    "title":"RAF Kenley",
+    "icao":"EGKN",
+    "iata":"None",
+    "runways":"02, 20, 07G, 25G, 12, 30",
+    "chart":"airports/EGKN.pdf",
+    "approach":"None",
+    "tower":"None",
+    "radar":"None",
+    "ground":"None",
+    "atis":"None",
+    "ops":"None",
+    "other":"119.760",
+    "note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 33.71706944,35.01478889 ]
+    },
+    "properties": {
+    "title":"RAF Kingsfield",
+    "icao":"LCRE",
+    "iata":"None",
+    "runways":"06, 24",
+    "chart":"airports/LCRE.png",
+    "approach":"121.200",
+    "tower":"121.000",
+    "radar":"None",
+    "ground":"119.400",
+    "atis":"126.550",
+    "ops":"None",
+    "other":"(DZ) 130.100",
+    "note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -3.398525,55.87320556 ]
+    },
+    "properties": {
+    "title":"RAF Kirknewton",
+    "icao":"EGKT",
+    "iata":"None",
+    "runways":"05L, 23R, 05R, 23L, 12, 30",
+    "chart":"airports/EGKT.pdf",
+    "approach":"121.200, 128.975",
+    "tower":"None",
+    "radar":"None",
+    "ground":"None",
+    "atis":"None",
+    "ops":"None",
+    "other":"(MAGCS) 124.100",
+    "note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 0.561025,52.40941111 ]
+    },
+    "properties": {
+    "title":"RAF Lakenheath",
+    "icao":"EGUL",
+    "iata":"None",
+    "runways":"06, 24",
+    "chart":"airports/EGUL.pdf",
+    "approach":"259.600 (ICF), 136.500, 264.575, 275.825, 315.700",
+    "tower":"122.100, 373.775",
+    "radar":"315.700",
+    "ground":"397.350",
+    "atis":"341.050",
+    "ops":"244.475, 341.050",
+    "other":"(MATZ Crossing) 128.900, 242.050, (PMSV) 284.425, 257.750",
+    "note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -1.53539444,54.29252778 ]
+    },
+    "properties": {
+    "title":"RAF Leeming",
+    "icao":"EGXE",
+    "iata":"None",
+    "runways":"03, 21, 16, 34",
+    "chart":"airports/EGXE.pdf",
+    "approach":"278.2250 (ICF), 123.300, 362.300",
+    "tower":"120.505, 122.100, 376.8500",
+    "radar":"233.9000, 123.300, 245.6520, 373.5500",
+    "ground":"379.900",
+    "atis":"369.475",
+    "ops":"None",
+    "other":"(ZONE) 133.375, 372.300",
+    "note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -2.8685,56.37266667 ]
+    },
+    "properties": {
+    "title":"RAF Leuchars",
+    "icao":"EGQL",
+    "iata":"None",
+    "runways":"08, 21",
+    "chart":"airports/EGQL.pdf",
+    "approach":"126.500(ICF), 123.300, 278.7000(ICF), 292.3500, 362.300",
+    "tower":"119.225, 122.100, 257.800",
+    "radar":"123.300, 299.7500, 309.6000 372.7500",
+    "ground":"275.375",
+    "atis":"368.850",
+    "ops":"None",
+    "other":"(ZONE) 126.500, 292.3500",
+    "note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -1.69418889,51.86708889 ]
+    },
+    "properties": {
+    "title":"RAF Little Rissington",
+    "icao":"EGVL",
+    "iata":"None",
+    "runways":"04, 22, 09, 27, 13, 31",
+    "chart":"",
+    "approach":"None",
+    "tower":"None",
+    "radar":"None",
+    "ground":"None",
+    "atis":"None",
+    "ops":"None",
+    "other":"120.775",
+    "note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -3.33912778,57.70502778 ]
+    },
+    "properties": {
+    "title":"RAF Lossiemouth",
+    "icao":"EGQS",
+    "iata":"None",
+    "runways":"05, 23, 10, 28",
+    "chart":"airports/EGQS.pdf",
+    "approach":"315.150 (ICF) 123.300, 362.200, 362.775, 119.575 (DEP), 305.850 (DEP)",
+    "tower":"118.900, 279.050",
+    "radar":"123.300, 277.525 378.775, 255.925",
+    "ground":"118.900, 268.625",
+    "atis":"369.150",
+    "ops":"291.150",
+    "other":"None",
+    "note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 0.55067222,52.64840556 ]
+    },
+    "properties": {
+    "title":"RAF Marham",
+    "icao":"EGYM",
+    "iata":"None",
+    "runways":"01, 19, 06, 24",
+    "chart":"airports/EGYM.pdf",
+    "approach":"343.975 (ICF), 259.600 (ICF), 362.300",
+    "tower":"118.325, 122.100, 257.800, 278.175",
+    "radar":"124.150, 123.300, 232.150, 356.150, 357.000, 378.700",
+    "ground":"360.400",
+    "atis":"245.675",
+    "ops":"284.000",
+    "other":"None",
+    "note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -2.93566,50.9625 ]
+    },
+    "properties": {
+    "title":"RNAS Merryfield",
+    "icao":"EGDI",
+    "iata":"None",
+    "runways":"03, 21, 09, 27, 16, 34",
+    "chart":"airports/EGDI.pdf",
+    "approach":"None",
+    "tower":"122.100, 355.950",
+    "radar":"None",
+    "ground":"None",
+    "atis":"None",
+    "ops":"None",
+    "other":"None",
+    "note":"Satellite A/D for RNAS Yeovilton"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -1.57025,51.149358 ]
+    },
+    "properties": {
+    "title":"AAC Middle Wallop",
+    "icao":"EGVP",
+    "iata":"None",
+    "runways":"08, 26, 17, 35",
+    "chart":"airports/EGVP.pdf",
+    "approach":"123.300, 345.175",
+    "tower":"118.600, 233.375",
+    "radar":"123.300, 233.575, 253.475",
+    "ground":"None",
+    "atis":"240.800",
+    "ops":"None",
+    "other":"None",
+    "note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 0.486408,52.36193 ]
+    },
+    "properties": {
+    "title":"RAF Mildenhall",
+    "icao":"EGUN",
+    "iata":"None",
+    "runways":"10, 28",
+    "chart":"airports/EGUN.jpg",
+    "approach":"136.500, 259.600 (ICF), 309.200",
+    "tower":"122.550, 370.250",
+    "radar":"136.500, 309.200, 250.300",
+    "ground":"121.800, 337.975",
+    "atis":"375.500",
+    "ops":"131.975, 308.850, 313.550",
+    "other":"(PMSV) 284.425",
+    "note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -4.37401,53.2593 ]
+    },
+    "properties": {
+    "title":"RAF Mona",
+    "icao":"EGAQ",
+    "iata":"None",
+    "runways":"04, 22",
+    "chart":"airports/EGOQ.pdf",
+    "approach":"266.125",
+    "tower":"119.175, 398.525",
+    "radar":"125.225, 269.1000",
+    "ground":"None",
+    "atis":"118.955",
+    "ops":"None",
+    "other":"None",
+    "note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -58.4459,-51.82268 ]
+    },
+    "properties": {
+    "title":"RAF Mount Pleasant",
+    "icao":"EGYP",
+    "iata":"None",
+    "runways":"05, 23, 10, 28",
+    "chart":"airports/EGYP.pdf",
+    "approach":"118.500, 257.300",
+    "tower":"133.350, 356.800",
+    "radar":"125.950, 317.700",
+    "ground":"130.300, 280.500",
+    "atis":"128.550",
+    "ops":"None",
+    "other":"(Island Radar) 131.500, 132.500",
+    "note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -1.75416,51.24716 ]
+    },
+    "properties": {
+    "title":"AAC Netheravon",
+    "icao":"EGDN",
+    "iata":"None",
+    "runways":"04, 22, 11, 29, 06, 24",
+    "chart":"airports/EGDN.pdf",
+    "approach":"None",
+    "tower":"128.300, 398.200",
+    "radar":"None",
+    "ground":"None",
+    "atis":"None",
+    "ops":"122.750, 277.800",
+    "other":"None",
+    "note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -0.41959,51.5527 ]
+    },
+    "properties": {
+    "title":"RAF Northolt",
+    "icao":"EGWU",
+    "iata":"None",
+    "runways":"07, 25",
+    "chart":"airports/EGWU.pdf",
+    "approach":"126.450 (ICF), 129.125 (DEP)",
+    "tower":"120.675, 257.800, 279.7500",
+    "radar":"130.350, 125.875, 123.300, 343.7500",
+    "ground":"121.575",
+    "atis":"125.125, 299.800",
+    "ops":"389.450",
+    "other":"None",
+    "note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -0.94281,51.23419 ]
+    },
+    "properties": {
+    "title":"RAF Odiham",
+    "icao":"EGVO",
+    "iata":"None",
+    "runways":"09, 27",
+    "chart":"airports/EGVO.pdf",
+    "approach":"131.300, 275.4500",
+    "tower":"119.225, 267.4000",
+    "radar":"123.300, 245.625, 313.375",
+    "ground":"339.825",
+    "atis":"370.750",
+    "ops":"None",
+    "other":"None",
+    "note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -5.23177,50.002 ]
+    },
+    "properties": {
+    "title":"RNAS Predannack",
+    "icao":"EGDO",
+    "iata":"None",
+    "runways":"05, 23, 09, 27, 13, 31, 18, 36",
+    "chart":"airports/EGDO.pdf",
+    "approach":"134.050, 282.575",
+    "tower":"122.100, 285.100, 373.950",
+    "radar":"None",
+    "ground":"None",
+    "atis":"None",
+    "ops":"None",
+    "other":"None",
+    "note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -0.550819,53.30794 ]
+    },
+    "properties": {
+    "title":"RAF Scampton",
+    "icao":"EGXP",
+    "iata":"None",
+    "runways":"04, 22",
+    "chart":"airports/EGXP.pdf",
+    "approach":"259.600 (ICF), 270.050, 345.075 (ICF)",
+    "tower":"340.675",
+    "radar":"251.525",
+    "ground":"336.525",
+    "atis":"None",
+    "ops":"None",
+    "other":"None",
+    "note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -2.667939,52.793069 ]
+    },
+    "properties": {
+    "title":"RAF Shawbury",
+    "icao":"EGOS",
+    "iata":"None",
+    "runways":"05, 23, 18, 36",
+    "chart":"airports/EGOS.pdf",
+    "approach":"269.425 (ICF), 133.150",
+    "tower":"122.100, 362.000",
+    "radar":"123.300, 360.450, 373.225, 377.775",
+    "ground":"None",
+    "atis":"341.650",
+    "ops":"None",
+    "other":"(ZONE) 369.175, (INFO) 121.575",
+    "note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -0.91163889,53.023319 ]
+    },
+    "properties": {
+    "title":"RAF Syerston",
+    "icao":"EGXY",
+    "iata":"None",
+    "runways":"06, 24, 11, 29, 15, 33",
+    "chart":"airports/EGXY.pdf",
+    "approach":"None",
+    "tower":"None",
+    "radar":"None",
+    "ground":"121.825",
+    "atis":"None",
+    "ops":"None",
+    "other":"(MAGCS) 128.525, 292.450, (VFR) 123.375",
+    "note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -2.5335,52.87116667 ]
+    },
+    "properties": {
+    "title":"RAF Tern Hill",
+    "icao":"EGOE",
+    "iata":"None",
+    "runways":"04, 22, 10, 28, 17G, 35G",
+    "chart":"airports/EGOE.pdf",
+    "approach":"369.175",
+    "tower":"122.100, 386.675",
+    "radar":"None",
+    "ground":"241.925",
+    "atis":"None",
+    "ops":"None",
+    "other":"None",
+    "note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -1.38162778,54.20562778 ]
+    },
+    "properties": {
+    "title":"RAF Topcliffe",
+    "icao":"EGXZ",
+    "iata":"None",
+    "runways":"02, 20, 13, 31",
+    "chart":"airports/EGXZ.pdf",
+    "approach":"125.000",
+    "tower":"121.450",
+    "radar":"None",
+    "ground":"122.100",
+    "atis":"None",
+    "ops":"None",
+    "other":"(ZONE) 133.375, 372.300",
+    "note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -1.764375,51.28620278 ]
+    },
+    "properties": {
+    "title":"AAC Upavon",
+    "icao":"EGDJ",
+    "iata":"None",
+    "runways":"05, 23, 07, 25",
+    "chart":"airports/EGDJ.pdf",
+    "approach":"None",
+    "tower":"None",
+    "radar":"None",
+    "ground":"None",
+    "atis":"None",
+    "ops":"122.750, 277.800",
+    "other":"124.100",
+    "note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -4.53533333,53.24816667 ]
+    },
+    "properties": {
+    "title":"RAF Valley",
+    "icao":"EGOV",
+    "iata":"None",
+    "runways":"01, 19, 13, 31",
+    "chart":"airports/EGOV.pdf",
+    "approach":"125.225 (ICF), 266.125 (ICF)",
+    "tower":"122.100, 389.275",
+    "radar":"125.225, 123.300, 269.100, 363.650",
+    "ground":"122.100, 369.500",
+    "atis":"120.725",
+    "ops":"None",
+    "other":"None",
+    "note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -0.52383889,53.16616111 ]
+    },
+    "properties": {
+    "title":"RAF Waddington",
+    "icao":"EGXW",
+    "iata":"None",
+    "runways":"02, 20",
+    "chart":"airports/EGXW.pdf",
+    "approach":"345.075 (ICF), 362.300, 275.500",
+    "tower":"121.300, 122.100, 241.325, 257.800",
+    "radar":"344.200, 376.200, 123.300, 280.175",
+    "ground":"342.125",
+    "atis":"291.675",
+    "ops":"369.400",
+    "other":"(ZONE) 119.500, 232.700",
+    "note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -2.88306,53.745098 ]
+    },
+    "properties": {
+    "title":"Flying Station Warton",
+    "icao":"EGNO",
+    "iata":"None",
+    "runways":"07, 25",
+    "chart":"airports/EGNOMIL.pdf",
+    "approach":"129.730, 356.050",
+    "tower":"130.805, 369.275",
+    "radar":"129.530, 232.200",
+    "ground":"None",
+    "atis":"121.730",
+    "ops":"None",
+    "other":"None",
+    "note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 0.95583,52.12702778 ]
+    },
+    "properties": {
+    "title":"AAC Wattisham",
+    "icao":"EGUW",
+    "iata":"None",
+    "runways":"05, 23",
+    "chart":"airports/EGUW.pdf",
+    "approach":"125.800 (ICF), 389.225",
+    "tower":"388.350",
+    "radar":"265.725, 389.725, 398.050",
+    "ground":"125.800",
+    "atis":"277.925",
+    "ops":"None",
+    "other":"None",
+    "note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -1.21777222,51.879125 ]
+    },
+    "properties": {
+    "title":"Weston-On-The-Green DZ",
+    "icao":"",
+    "iata":"None",
+    "runways":"01, 19, 05, 23, 10, 28",
+    "chart":"airports/WOTG.pdf",
+    "approach":"None",
+    "tower":"133.650 (DZ)(P), 246.725 (DZ)(S)",
+    "radar":"124.275 (ICF)",
+    "ground":"None",
+    "atis":"None",
+    "ops":"None",
+    "other":"None",
+    "note":"Drop Zone for No.1 Parachute Training School at Brize Norton"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -0.47590556,52.61305556 ]
+    },
+    "properties": {
+    "title":"RAF Wittering",
+    "icao":"EGXT",
+    "iata":"None",
+    "runways":"07,25",
+    "chart":"airports/EGXT.pdf",
+    "approach":"234.075 (ICF)",
+    "tower":"127.975, 397.100, 122.100",
+    "radar":"135.200, 276.650, 372.125",
+    "ground":"None",
+    "atis":"282.400",
+    "ops":"None",
+    "other":"(ZONE) 119.675 (ICF), 344.600",
+    "note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -3.05552778,53.581575 ]
+    },
+    "properties": {
+    "title":"RAF Woodvale",
+    "icao":"EGOW",
+    "iata":"None",
+    "runways":"03, 21, 08, 26",
+    "chart":"airports/EGOW.pdf",
+    "approach":"None",
+    "tower":"119.750, 233.675",
+    "radar":"None",
+    "ground":"121.000",
+    "atis":"121.000, 280.650",
+    "ops":"None",
+    "other":"None",
+    "note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -2.64549444,51.00826944 ]
+    },
+    "properties": {
+    "title":"RNAS Yeovilton",
+    "icao":"EGDY",
+    "iata":"None",
+    "runways":"08, 26, 04, 22",
+    "chart":"airports/EGDY.pdf",
+    "approach":"127.350, 234.300",
+    "tower":"120.800, 376.300",
+    "radar":"127.350, 123.300, 240.575, 247.400, 397.050",
+    "ground":"122.100, 362.850",
+    "atis":"244.550",
+    "ops":"None",
+    "other":"None",
+    "note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -4.15,51.087 ]
+    },
+    "properties": {
+    "title":"RM Chivnor",
+    "icao":"EGDC",
+    "iata":"None",
+    "runways":"10, 28",
+    "chart":"airports/EGDC.pdf",
+    "approach":"None",
+    "tower":"None",
+    "radar":"None",
+    "ground":"None",
+    "atis":"None",
+    "ops":"None",
+    "other":"130.200",
+    "note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 1.40583333333,52.09 ]
+    },
+    "properties": {
+    "title":"MOD Woodbridge",
+    "icao":"EGVG",
+    "iata":"None",
+    "runways":"09",
+    "chart":"airports/EGVG.pdf",
+    "approach":"None",
+    "tower":"None",
+    "radar":"None",
+    "ground":"None",
+    "atis":"None",
+    "ops":"None",
+    "other":"122.100",
+    "note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 0.766,52.847 ]
+    },
+    "properties": {
+    "title":"Sculthorpe Training Area",
+    "icao":"",
+    "iata":"None",
+    "runways":"N/A",
+    "chart":"",
+    "approach":"None",
+    "tower":"None",
+    "radar":"None",
+    "ground":"None",
+    "atis":"None",
+    "ops":"None",
+    "other":"None",
+    "note":""
+    }
+  }
+]
+}

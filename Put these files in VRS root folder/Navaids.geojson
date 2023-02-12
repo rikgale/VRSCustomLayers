@@ -1,0 +1,6204 @@
+var Navaids = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": 1,
+      "properties": {
+        "_id": "62616bc7abdcc7f0ccbbc721",
+        "approved": true,
+        "name": "ABERDEEN",
+        "identifier": "ATF",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "348.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 82,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -1.0031549873110808,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:35:51.300Z",
+        "updatedAt": "2022-04-25T07:55:39.209Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 50.42544719999995,
+          "hae": 132.42544719999995
+        },
+        "range": {
+          "value": 25,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.1058333333333,
+          57.0775
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 2,
+      "properties": {
+        "_id": "62616bc7abdcc7f0ccbbc72f",
+        "approved": true,
+        "name": "ABERDEEN",
+        "identifier": "ADN",
+        "type": 4,
+        "country": "GB",
+        "channel": "90X",
+        "frequency": {
+          "value": "114.300",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 177,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -1.1037153784420624,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:35:51.707Z",
+        "updatedAt": "2022-04-25T07:55:41.738Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 50.67949448471998,
+          "hae": 227.67949448471998
+        },
+        "range": {
+          "value": 90,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.2673,
+          57.31043
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 3,
+      "properties": {
+        "_id": "62616c0eabdcc7f0ccbbd1b4",
+        "approved": true,
+        "name": "BARKWAY",
+        "identifier": "BKY",
+        "type": 4,
+        "country": "GB",
+        "channel": "109Y",
+        "frequency": {
+          "value": "116.250",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 140,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": 0.41184564743156415,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:37:02.447Z",
+        "updatedAt": "2022-04-25T08:12:21.140Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 46.45671019200003,
+          "hae": 186.45671019200003
+        },
+        "range": {
+          "value": 40,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.061898,
+          51.98975
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 4,
+      "properties": {
+        "_id": "62616c0fabdcc7f0ccbbd1e0",
+        "approved": true,
+        "name": "BARRA",
+        "identifier": "BRR",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "316.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 3,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -3.270981641237421,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:37:03.606Z",
+        "updatedAt": "2022-04-25T08:12:32.094Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 58.158655466666886,
+          "hae": 61.158655466666886
+        },
+        "range": {
+          "value": 15,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.4488888888889,
+          57.025555555556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 5,
+      "properties": {
+        "_id": "62616c18abdcc7f0ccbbd32a",
+        "approved": true,
+        "name": "BELFAST",
+        "identifier": "BEL",
+        "type": 4,
+        "country": "GB",
+        "channel": "119X",
+        "frequency": {
+          "value": "117.200",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 60,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -2.3061027587102867,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:37:12.371Z",
+        "updatedAt": "2022-04-25T08:13:38.384Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 56.537554639276806,
+          "hae": 116.5375546392768
+        },
+        "range": {
+          "value": 40,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.22989,
+          54.66116
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 6,
+      "properties": {
+        "_id": "62616c18abdcc7f0ccbbd335",
+        "approved": true,
+        "name": "BELFAST",
+        "identifier": "HB",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "420.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 5,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -2.154374336682824,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:37:12.647Z",
+        "updatedAt": "2022-04-25T08:13:42.408Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 56.36959973333339,
+          "hae": 61.36959973333339
+        },
+        "range": {
+          "value": 15,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.8719444444444,
+          54.621111111111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 7,
+      "properties": {
+        "_id": "62616c18abdcc7f0ccbbd340",
+        "approved": true,
+        "name": "BELFAST",
+        "identifier": "OY",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "332.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 107,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -2.253006924348831,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:37:12.947Z",
+        "updatedAt": "2022-04-25T08:13:46.346Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 56.5233853,
+          "hae": 163.5233853
+        },
+        "range": {
+          "value": 15,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.0852777777778,
+          54.6925
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 8,
+      "properties": {
+        "_id": "62616c1aabdcc7f0ccbbd377",
+        "approved": true,
+        "name": "BENBECULA",
+        "identifier": "BEN",
+        "type": 4,
+        "country": "GB",
+        "channel": "86Y",
+        "frequency": {
+          "value": "113.950",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 5,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -3.3277747107255253,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:37:14.394Z",
+        "updatedAt": "2022-04-25T08:13:58.204Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 57.88778822290564,
+          "hae": 62.88778822290564
+        },
+        "range": {
+          "value": 60,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.36523,
+          57.47796
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 9,
+      "properties": {
+        "_id": "62616c1aabdcc7f0ccbbd382",
+        "approved": true,
+        "name": "BENBECULA",
+        "identifier": "BBA",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "401.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 4,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -3.329126241638722,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:37:14.647Z",
+        "updatedAt": "2022-04-25T08:14:02.437Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 57.89207020000015,
+          "hae": 61.89207020000015
+        },
+        "range": {
+          "value": 40,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.3691666666667,
+          57.476111111111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 10,
+      "properties": {
+        "_id": "62616c1aabdcc7f0ccbbd38d",
+        "approved": true,
+        "name": "BENBECULA",
+        "identifier": "BCL",
+        "type": 0,
+        "country": "GB",
+        "channel": "18X",
+        "frequency": {
+          "value": "108.100",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 5,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -3.3293854690081495,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:37:14.948Z",
+        "updatedAt": "2022-04-25T08:14:06.388Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 57.89384100000004,
+          "hae": 62.89384100000004
+        },
+        "range": {
+          "value": 25,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.3702777777778,
+          57.475
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 11,
+      "properties": {
+        "_id": "62616c1babdcc7f0ccbbd398",
+        "approved": true,
+        "name": "BENSON",
+        "identifier": "BSO",
+        "type": 1,
+        "country": "GB",
+        "channel": "37X",
+        "frequency": {
+          "value": "110.000",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 54,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": 0.04742130291007415,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:37:15.236Z",
+        "updatedAt": "2022-04-21T14:37:15.251Z",
+        "createdBy": "import-script",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 47.45310613333294,
+          "hae": 101.45310613333294
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.0994444444444,
+          51.614722222222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 12,
+      "properties": {
+        "_id": "62616c1dabdcc7f0ccbbd3f0",
+        "approved": true,
+        "name": "BERRY HEAD",
+        "identifier": "BHD",
+        "type": 4,
+        "country": "GB",
+        "channel": "57Y",
+        "frequency": {
+          "value": "112.050",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 56,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -0.6533503751063271,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:37:17.607Z",
+        "updatedAt": "2022-04-25T08:14:34.370Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 51.712224025343886,
+          "hae": 107.71222402534389
+        },
+        "range": {
+          "value": 85,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.49368,
+          50.3986
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 13,
+      "properties": {
+        "_id": "62616c21abdcc7f0ccbbd48a",
+        "approved": true,
+        "name": "BIGGIN",
+        "identifier": "BIG",
+        "type": 4,
+        "country": "GB",
+        "channel": "98X",
+        "frequency": {
+          "value": "115.100",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 180,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": 0.4613136390274532,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:37:21.690Z",
+        "updatedAt": "2022-04-25T08:15:02.413Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 45.71264323141344,
+          "hae": 225.71264323141344
+        },
+        "range": {
+          "value": 60,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.034811,
+          51.33089
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 14,
+      "properties": {
+        "_id": "62616c24abdcc7f0ccbbd503",
+        "approved": true,
+        "name": "BIRMINGHAM",
+        "identifier": "BHX",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "406.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 99,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -0.27286371977191026,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:37:24.971Z",
+        "updatedAt": "2022-04-25T08:15:14.361Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 49.947103199999134,
+          "hae": 148.94710319999913
+        },
+        "range": {
+          "value": 25,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.7525,
+          52.454444444444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 15,
+      "properties": {
+        "_id": "62616c27abdcc7f0ccbbd571",
+        "approved": true,
+        "name": "BLACKBUSHE",
+        "identifier": "BLC",
+        "type": 0,
+        "country": "GB",
+        "channel": "109X",
+        "frequency": {
+          "value": "116.200",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 96,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": 0.16369268917311103,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:37:27.911Z",
+        "updatedAt": "2022-04-25T08:15:26.297Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 46.62203279999963,
+          "hae": 142.62203279999963
+        },
+        "range": {
+          "value": 50,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.845,
+          51.323333333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 16,
+      "properties": {
+        "_id": "62616c28abdcc7f0ccbbd57c",
+        "approved": true,
+        "name": "BLACKBUSHE",
+        "identifier": "BLK",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "328.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 97,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": 0.16378761981548975,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:37:28.209Z",
+        "updatedAt": "2022-04-25T08:15:30.236Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 46.62176439999968,
+          "hae": 143.62176439999968
+        },
+        "range": {
+          "value": 15,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.84472222222222,
+          51.323333333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 17,
+      "properties": {
+        "_id": "62616c28abdcc7f0ccbbd587",
+        "approved": true,
+        "name": "BLACKPOOL",
+        "identifier": "BPL",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "318.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 9,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -0.908603474087275,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:37:28.486Z",
+        "updatedAt": "2022-04-25T08:15:34.216Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 52.84426666666673,
+          "hae": 61.84426666666673
+        },
+        "range": {
+          "value": 15,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.0277777777778,
+          53.772777777778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 18,
+      "properties": {
+        "_id": "62616c28abdcc7f0ccbbd592",
+        "approved": true,
+        "name": "BLACKPOOL",
+        "identifier": "I-BPL",
+        "type": 0,
+        "country": "GB",
+        "channel": "18Y",
+        "frequency": {
+          "value": "108.150",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 9,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -0.9084750932622312,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:37:28.748Z",
+        "updatedAt": "2022-04-21T14:37:28.783Z",
+        "createdBy": "import-script",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 52.84536719999997,
+          "hae": 61.84536719999997
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.0283333333333,
+          53.770277777778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 19,
+      "properties": {
+        "_id": "62616c32abdcc7f0ccbbd6fd",
+        "approved": true,
+        "name": "BOSCOMBE DOWN",
+        "identifier": "BDN",
+        "type": 1,
+        "country": "GB",
+        "channel": "19X",
+        "frequency": {
+          "value": "108.200",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 114,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -0.13078706523872155,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:37:38.428Z",
+        "updatedAt": "2022-04-21T14:37:38.462Z",
+        "createdBy": "import-script",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 47.81476400000028,
+          "hae": 161.81476400000028
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.7527777777778,
+          51.148888888889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 20,
+      "properties": {
+        "_id": "62616c35abdcc7f0ccbbd76b",
+        "approved": true,
+        "name": "BOURNEMOUTH",
+        "identifier": "BIA",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "339.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 11,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -0.12331198705153378,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:37:41.329Z",
+        "updatedAt": "2022-04-25T08:16:59.244Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 47.619539999999944,
+          "hae": 58.619539999999944
+        },
+        "range": {
+          "value": 20,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.8425,
+          50.777777777778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 21,
+      "properties": {
+        "_id": "62616c35abdcc7f0ccbbd781",
+        "approved": true,
+        "name": "BOVINGDON",
+        "identifier": "BNN",
+        "type": 4,
+        "country": "GB",
+        "channel": "84Y",
+        "frequency": {
+          "value": "113.750",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 162,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": 0.2262155230791964,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:37:41.924Z",
+        "updatedAt": "2022-04-25T08:17:06.311Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 47.037456281472004,
+          "hae": 209.037456281472
+        },
+        "range": {
+          "value": 60,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.5498,
+          51.72613
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 22,
+      "properties": {
+        "_id": "62616c3aabdcc7f0ccbbd831",
+        "approved": true,
+        "name": "BRECON",
+        "identifier": "BCN",
+        "type": 4,
+        "country": "GB",
+        "channel": "121Y",
+        "frequency": {
+          "value": "117.450",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 432,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -0.7296805835889617,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:37:46.530Z",
+        "updatedAt": "2022-04-25T08:17:45.300Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 52.52582933333494,
+          "hae": 484.52582933333497
+        },
+        "range": {
+          "value": 65,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.2630555555556,
+          51.725555555556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 23,
+      "properties": {
+        "_id": "62616c3fabdcc7f0ccbbd8d6",
+        "approved": true,
+        "name": "BRISTOL",
+        "identifier": "BRI",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "414.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 182,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -0.4937251335513472,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:37:51.136Z",
+        "updatedAt": "2022-04-25T08:18:17.357Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 50.431335299999944,
+          "hae": 232.43133529999994
+        },
+        "range": {
+          "value": 40,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.7175,
+          51.381388888889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 24,
+      "properties": {
+        "_id": "62616c3fabdcc7f0ccbbd8ec",
+        "approved": true,
+        "name": "BRIZE NORTON",
+        "identifier": "BZ",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "386.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 90,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -0.1416315684329292,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:37:51.777Z",
+        "updatedAt": "2022-04-21T14:37:51.812Z",
+        "createdBy": "import-script",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 48.48155559999941,
+          "hae": 138.4815555999994
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.6016666666667,
+          51.749444444444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 25,
+      "properties": {
+        "_id": "62616c40abdcc7f0ccbbd8f7",
+        "approved": true,
+        "name": "BRIZE NORTON",
+        "identifier": "BZN",
+        "type": 1,
+        "country": "GB",
+        "channel": "56X",
+        "frequency": {
+          "value": "111.900",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 90,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -0.1421946796608176,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:37:52.051Z",
+        "updatedAt": "2022-04-21T14:37:52.087Z",
+        "createdBy": "import-script",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 48.48341539999947,
+          "hae": 138.48341539999947
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.6036111111111,
+          51.748333333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 26,
+      "properties": {
+        "_id": "62616c43abdcc7f0ccbbd965",
+        "approved": true,
+        "name": "BROOKMANS PARK",
+        "identifier": "BPK",
+        "type": 4,
+        "country": "GB",
+        "channel": "122X",
+        "frequency": {
+          "value": "117.500",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 113,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": 0.37597376147813616,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:37:55.032Z",
+        "updatedAt": "2022-04-25T08:18:40.111Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 46.39311559999982,
+          "hae": 159.39311559999982
+        },
+        "range": {
+          "value": 40,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.10666666666667,
+          51.749722222222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 27,
+      "properties": {
+        "_id": "62616c49abdcc7f0ccbbda62",
+        "approved": true,
+        "name": "BURNHAM",
+        "identifier": "BUR",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "421.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 22,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": 0.20232156254243114,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:38:01.827Z",
+        "updatedAt": "2022-04-21T14:38:01.861Z",
+        "createdBy": "import-script",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 46.77767226666694,
+          "hae": 68.77767226666694
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.67722222222222,
+          51.518888888889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 28,
+      "properties": {
+        "_id": "62616c54abdcc7f0ccbbdbee",
+        "approved": true,
+        "name": "CAMBRIDGE",
+        "identifier": "CAM",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "332.500",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 19,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": 0.433482333031606,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:38:12.704Z",
+        "updatedAt": "2022-04-25T08:20:26.083Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 46.44492853333355,
+          "hae": 65.44492853333355
+        },
+        "range": {
+          "value": 15,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.18305555555556,
+          52.210555555556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 29,
+      "properties": {
+        "_id": "62616c56abdcc7f0ccbbdc25",
+        "approved": true,
+        "name": "CAMPBELTOWN",
+        "identifier": "CBL",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "380.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 7,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -2.2214341775367963,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:38:14.293Z",
+        "updatedAt": "2022-04-25T08:20:37.068Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 55.9755544999999,
+          "hae": 62.9755544999999
+        },
+        "range": {
+          "value": 15,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.6880555555556,
+          55.435833333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 30,
+      "properties": {
+        "_id": "62616c5eabdcc7f0ccbbdd4e",
+        "approved": true,
+        "name": "CARDIFF",
+        "identifier": "CDF",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "388.500",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 68,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -0.7158009247598305,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:38:22.444Z",
+        "updatedAt": "2022-04-25T08:21:24.053Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 51.822399999999675,
+          "hae": 119.82239999999967
+        },
+        "range": {
+          "value": 40,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.3377777777778,
+          51.393333333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 31,
+      "properties": {
+        "_id": "62616c5fabdcc7f0ccbbdd64",
+        "approved": true,
+        "name": "CARLISLE",
+        "identifier": "CL",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "328.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 53,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -0.9841433380598604,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:38:23.036Z",
+        "updatedAt": "2022-04-21T14:38:23.067Z",
+        "createdBy": "import-script",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 52.858099999999894,
+          "hae": 105.8580999999999
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.8055555555556,
+          54.940277777778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 32,
+      "properties": {
+        "_id": "62616c5fabdcc7f0ccbbdd6f",
+        "approved": true,
+        "name": "CARLISLE",
+        "identifier": "CO",
+        "type": 0,
+        "country": "GB",
+        "channel": "44X",
+        "frequency": {
+          "value": "110.700",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 53,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -0.9839953466734862,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:38:23.335Z",
+        "updatedAt": "2022-04-21T14:38:23.367Z",
+        "createdBy": "import-script",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 52.858014800000035,
+          "hae": 105.85801480000003
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.8052777777778,
+          54.94
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 33,
+      "properties": {
+        "_id": "62616c79abdcc7f0ccbbe137",
+        "approved": true,
+        "name": "CHILTERN",
+        "identifier": "CHT",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "277.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 71,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": 0.24675965256938945,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:38:49.540Z",
+        "updatedAt": "2022-04-21T14:38:49.583Z",
+        "createdBy": "import-script",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 46.82171430000082,
+          "hae": 117.82171430000082
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.51861111111111,
+          51.623055555556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 34,
+      "properties": {
+        "_id": "62616c81abdcc7f0ccbbe234",
+        "approved": true,
+        "name": "CLACTON",
+        "identifier": "CLN",
+        "type": 4,
+        "country": "GB",
+        "channel": "92Y",
+        "frequency": {
+          "value": "114.550",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 20,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": 0.7921067363942006,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:38:57.237Z",
+        "updatedAt": "2022-04-25T08:23:47.038Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 45.24175739999964,
+          "hae": 65.24175739999964
+        },
+        "range": {
+          "value": 100,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.1475,
+          51.848333333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 35,
+      "properties": {
+        "_id": "62616c8dabdcc7f0ccbbe3f7",
+        "approved": true,
+        "name": "COMPTON",
+        "identifier": "CPT",
+        "type": 4,
+        "country": "GB",
+        "channel": "90Y",
+        "frequency": {
+          "value": "114.350",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 147,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": 0.018253886828608054,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:39:09.951Z",
+        "updatedAt": "2022-04-25T08:24:27.907Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 47.48862552000003,
+          "hae": 194.48862552000003
+        },
+        "range": {
+          "value": 80,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.21971,
+          51.49158
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 36,
+      "properties": {
+        "_id": "62616c90abdcc7f0ccbbe45a",
+        "approved": true,
+        "name": "CONINGSBY",
+        "identifier": "CGY",
+        "type": 1,
+        "country": "GB",
+        "channel": "48X",
+        "frequency": {
+          "value": "111.100",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 10,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": 0.22607032129592083,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:39:12.761Z",
+        "updatedAt": "2022-04-21T14:39:12.793Z",
+        "createdBy": "import-script",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 46.906530133333376,
+          "hae": 56.906530133333376
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.16888888888889,
+          53.091111111111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 37,
+      "properties": {
+        "_id": "62616c9aabdcc7f0ccbbe59d",
+        "approved": true,
+        "name": "CRANFIELD",
+        "identifier": "CIT",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "850.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 59,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": 0.18446765635837434,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:39:22.034Z",
+        "updatedAt": "2022-04-25T08:25:18.158Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 47.445755166666714,
+          "hae": 106.44575516666671
+        },
+        "range": {
+          "value": 15,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.55694444444444,
+          52.130277777778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 38,
+      "properties": {
+        "_id": "62616c9aabdcc7f0ccbbe5a8",
+        "approved": true,
+        "name": "CRANWELL",
+        "identifier": "CWL",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "423.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 60,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": 0.11810877112684968,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:39:22.353Z",
+        "updatedAt": "2022-04-21T14:39:22.385Z",
+        "createdBy": "import-script",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 47.61269399999992,
+          "hae": 107.61269399999992
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.48916666666667,
+          53.026388888889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 39,
+      "properties": {
+        "_id": "62616c9aabdcc7f0ccbbe5b3",
+        "approved": true,
+        "name": "CRANWELL",
+        "identifier": "CWZ",
+        "type": 1,
+        "country": "GB",
+        "channel": "121X",
+        "frequency": {
+          "value": "117.400",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 60,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": 0.11917310170303223,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:39:22.647Z",
+        "updatedAt": "2022-04-21T14:39:22.681Z",
+        "createdBy": "import-script",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 47.604724133333406,
+          "hae": 107.6047241333334
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.48555555555556,
+          53.028611111111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 40,
+      "properties": {
+        "_id": "62616c9fabdcc7f0ccbbe663",
+        "approved": true,
+        "name": "CULDROSE",
+        "identifier": "CUL",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "370.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 77,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -1.2355167530924327,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:39:27.549Z",
+        "updatedAt": "2022-04-21T14:39:27.580Z",
+        "createdBy": "import-script",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 53.42850800000002,
+          "hae": 130.42850800000002
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.2486111111111,
+          50.0825
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 41,
+      "properties": {
+        "_id": "62616ca7abdcc7f0ccbbe781",
+        "approved": true,
+        "name": "DAVENTRY",
+        "identifier": "DTY",
+        "type": 4,
+        "country": "GB",
+        "channel": "111X",
+        "frequency": {
+          "value": "116.400",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 177,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -0.01575772829077667,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:39:35.447Z",
+        "updatedAt": "2022-04-25T08:25:55.162Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 48.52638529128001,
+          "hae": 225.52638529128
+        },
+        "range": {
+          "value": 60,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.11383,
+          52.1801
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 42,
+      "properties": {
+        "_id": "62616ca9abdcc7f0ccbbe7c3",
+        "approved": true,
+        "name": "DEAN CROSS",
+        "identifier": "DCS",
+        "type": 0,
+        "country": "GB",
+        "channel": "99X",
+        "frequency": {
+          "value": "115.200",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 211,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -1.1629178603490111,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:39:37.256Z",
+        "updatedAt": "2022-04-25T08:26:07.311Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 53.740372333333994,
+          "hae": 264.740372333334
+        },
+        "range": {
+          "value": 100,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.3405555555556,
+          54.721944444444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 43,
+      "properties": {
+        "_id": "62616cb1abdcc7f0ccbbe8e1",
+        "approved": true,
+        "name": "DETLING",
+        "identifier": "DET",
+        "type": 4,
+        "country": "GB",
+        "channel": "120X",
+        "frequency": {
+          "value": "117.300",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 190,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": 0.6517096049498359,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:39:45.224Z",
+        "updatedAt": "2022-04-25T08:26:52.460Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 45.34078333333338,
+          "hae": 235.34078333333338
+        },
+        "range": {
+          "value": 60,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.59722222222222,
+          51.303888888889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 44,
+      "properties": {
+        "_id": "62616cb9abdcc7f0ccbbea0a",
+        "approved": true,
+        "name": "DONCASTER",
+        "identifier": "FNY",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "338.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 8,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -0.11553409077316121,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:39:53.821Z",
+        "updatedAt": "2022-04-25T08:27:59.881Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 48.31221000000011,
+          "hae": 56.31221000000011
+        },
+        "range": {
+          "value": 20,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.0016666666667,
+          53.475
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 45,
+      "properties": {
+        "_id": "62616cbbabdcc7f0ccbbea4c",
+        "approved": true,
+        "name": "DOVER",
+        "identifier": "DVR",
+        "type": 4,
+        "country": "GB",
+        "channel": "96Y",
+        "frequency": {
+          "value": "114.950",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 90,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": 0.9135796659444779,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:39:55.736Z",
+        "updatedAt": "2022-04-25T08:28:07.294Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 44.760122999999965,
+          "hae": 134.76012299999996
+        },
+        "range": {
+          "value": 80,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.3591666666667,
+          51.1625
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 46,
+      "properties": {
+        "_id": "62616cc1abdcc7f0ccbbeb07",
+        "approved": true,
+        "name": "DUNDEE",
+        "identifier": "DND",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "394.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 28,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -1.3298180071209431,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:40:01.141Z",
+        "updatedAt": "2022-04-25T08:28:49.340Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 52.44018,
+          "hae": 80.44018
+        },
+        "range": {
+          "value": 25,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.115,
+          56.455
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 47,
+      "properties": {
+        "_id": "62616cc3abdcc7f0ccbbeb54",
+        "approved": true,
+        "name": "DURHAM",
+        "identifier": "TD",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "347.500",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 10,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -0.3655696295655068,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:40:03.193Z",
+        "updatedAt": "2022-04-25T08:28:53.344Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 49.364129066666464,
+          "hae": 59.364129066666464
+        },
+        "range": {
+          "value": 25,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.3336111111111,
+          54.560555555556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 48,
+      "properties": {
+        "_id": "62616cc4abdcc7f0ccbbeb80",
+        "approved": true,
+        "name": "EAST MIDLANDS",
+        "identifier": "EME",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "353.500",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 48,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -0.11449031904500064,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:40:04.331Z",
+        "updatedAt": "2022-04-25T08:29:05.393Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 49.106359999999796,
+          "hae": 97.1063599999998
+        },
+        "range": {
+          "value": 20,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.1944444444444,
+          52.832777777778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 49,
+      "properties": {
+        "_id": "62616cc4abdcc7f0ccbbeb8b",
+        "approved": true,
+        "name": "EAST MIDLANDS",
+        "identifier": "EMW",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "393.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 85,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -0.2077946967700514,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:40:04.568Z",
+        "updatedAt": "2022-04-25T08:29:08.965Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 49.838371066666554,
+          "hae": 134.83837106666655
+        },
+        "range": {
+          "value": 10,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.4544444444444,
+          52.828611111111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 50,
+      "properties": {
+        "_id": "62616cc6abdcc7f0ccbbebd8",
+        "approved": true,
+        "name": "EDINBURGH",
+        "identifier": "EDN",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "341.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 19,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -1.3275162149303836,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:40:06.629Z",
+        "updatedAt": "2022-04-21T14:40:06.663Z",
+        "createdBy": "import-script",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 53.10020413333373,
+          "hae": 72.10020413333373
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.2855555555556,
+          55.978611111111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 51,
+      "properties": {
+        "_id": "62616cc6abdcc7f0ccbbebe3",
+        "approved": true,
+        "name": "EDINBURGH",
+        "identifier": "UW",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "368.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 141,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -1.4046391554257265,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:40:06.908Z",
+        "updatedAt": "2022-04-25T08:29:19.431Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 53.731426299999356,
+          "hae": 194.73142629999936
+        },
+        "range": {
+          "value": 25,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.5025,
+          55.905277777778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 52,
+      "properties": {
+        "_id": "62616cc8abdcc7f0ccbbec0f",
+        "approved": true,
+        "name": "EGLINTON",
+        "identifier": "EGT",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "328.500",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 2,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -2.7554929297416666,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:40:08.126Z",
+        "updatedAt": "2022-04-25T08:29:31.339Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 57.48549946666586,
+          "hae": 59.48549946666586
+        },
+        "range": {
+          "value": 25,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.1561111111111,
+          55.045555555556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 53,
+      "properties": {
+        "_id": "62616cd5abdcc7f0ccbbedf3",
+        "approved": true,
+        "name": "EPSOM",
+        "identifier": "EPM",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "316.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 57,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": 0.32502251371589697,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:40:21.586Z",
+        "updatedAt": "2022-04-21T14:40:21.616Z",
+        "createdBy": "import-script",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 46.10819999999947,
+          "hae": 103.10819999999947
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.37194444444444,
+          51.319444444444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 54,
+      "properties": {
+        "_id": "62616ce0abdcc7f0ccbbef74",
+        "approved": true,
+        "name": "EXETER",
+        "identifier": "EX",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "337.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 56,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -0.6245104061789306,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:40:32.003Z",
+        "updatedAt": "2022-04-25T08:31:15.102Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 51.70135999999971,
+          "hae": 107.70135999999971
+        },
+        "range": {
+          "value": 25,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.295,
+          50.752222222222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 55,
+      "properties": {
+        "_id": "62616ce0abdcc7f0ccbbef95",
+        "approved": true,
+        "name": "FAIRFORD",
+        "identifier": "FFA",
+        "type": 1,
+        "country": "GB",
+        "channel": "81X",
+        "frequency": {
+          "value": "113.400",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 82,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -0.20306340678759027,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:40:32.841Z",
+        "updatedAt": "2022-04-21T14:40:32.874Z",
+        "createdBy": "import-script",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 48.70307220000046,
+          "hae": 130.70307220000046
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.7975,
+          51.681666666667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 56,
+      "properties": {
+        "_id": "62616cfdabdcc7f0ccbbf3b5",
+        "approved": true,
+        "name": "GAMSTON",
+        "identifier": "GAM",
+        "type": 0,
+        "country": "GB",
+        "channel": "75X",
+        "frequency": {
+          "value": "112.800",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 26,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -0.07428100023140587,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:41:01.795Z",
+        "updatedAt": "2022-04-25T08:34:17.452Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 48.3215996666666,
+          "hae": 74.3215996666666
+        },
+        "range": {
+          "value": 80,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.94722222222222,
+          53.281388888889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 57,
+      "properties": {
+        "_id": "62616d0dabdcc7f0ccbbf5f1",
+        "approved": true,
+        "name": "GLASGOW",
+        "identifier": "GLW",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "331.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 5,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -1.7797589316542752,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:41:17.703Z",
+        "updatedAt": "2022-04-25T08:35:27.410Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 54.91937270000014,
+          "hae": 59.91937270000014
+        },
+        "range": {
+          "value": 25,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.4336111111111,
+          55.869722222222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 58,
+      "properties": {
+        "_id": "62616d0dabdcc7f0ccbbf5fc",
+        "approved": true,
+        "name": "GLASGOW",
+        "identifier": "GOW",
+        "type": 4,
+        "country": "GB",
+        "channel": "101X",
+        "frequency": {
+          "value": "115.400",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 5,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -1.7849171310533811,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:41:17.947Z",
+        "updatedAt": "2022-04-25T08:35:30.930Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 54.932408999999694,
+          "hae": 59.932408999999694
+        },
+        "range": {
+          "value": 70,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.4458333333333,
+          55.870555555556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 59,
+      "properties": {
+        "_id": "62616d0fabdcc7f0ccbbf628",
+        "approved": true,
+        "name": "GLOUCESTERSHIRE",
+        "identifier": "GST",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "331.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 24,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -0.3573091277728969,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:41:19.175Z",
+        "updatedAt": "2022-04-25T08:35:38.057Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 49.63018946666668,
+          "hae": 73.63018946666668
+        },
+        "range": {
+          "value": 25,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.1677777777778,
+          51.891944444444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 60,
+      "properties": {
+        "_id": "62616d13abdcc7f0ccbbf6b7",
+        "approved": true,
+        "name": "GOODWOOD",
+        "identifier": "GWC",
+        "type": 4,
+        "country": "GB",
+        "channel": "94Y",
+        "frequency": {
+          "value": "114.750",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 27,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": 0.23776944852225543,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:41:23.402Z",
+        "updatedAt": "2022-04-25T08:35:57.925Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 45.925920000000275,
+          "hae": 72.92592000000027
+        },
+        "range": {
+          "value": 80,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.75666666666667,
+          50.855277777778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 61,
+      "properties": {
+        "_id": "62616d37abdcc7f0ccbbfb93",
+        "approved": true,
+        "name": "HAVERFORDWEST",
+        "identifier": "HDW",
+        "type": 0,
+        "country": "GB",
+        "channel": "114Y",
+        "frequency": {
+          "value": "116.750",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 48,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -1.3682917544973505,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:41:59.706Z",
+        "updatedAt": "2022-04-25T08:38:34.386Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 54.76059399999971,
+          "hae": 102.76059399999971
+        },
+        "range": {
+          "value": 10,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.97,
+          51.831944444444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 62,
+      "properties": {
+        "_id": "62616d38abdcc7f0ccbbfba1",
+        "approved": true,
+        "name": "HAVERFORDWEST",
+        "identifier": "HAV",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "328.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 47,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -1.3675698507249276,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:42:00.042Z",
+        "updatedAt": "2022-04-25T08:38:38.409Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 54.76016583333305,
+          "hae": 101.76016583333305
+        },
+        "range": {
+          "value": 10,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.9680555555556,
+          51.831944444444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 63,
+      "properties": {
+        "_id": "62616d38abdcc7f0ccbbfbb7",
+        "approved": true,
+        "name": "HAWARDEN",
+        "identifier": "HAW",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "340.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 6,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -0.8110570015161647,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:42:00.589Z",
+        "updatedAt": "2022-04-25T08:38:42.423Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 53.07207099999968,
+          "hae": 59.07207099999968
+        },
+        "range": {
+          "value": 25,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.9794444444444,
+          53.179166666667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 64,
+      "properties": {
+        "_id": "62616d3eabdcc7f0ccbbfc9e",
+        "approved": true,
+        "name": "HENTON",
+        "identifier": "HEN",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "433.500",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 120,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": 0.13996954125399486,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:42:06.686Z",
+        "updatedAt": "2022-04-25T08:39:09.341Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 47.40011083333306,
+          "hae": 167.40011083333306
+        },
+        "range": {
+          "value": 30,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.79027777777778,
+          51.759722222222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 65,
+      "properties": {
+        "_id": "62616d49abdcc7f0ccbbfe35",
+        "approved": true,
+        "name": "HONILEY",
+        "identifier": "HON",
+        "type": 4,
+        "country": "GB",
+        "channel": "83Y",
+        "frequency": {
+          "value": "113.650",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 127,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -0.23000975080401118,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:42:17.201Z",
+        "updatedAt": "2022-04-25T08:39:51.364Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 49.598773200000664,
+          "hae": 176.59877320000066
+        },
+        "range": {
+          "value": 60,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.6636111111111,
+          52.356666666667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 66,
+      "properties": {
+        "_id": "62616d50abdcc7f0ccbbff53",
+        "approved": true,
+        "name": "HUMBERSIDE",
+        "identifier": "KIM",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "365.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 30,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": 0.11015784769221654,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:42:24.707Z",
+        "updatedAt": "2022-04-25T08:40:33.404Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 46.82616066666654,
+          "hae": 76.82616066666654
+        },
+        "range": {
+          "value": 15,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.35388888888889,
+          53.573888888889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 67,
+      "properties": {
+        "_id": "62616d5babdcc7f0ccbc0100",
+        "approved": true,
+        "name": "INVERNESS",
+        "identifier": "IVR",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "328.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 7,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -1.8948030107225389,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:42:35.325Z",
+        "updatedAt": "2022-04-25T09:10:16.614Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 53.02130599999961,
+          "hae": 60.02130599999961
+        },
+        "range": {
+          "value": 25,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.0458333333333,
+          57.541388888889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 68,
+      "properties": {
+        "_id": "62616d5babdcc7f0ccbc010b",
+        "approved": true,
+        "name": "INVERNESSI",
+        "identifier": "INS",
+        "type": 4,
+        "country": "GB",
+        "channel": "29X",
+        "frequency": {
+          "value": "109.200",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 8,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -1.8929604229602153,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:42:35.612Z",
+        "updatedAt": "2022-04-25T09:10:22.074Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 53.00699439999991,
+          "hae": 61.00699439999991
+        },
+        "range": {
+          "value": 40,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.0411111111111,
+          57.5425
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 69,
+      "properties": {
+        "_id": "62616d5fabdcc7f0ccbc01b0",
+        "approved": true,
+        "name": "ISLAY",
+        "identifier": "LAY",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "395.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 16,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -2.4982049230591485,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:42:39.870Z",
+        "updatedAt": "2022-04-25T09:10:34.392Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 56.414180666666795,
+          "hae": 72.4141806666668
+        },
+        "range": {
+          "value": 20,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2494444444444,
+          55.682777777778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 70,
+      "properties": {
+        "_id": "62616d60abdcc7f0ccbc01bb",
+        "approved": true,
+        "name": "ISLAY",
+        "identifier": "ISY",
+        "type": 0,
+        "country": "GB",
+        "channel": "36Y",
+        "frequency": {
+          "value": "109.950",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 16,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -2.4982559978317966,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:42:40.185Z",
+        "updatedAt": "2022-04-21T14:42:40.202Z",
+        "createdBy": "import-script",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 56.41438033333364,
+          "hae": 72.41438033333364
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2494444444444,
+          55.683055555556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 71,
+      "properties": {
+        "_id": "62616d84abdcc7f0ccbc070e",
+        "approved": true,
+        "name": "KIRKWALL",
+        "identifier": "KW",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "395.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 9,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -1.6234339448253667,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:43:16.561Z",
+        "updatedAt": "2022-04-25T09:14:00.435Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 52.17988350000044,
+          "hae": 61.17988350000044
+        },
+        "range": {
+          "value": 40,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.8991666666667,
+          58.959166666667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 72,
+      "properties": {
+        "_id": "62616d84abdcc7f0ccbc071a",
+        "approved": true,
+        "name": "KIRKWALL",
+        "identifier": "KWL",
+        "type": 4,
+        "country": "GB",
+        "channel": "23X",
+        "frequency": {
+          "value": "108.600",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 11,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -1.62117581174382,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:43:16.772Z",
+        "updatedAt": "2022-04-25T09:14:04.419Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 52.16999166666659,
+          "hae": 63.16999166666659
+        },
+        "range": {
+          "value": 25,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.8938888888889,
+          58.959722222222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 73,
+      "properties": {
+        "_id": "62616d9eabdcc7f0ccbc0aed",
+        "approved": true,
+        "name": "LAKENHEATH",
+        "identifier": "LKH",
+        "type": 1,
+        "country": "GB",
+        "channel": "39X",
+        "frequency": {
+          "value": "110.200",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 9,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": 0.5419320046156187,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:43:42.698Z",
+        "updatedAt": "2022-04-21T14:43:42.713Z",
+        "createdBy": "import-script",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 46.16060683333333,
+          "hae": 55.16060683333333
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.54805555555556,
+          52.406388888889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 74,
+      "properties": {
+        "_id": "62616d9fabdcc7f0ccbc0b19",
+        "approved": true,
+        "name": "LAMBOURNE",
+        "identifier": "LAM",
+        "type": 4,
+        "country": "GB",
+        "channel": "103X",
+        "frequency": {
+          "value": "115.600",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 65,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": 0.47318422598536697,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:43:43.891Z",
+        "updatedAt": "2022-04-25T09:16:28.963Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 45.95789319999983,
+          "hae": 110.95789319999983
+        },
+        "range": {
+          "value": 40,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.15166666666667,
+          51.646111111111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 75,
+      "properties": {
+        "_id": "62616da2abdcc7f0ccbc0b7c",
+        "approved": true,
+        "name": "LANDS END",
+        "identifier": "LND",
+        "type": 4,
+        "country": "GB",
+        "channel": "89X",
+        "frequency": {
+          "value": "114.200",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 222,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -1.3818700618780981,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:43:46.545Z",
+        "updatedAt": "2022-04-25T09:16:41.276Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 53.69332150000005,
+          "hae": 275.6933215
+        },
+        "range": {
+          "value": 200,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.6369444444444,
+          50.136388888889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 76,
+      "properties": {
+        "_id": "62616da8abdcc7f0ccbc0c63",
+        "approved": true,
+        "name": "LASHENDEN",
+        "identifier": "LSH",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "340.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 20,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": 0.6814199348287115,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:43:52.570Z",
+        "updatedAt": "2022-04-25T09:17:19.421Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 45.23821900000024,
+          "hae": 65.23821900000024
+        },
+        "range": {
+          "value": 15,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.65055555555556,
+          51.154166666667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 77,
+      "properties": {
+        "_id": "62616da8abdcc7f0ccbc0c6e",
+        "approved": true,
+        "name": "LASHENDEN",
+        "identifier": "HLS",
+        "type": 0,
+        "country": "GB",
+        "channel": "106Y",
+        "frequency": {
+          "value": "115.950",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 20,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": 0.6814199349994955,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:43:52.879Z",
+        "updatedAt": "2022-04-25T09:17:23.445Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 45.23821900000024,
+          "hae": 65.23821900000024
+        },
+        "range": {
+          "value": 15,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.65055555555556,
+          51.154166666667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 78,
+      "properties": {
+        "_id": "62616dafabdcc7f0ccbc0d6b",
+        "approved": true,
+        "name": "LEEDS BRADFORD",
+        "identifier": "LBA",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "402.500",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 196,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -0.40180580988452,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:43:59.541Z",
+        "updatedAt": "2022-04-25T09:18:22.385Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 50.254430000000184,
+          "hae": 246.25443000000018
+        },
+        "range": {
+          "value": 25,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.6527777777778,
+          53.865
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 79,
+      "properties": {
+        "_id": "62616dafabdcc7f0ccbc0d76",
+        "approved": true,
+        "name": "LEEMING",
+        "identifier": "LEE",
+        "type": 1,
+        "country": "GB",
+        "channel": "73X",
+        "frequency": {
+          "value": "112.600",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 36,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -0.274,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:43:59.843Z",
+        "updatedAt": "2022-06-06T15:27:22.054Z",
+        "createdBy": "import-script",
+        "updatedBy": "eBT9qSrxquPVguazo7MwJzzaf2p1",
+        "elevationGeoid": {
+          "geoidHeight": 49.89753449999981,
+          "hae": 85.89753449999981
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.525,
+          54.283972222222225
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 80,
+      "properties": {
+        "_id": "62616db0abdcc7f0ccbc0d94",
+        "approved": true,
+        "name": "LEICESTER",
+        "identifier": "LE",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "383.500",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 143,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -0.03288127084819917,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:44:00.742Z",
+        "updatedAt": "2022-04-25T09:18:26.405Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 48.78377140000009,
+          "hae": 191.7837714000001
+        },
+        "range": {
+          "value": 10,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.035,
+          52.606388888889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 81,
+      "properties": {
+        "_id": "62616db5abdcc7f0ccbc0e47",
+        "approved": true,
+        "name": "LEUCHARS",
+        "identifier": "LUK",
+        "type": 1,
+        "country": "GB",
+        "channel": "42X",
+        "frequency": {
+          "value": "110.500",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 8,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -1.2141708157145088,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:44:05.583Z",
+        "updatedAt": "2022-04-21T14:44:05.600Z",
+        "createdBy": "import-script",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 51.87704406666646,
+          "hae": 59.87704406666646
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.8636111111111,
+          56.372777777778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 82,
+      "properties": {
+        "_id": "62616dbeabdcc7f0ccbc0f91",
+        "approved": true,
+        "name": "LINTON-ON-OUSE",
+        "identifier": "LOO",
+        "type": 1,
+        "country": "GB",
+        "channel": "27X",
+        "frequency": {
+          "value": "109.000",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 13,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -0.2729386410693517,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:44:14.358Z",
+        "updatedAt": "2022-04-21T14:44:14.381Z",
+        "createdBy": "import-script",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 48.9679928000003,
+          "hae": 61.9679928000003
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.2491666666667,
+          54.050555555556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 83,
+      "properties": {
+        "_id": "62616dc0abdcc7f0ccbc0fd3",
+        "approved": true,
+        "name": "LIVERPOOL",
+        "identifier": "LPL",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "349.500",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 34,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -0.7369049469736401,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:44:16.093Z",
+        "updatedAt": "2022-04-25T09:20:15.411Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 52.40509800000004,
+          "hae": 86.40509800000004
+        },
+        "range": {
+          "value": 25,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.725,
+          53.339722222222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 84,
+      "properties": {
+        "_id": "62616dc6abdcc7f0ccbc10c5",
+        "approved": true,
+        "name": "LONDON",
+        "identifier": "LON",
+        "type": 4,
+        "country": "GB",
+        "channel": "83X",
+        "frequency": {
+          "value": "113.600",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 26,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": 0.2773155663464692,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:44:22.408Z",
+        "updatedAt": "2022-04-25T09:20:54.393Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 46.492275999999634,
+          "hae": 72.49227599999963
+        },
+        "range": {
+          "value": 40,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.46666666666667,
+          51.487222222222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 85,
+      "properties": {
+        "_id": "62616dc6abdcc7f0ccbc10db",
+        "approved": true,
+        "name": "LONDON-CITY",
+        "identifier": "LCY",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "322.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 3,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": 0.45716677435785624,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:44:22.986Z",
+        "updatedAt": "2022-04-25T09:20:57.961Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 45.84621000000044,
+          "hae": 48.84621000000044
+        },
+        "range": {
+          "value": 10,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0675,
+          51.504166666667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 86,
+      "properties": {
+        "_id": "62616dcbabdcc7f0ccbc1180",
+        "approved": true,
+        "name": "LOSSIEMOUTH",
+        "identifier": "LSM",
+        "type": 1,
+        "country": "GB",
+        "channel": "50X",
+        "frequency": {
+          "value": "111.300",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 8,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -1.6140197050257818,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:44:27.014Z",
+        "updatedAt": "2022-04-21T14:44:27.038Z",
+        "createdBy": "import-script",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 51.15112939999858,
+          "hae": 59.15112939999858
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.3275,
+          57.710555555556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 87,
+      "properties": {
+        "_id": "62616dd1abdcc7f0ccbc127d",
+        "approved": true,
+        "name": "LUTON",
+        "identifier": "LUT",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "345.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 138,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": 0.31254869747256403,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:44:33.829Z",
+        "updatedAt": "2022-04-25T09:21:51.443Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 46.78010369999973,
+          "hae": 184.78010369999973
+        },
+        "range": {
+          "value": 20,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2525,
+          51.894722222222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 88,
+      "properties": {
+        "_id": "62616dd5abdcc7f0ccbc1301",
+        "approved": true,
+        "name": "LYDD",
+        "identifier": "LZD",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "397.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 2,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": 0.7914221822956525,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:44:37.199Z",
+        "updatedAt": "2022-04-25T09:22:27.289Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 45.00637000000006,
+          "hae": 47.00637000000006
+        },
+        "range": {
+          "value": 20,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.93916666666667,
+          50.958888888889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 89,
+      "properties": {
+        "_id": "62616dd5abdcc7f0ccbc130c",
+        "approved": true,
+        "name": "LYDD",
+        "identifier": "LYD",
+        "type": 4,
+        "country": "GB",
+        "channel": "87Y",
+        "frequency": {
+          "value": "114.050",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 2,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": 0.7685139498275882,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:44:37.574Z",
+        "updatedAt": "2022-04-25T09:22:30.155Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 45.04819351921347,
+          "hae": 47.04819351921347
+        },
+        "range": {
+          "value": 80,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.878611,
+          50.99972
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 90,
+      "properties": {
+        "_id": "62616dd7abdcc7f0ccbc1358",
+        "approved": true,
+        "name": "MACHRIHANISH",
+        "identifier": "MAC",
+        "type": 0,
+        "country": "GB",
+        "channel": "107X",
+        "frequency": {
+          "value": "116.000",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 25,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -2.204874721508242,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:44:39.387Z",
+        "updatedAt": "2022-04-25T09:22:45.234Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 55.965885199999974,
+          "hae": 80.96588519999997
+        },
+        "range": {
+          "value": 150,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.6502777777778,
+          55.43
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 91,
+      "properties": {
+        "_id": "62616de3abdcc7f0ccbc14cf",
+        "approved": true,
+        "name": "MANCHESTER",
+        "identifier": "MCT",
+        "type": 4,
+        "country": "GB",
+        "channel": "82Y",
+        "frequency": {
+          "value": "113.550",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 78,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -0.5665651589405254,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:44:51.400Z",
+        "updatedAt": "2022-04-25T09:23:25.453Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 51.54826799999978,
+          "hae": 129.54826799999978
+        },
+        "range": {
+          "value": 90,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.2622222222222,
+          53.356944444444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 92,
+      "properties": {
+        "_id": "62616deaabdcc7f0ccbc15b6",
+        "approved": true,
+        "name": "MARHAM",
+        "identifier": "MAM",
+        "type": 1,
+        "country": "GB",
+        "channel": "24X",
+        "frequency": {
+          "value": "108.700",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 20,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": 0.525102165529202,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:44:58.322Z",
+        "updatedAt": "2022-04-21T14:44:58.355Z",
+        "createdBy": "import-script",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 46.02831170000033,
+          "hae": 66.02831170000033
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.56083333333333,
+          52.646944444444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 93,
+      "properties": {
+        "_id": "62616df4abdcc7f0ccbc1725",
+        "approved": true,
+        "name": "MAYFIELD",
+        "identifier": "MAY",
+        "type": 4,
+        "country": "GB",
+        "channel": "126X",
+        "frequency": {
+          "value": "117.900",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 103,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": 0.515410615735467,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:45:08.280Z",
+        "updatedAt": "2022-04-25T09:24:22.012Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 45.4443329333331,
+          "hae": 148.4443329333331
+        },
+        "range": {
+          "value": 40,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.11611111111111,
+          51.017222222222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 94,
+      "properties": {
+        "_id": "62616e01abdcc7f0ccbc18f3",
+        "approved": true,
+        "name": "MIDHURST",
+        "identifier": "MID",
+        "type": 4,
+        "country": "GB",
+        "channel": "87X",
+        "frequency": {
+          "value": "114.000",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 57,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": 0.26382504432710635,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:45:21.144Z",
+        "updatedAt": "2022-04-25T09:25:20.553Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 46.03116000000014,
+          "hae": 103.03116000000014
+        },
+        "range": {
+          "value": 60,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.625,
+          51.053888888889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 95,
+      "properties": {
+        "_id": "62616e03abdcc7f0ccbc1940",
+        "approved": true,
+        "name": "MILDENHALL",
+        "identifier": "MLD",
+        "type": 1,
+        "country": "GB",
+        "channel": "106X",
+        "frequency": {
+          "value": "115.900",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 9,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": 0.5251171526021655,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:45:23.462Z",
+        "updatedAt": "2022-04-21T14:45:23.495Z",
+        "createdBy": "import-script",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 46.208702399999964,
+          "hae": 55.208702399999964
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.48833333333333,
+          52.363333333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 96,
+      "properties": {
+        "_id": "62616e36abdcc7f0ccbc201d",
+        "approved": true,
+        "name": "NEWCASTLE",
+        "identifier": "NEW",
+        "type": 0,
+        "country": "GB",
+        "channel": "89Y",
+        "frequency": {
+          "value": "114.250",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 77,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -0.5651489877865885,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:46:14.168Z",
+        "updatedAt": "2022-04-25T09:29:14.406Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 50.20381080000027,
+          "hae": 127.20381080000027
+        },
+        "range": {
+          "value": 200,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.6983333333333,
+          55.038333333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 97,
+      "properties": {
+        "_id": "62616e36abdcc7f0ccbc202b",
+        "approved": true,
+        "name": "NEWCASTLE",
+        "identifier": "NT",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "352.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 62,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -0.5451091337169974,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:46:14.407Z",
+        "updatedAt": "2022-04-25T09:29:18.412Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 50.03670679999976,
+          "hae": 112.03670679999976
+        },
+        "range": {
+          "value": 40,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.6427777777778,
+          55.050277777778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 98,
+      "properties": {
+        "_id": "62616e38abdcc7f0ccbc2078",
+        "approved": true,
+        "name": "NEWQUAY",
+        "identifier": "NQY",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "347.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 103,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -1.1911722294438067,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:46:16.442Z",
+        "updatedAt": "2022-04-25T09:29:26.435Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 53.43262560000008,
+          "hae": 156.43262560000008
+        },
+        "range": {
+          "value": 50,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.9966666666667,
+          50.4425
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 99,
+      "properties": {
+        "_id": "62616e43abdcc7f0ccbc221a",
+        "approved": true,
+        "name": "NORWICH",
+        "identifier": "NWI",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "342.500",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 29,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": 0.7751513266086014,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:46:27.490Z",
+        "updatedAt": "2022-04-25T09:30:56.040Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 45.174277399999994,
+          "hae": 74.1742774
+        },
+        "range": {
+          "value": 50,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.2913888888889,
+          52.6775
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 100,
+      "properties": {
+        "_id": "62616e4babdcc7f0ccbc2343",
+        "approved": true,
+        "name": "OBAN",
+        "identifier": "OBN",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "404.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 5,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -2.28445920382991,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:46:35.329Z",
+        "updatedAt": "2022-04-21T14:46:35.361Z",
+        "createdBy": "import-script",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 55.52115093333262,
+          "hae": 60.52115093333262
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.4022222222222,
+          56.460555555556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 101,
+      "properties": {
+        "_id": "62616e4babdcc7f0ccbc234e",
+        "approved": true,
+        "name": "OBAN",
+        "identifier": "OBA",
+        "type": 0,
+        "country": "GB",
+        "channel": "42Y",
+        "frequency": {
+          "value": "110.550",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 5,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -2.2845089373033822,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:46:35.591Z",
+        "updatedAt": "2022-04-25T09:31:32.358Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 55.520724800000494,
+          "hae": 60.520724800000494
+        },
+        "range": {
+          "value": 18,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.4022222222222,
+          56.460833333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 102,
+      "properties": {
+        "_id": "62616e4dabdcc7f0ccbc2390",
+        "approved": true,
+        "name": "OCKHAM",
+        "identifier": "OCK",
+        "type": 4,
+        "country": "GB",
+        "channel": "100X",
+        "frequency": {
+          "value": "115.300",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 45,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": 0.3008328941327699,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:46:37.308Z",
+        "updatedAt": "2022-04-25T09:31:44.149Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 46.17231800000002,
+          "hae": 91.17231800000002
+        },
+        "range": {
+          "value": 70,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.44722222222222,
+          51.305
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 103,
+      "properties": {
+        "_id": "62616e4fabdcc7f0ccbc23c7",
+        "approved": true,
+        "name": "ODIHAM",
+        "identifier": "ODH",
+        "type": 1,
+        "country": "GB",
+        "channel": "33X",
+        "frequency": {
+          "value": "109.600",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 119,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": 0.1370405175046671,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:46:39.045Z",
+        "updatedAt": "2022-04-21T14:46:39.078Z",
+        "createdBy": "import-script",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 46.64418766666691,
+          "hae": 165.6441876666669
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.94861111111111,
+          51.232777777778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 104,
+      "properties": {
+        "_id": "62616e5fabdcc7f0ccbc2671",
+        "approved": true,
+        "name": "OTTRINGHAM",
+        "identifier": "OTR",
+        "type": 4,
+        "country": "GB",
+        "channel": "86X",
+        "frequency": {
+          "value": "113.900",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 1,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": 0.18834966451415605,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:46:55.667Z",
+        "updatedAt": "2022-04-25T09:33:49.407Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 46.13620180000029,
+          "hae": 47.13620180000029
+        },
+        "range": {
+          "value": 100,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.10361111111111,
+          53.698333333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 105,
+      "properties": {
+        "_id": "62616e62abdcc7f0ccbc26ea",
+        "approved": true,
+        "name": "OXFORD",
+        "identifier": "OX",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "367.500",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 79,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -0.053094862586310354,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:46:58.646Z",
+        "updatedAt": "2022-04-25T09:34:01.408Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 48.19159999999928,
+          "hae": 127.19159999999928
+        },
+        "range": {
+          "value": 25,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.3236111111111,
+          51.833333333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 106,
+      "properties": {
+        "_id": "62616e7dabdcc7f0ccbc2a39",
+        "approved": true,
+        "name": "PERTH",
+        "identifier": "PTH",
+        "type": 3,
+        "country": "GB",
+        "frequency": {
+          "value": "110.400",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 120,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -1.4325424350815608,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:47:25.488Z",
+        "updatedAt": "2022-04-25T09:35:30.252Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 52.95151039999999,
+          "hae": 172.9515104
+        },
+        "range": {
+          "value": 80,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.3686111111111,
+          56.4425
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 107,
+      "properties": {
+        "_id": "62616e8fabdcc7f0ccbc2cc2",
+        "approved": true,
+        "name": "POLE HILL",
+        "identifier": "POL",
+        "type": 4,
+        "country": "GB",
+        "channel": "58X",
+        "frequency": {
+          "value": "112.100",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 432,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -0.5556543741987569,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:47:43.107Z",
+        "updatedAt": "2022-04-25T09:36:34.098Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 51.70008160000003,
+          "hae": 483.70008160000003
+        },
+        "range": {
+          "value": 115,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.1033333333333,
+          53.743888888889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 108,
+      "properties": {
+        "_id": "62616e9cabdcc7f0ccbc2ed2",
+        "approved": true,
+        "name": "PRESTWICK",
+        "identifier": "PIK",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "355.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 16,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -1.7787556032837233,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:47:56.365Z",
+        "updatedAt": "2022-04-25T09:38:17.151Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 55.26436386666671,
+          "hae": 71.26436386666671
+        },
+        "range": {
+          "value": 30,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.5772222222222,
+          55.506111111111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 109,
+      "properties": {
+        "_id": "62616ed3abdcc7f0ccbc3707",
+        "approved": true,
+        "name": "SAINT ABBS",
+        "identifier": "SAB",
+        "type": 4,
+        "country": "GB",
+        "channel": "72X",
+        "frequency": {
+          "value": "112.500",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 224,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -0.8810804457756863,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:48:51.218Z",
+        "updatedAt": "2022-04-25T09:51:53.505Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 50.688201900000195,
+          "hae": 274.6882019000002
+        },
+        "range": {
+          "value": 50,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.2063888888889,
+          55.9075
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 110,
+      "properties": {
+        "_id": "62616ef5abdcc7f0ccbc3b8a",
+        "approved": true,
+        "name": "SCATSTA",
+        "identifier": "SS",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "315.500",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 20,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -1.077663454826407,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:49:25.977Z",
+        "updatedAt": "2022-04-25T09:53:36.001Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 50.11545583333361,
+          "hae": 70.11545583333361
+        },
+        "range": {
+          "value": 25,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.2152777777778,
+          60.460277777778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 111,
+      "properties": {
+        "_id": "62616ef8abdcc7f0ccbc3bd7",
+        "approved": true,
+        "name": "SEAFORD",
+        "identifier": "SFD",
+        "type": 4,
+        "country": "GB",
+        "channel": "117X",
+        "frequency": {
+          "value": "117.000",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 80,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": 0.5387540164004504,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:49:28.050Z",
+        "updatedAt": "2022-04-25T09:53:51.992Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 45.12826859999964,
+          "hae": 125.12826859999964
+        },
+        "range": {
+          "value": 50,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.12194444444444,
+          50.760833333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 112,
+      "properties": {
+        "_id": "62616efdabdcc7f0ccbc3c87",
+        "approved": true,
+        "name": "SHAWBURY",
+        "identifier": "SWB",
+        "type": 7,
+        "country": "GB",
+        "channel": "115X",
+        "frequency": {
+          "value": "116.800",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 72,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -0.6445274274246889,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:49:33.113Z",
+        "updatedAt": "2022-04-21T14:49:33.146Z",
+        "createdBy": "import-script",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 52.21364813333315,
+          "hae": 124.21364813333315
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.6622222222222,
+          52.798055555556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 113,
+      "properties": {
+        "_id": "62616efeabdcc7f0ccbc3cbe",
+        "approved": true,
+        "name": "SHERBURN",
+        "identifier": "SBL",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "323.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 8,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -0.22747261973049418,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:49:34.642Z",
+        "updatedAt": "2022-04-25T09:54:14.027Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 48.815929766666585,
+          "hae": 56.815929766666585
+        },
+        "range": {
+          "value": 10,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.2086111111111,
+          53.789722222222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 114,
+      "properties": {
+        "_id": "62616effabdcc7f0ccbc3cd4",
+        "approved": true,
+        "name": "SHOBDON",
+        "identifier": "SH",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "426.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 97,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -0.6549617771712929,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:49:35.130Z",
+        "updatedAt": "2022-04-25T09:54:18.287Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 52.35797639999933,
+          "hae": 149.35797639999933
+        },
+        "range": {
+          "value": 20,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.8797222222222,
+          52.243333333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 115,
+      "properties": {
+        "_id": "62616effabdcc7f0ccbc3cdf",
+        "approved": true,
+        "name": "SHOREHAM",
+        "identifier": "SRH",
+        "type": 0,
+        "country": "GB",
+        "channel": "36Y",
+        "frequency": {
+          "value": "109.950",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 12,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": 0.3946469950091737,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:49:35.383Z",
+        "updatedAt": "2022-04-25T09:54:21.154Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 45.49898399999995,
+          "hae": 57.49898399999995
+        },
+        "range": {
+          "value": 10,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.29333333333333,
+          50.836111111111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 116,
+      "properties": {
+        "_id": "62616effabdcc7f0ccbc3cea",
+        "approved": true,
+        "name": "SHOREHAM",
+        "identifier": "SHM",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "332.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": -1,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": 0.3940474595309137,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:49:35.618Z",
+        "updatedAt": "2022-04-25T09:54:25.051Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 45.500149600000384,
+          "hae": 44.500149600000384
+        },
+        "range": {
+          "value": 10,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.29527777777778,
+          50.835555555556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 117,
+      "properties": {
+        "_id": "62616f13abdcc7f0ccbc3fe9",
+        "approved": true,
+        "name": "SOUTHAMPTON",
+        "identifier": "SAM",
+        "type": 4,
+        "country": "GB",
+        "channel": "80Y",
+        "frequency": {
+          "value": "113.350",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 9,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": 0.028894234353934567,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:49:55.832Z",
+        "updatedAt": "2022-04-25T09:56:11.456Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 46.72521080000038,
+          "hae": 55.72521080000038
+        },
+        "range": {
+          "value": 100,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.345,
+          50.955277777778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 118,
+      "properties": {
+        "_id": "62616f14abdcc7f0ccbc3ff4",
+        "approved": true,
+        "name": "SOUTHAMPTON",
+        "identifier": "EAS",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "391.500",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 9,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": 0.025130814390617786,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:49:56.094Z",
+        "updatedAt": "2022-04-25T09:56:15.000Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 46.74082559999994,
+          "hae": 55.74082559999994
+        },
+        "range": {
+          "value": 15,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.3561111111111,
+          50.955
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 119,
+      "properties": {
+        "_id": "62616f14abdcc7f0ccbc3fff",
+        "approved": true,
+        "name": "SOUTHEND",
+        "identifier": "SND",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "362.500",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 12,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": 0.6639820243498722,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:49:56.334Z",
+        "updatedAt": "2022-04-25T09:56:18.013Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 45.355744599999895,
+          "hae": 57.355744599999895
+        },
+        "range": {
+          "value": 30,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.70027777777778,
+          51.576111111111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 120,
+      "properties": {
+        "_id": "62616f1babdcc7f0ccbc410a",
+        "approved": true,
+        "name": "ST MARY S",
+        "identifier": "STM",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "321.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 30,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -1.588954164659368,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:50:03.348Z",
+        "updatedAt": "2022-04-25T09:56:52.198Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 54.185284799999835,
+          "hae": 84.18528479999983
+        },
+        "range": {
+          "value": 15,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2911111111111,
+          49.914166666667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 121,
+      "properties": {
+        "_id": "62616f21abdcc7f0ccbc4212",
+        "approved": true,
+        "name": "STORNOWAY",
+        "identifier": "SAY",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "431.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 3,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -3.0181936991516034,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:50:09.815Z",
+        "updatedAt": "2022-04-25T09:57:23.425Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 56.79139400000025,
+          "hae": 59.79139400000025
+        },
+        "range": {
+          "value": 40,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3291666666667,
+          58.215555555556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 122,
+      "properties": {
+        "_id": "62616f22abdcc7f0ccbc421a",
+        "approved": true,
+        "name": "STORNOWAY",
+        "identifier": "STN",
+        "type": 4,
+        "country": "GB",
+        "channel": "98X",
+        "frequency": {
+          "value": "115.100",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 81,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -2.951353533834199,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:50:10.095Z",
+        "updatedAt": "2022-04-25T09:57:27.270Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 56.47598899999966,
+          "hae": 137.47598899999966
+        },
+        "range": {
+          "value": 105,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.1830555555556,
+          58.206944444444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 123,
+      "properties": {
+        "_id": "62616f23abdcc7f0ccbc425e",
+        "approved": true,
+        "name": "STRUMBLE",
+        "identifier": "STU",
+        "type": 4,
+        "country": "GB",
+        "channel": "78X",
+        "frequency": {
+          "value": "113.100",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 158,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -1.417504584658226,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:50:11.987Z",
+        "updatedAt": "2022-04-25T09:57:45.994Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 54.82858999999999,
+          "hae": 212.82859
+        },
+        "range": {
+          "value": 85,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.0402777777778,
+          51.994722222222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 124,
+      "properties": {
+        "_id": "62616f26abdcc7f0ccbc42b7",
+        "approved": true,
+        "name": "SUMBURGH",
+        "identifier": "SBH",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "351.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 4,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -1.037806518593401,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:50:14.263Z",
+        "updatedAt": "2022-04-25T09:58:05.340Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 49.56010639999957,
+          "hae": 53.56010639999957
+        },
+        "range": {
+          "value": 25,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.2947222222222,
+          59.882222222222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 125,
+      "properties": {
+        "_id": "62616f26abdcc7f0ccbc42c2",
+        "approved": true,
+        "name": "SUMBURGH",
+        "identifier": "SUM",
+        "type": 4,
+        "country": "GB",
+        "channel": "120Y",
+        "frequency": {
+          "value": "117.350",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 11,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -1.0335982670470432,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:50:14.500Z",
+        "updatedAt": "2022-04-25T09:58:08.164Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 49.54603160000022,
+          "hae": 60.54603160000022
+        },
+        "range": {
+          "value": 200,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.2863888888889,
+          59.878888888889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 126,
+      "properties": {
+        "_id": "62616f31abdcc7f0ccbc4485",
+        "approved": true,
+        "name": "TALLA",
+        "identifier": "TLA",
+        "type": 4,
+        "country": "GB",
+        "channel": "85X",
+        "frequency": {
+          "value": "113.800",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 836,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -1.2824774536672239,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:50:25.614Z",
+        "updatedAt": "2022-04-25T09:59:02.201Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 54.20733699999994,
+          "hae": 890.2073369999999
+        },
+        "range": {
+          "value": 100,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.3527777777778,
+          55.499166666667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 127,
+      "properties": {
+        "_id": "62616f3eabdcc7f0ccbc45c4",
+        "approved": true,
+        "name": "TATENHILL",
+        "identifier": "TNL",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "327.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 130,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -0.31941861791231885,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:50:38.624Z",
+        "updatedAt": "2022-04-25T09:59:50.154Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 50.52998779999993,
+          "hae": 180.52998779999993
+        },
+        "range": {
+          "value": 10,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.7669444444444,
+          52.815
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 128,
+      "properties": {
+        "_id": "62616f4fabdcc7f0ccbc4821",
+        "approved": true,
+        "name": "TIREE",
+        "identifier": "TIR",
+        "type": 4,
+        "country": "GB",
+        "channel": "124X",
+        "frequency": {
+          "value": "117.700",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 6,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -2.9164716678884752,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:50:55.324Z",
+        "updatedAt": "2022-04-25T10:01:05.000Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 57.41693119999971,
+          "hae": 63.41693119999971
+        },
+        "range": {
+          "value": 90,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.8755555555556,
+          56.493333333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 129,
+      "properties": {
+        "_id": "62616f60abdcc7f0ccbc4a9f",
+        "approved": true,
+        "name": "TRENT",
+        "identifier": "TNT",
+        "type": 4,
+        "country": "GB",
+        "channel": "104X",
+        "frequency": {
+          "value": "115.700",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 297,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -0.31187452193530374,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:51:12.149Z",
+        "updatedAt": "2022-04-25T10:02:26.423Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 50.745480800000195,
+          "hae": 347.7454808000002
+        },
+        "range": {
+          "value": 80,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.67,
+          53.053888888889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 130,
+      "properties": {
+        "_id": "62616f71abdcc7f0ccbc4c6d",
+        "approved": true,
+        "name": "TURNBERRY",
+        "identifier": "TRN",
+        "type": 4,
+        "country": "GB",
+        "channel": "122X",
+        "frequency": {
+          "value": "117.500",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 168,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -1.8310426683915366,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:51:29.178Z",
+        "updatedAt": "2022-04-25T10:03:15.354Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 55.57567920000045,
+          "hae": 223.57567920000045
+        },
+        "range": {
+          "value": 60,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.7838888888889,
+          55.313333333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 131,
+      "properties": {
+        "_id": "62616f7fabdcc7f0ccbc4e92",
+        "approved": true,
+        "name": "VALLEY",
+        "identifier": "VYL",
+        "type": 1,
+        "country": "GB",
+        "channel": "21X",
+        "frequency": {
+          "value": "108.400",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 13,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -1.4138717888659493,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:51:43.157Z",
+        "updatedAt": "2022-04-21T14:51:43.172Z",
+        "createdBy": "import-script",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 55.2741393,
+          "hae": 68.2741393
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.5441666666667,
+          53.2575
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 132,
+      "properties": {
+        "_id": "62616f9babdcc7f0ccbc52c9",
+        "approved": true,
+        "name": "WADDINGTON",
+        "identifier": "WAD",
+        "type": 1,
+        "country": "GB",
+        "channel": "118X",
+        "frequency": {
+          "value": "117.100",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 70,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": 0.09026056589374445,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:52:11.641Z",
+        "updatedAt": "2022-04-21T14:52:11.657Z",
+        "createdBy": "import-script",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 47.58931799999982,
+          "hae": 117.58931799999982
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.52666666666667,
+          53.165277777778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 133,
+      "properties": {
+        "_id": "62616f9dabdcc7f0ccbc5321",
+        "approved": true,
+        "name": "WALLASEY",
+        "identifier": "WAL",
+        "type": 4,
+        "country": "GB",
+        "channel": "88X",
+        "frequency": {
+          "value": "114.100",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 12,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -0.8974949421373074,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:52:13.779Z",
+        "updatedAt": "2022-04-25T10:06:40.544Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 53.23103213333383,
+          "hae": 65.23103213333383
+        },
+        "range": {
+          "value": 120,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.1344444444444,
+          53.391944444444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 134,
+      "properties": {
+        "_id": "62616f9eabdcc7f0ccbc5341",
+        "approved": true,
+        "name": "WALNEY",
+        "identifier": "WL",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "385.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 11,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -1.048281470288977,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:52:14.606Z",
+        "updatedAt": "2022-04-25T10:06:44.461Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 53.31532959999993,
+          "hae": 64.31532959999993
+        },
+        "range": {
+          "value": 25,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.2644444444444,
+          54.1275
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 135,
+      "properties": {
+        "_id": "62616fa0abdcc7f0ccbc538e",
+        "approved": true,
+        "name": "WARTON",
+        "identifier": "WTN",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "337.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 6,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -0.8390927220563797,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:52:16.632Z",
+        "updatedAt": "2022-04-25T10:06:59.322Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 52.60839760000013,
+          "hae": 58.60839760000013
+        },
+        "range": {
+          "value": 15,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.8522222222222,
+          53.751666666667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 136,
+      "properties": {
+        "_id": "62616fa3abdcc7f0ccbc53f0",
+        "approved": true,
+        "name": "WATTISHAM",
+        "identifier": "WTZ",
+        "type": 1,
+        "country": "GB",
+        "channel": "30X",
+        "frequency": {
+          "value": "109.300",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 84,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": 0.7004136479694001,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:52:19.180Z",
+        "updatedAt": "2022-04-21T14:52:19.196Z",
+        "createdBy": "import-script",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 45.68076613333298,
+          "hae": 129.68076613333298
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.94055555555556,
+          52.121944444444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 137,
+      "properties": {
+        "_id": "62616fa3abdcc7f0ccbc5407",
+        "approved": true,
+        "name": "WBA",
+        "identifier": "WBA",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "356.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 83,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -0.46372165225275624,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:52:19.744Z",
+        "updatedAt": "2022-04-25T10:07:06.215Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 51.15998039999948,
+          "hae": 134.15998039999948
+        },
+        "range": {
+          "value": 25,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.2616666666667,
+          52.515833333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 138,
+      "properties": {
+        "_id": "62616fa5abdcc7f0ccbc545e",
+        "approved": true,
+        "name": "WELSHPOOL",
+        "identifier": "WPL",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "323.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 71,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -0.8042313145319455,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:52:21.989Z",
+        "updatedAt": "2022-04-25T10:07:14.124Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 53.53510879999996,
+          "hae": 124.53510879999996
+        },
+        "range": {
+          "value": 15,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.1538888888889,
+          52.63
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 139,
+      "properties": {
+        "_id": "62616fa6abdcc7f0ccbc546b",
+        "approved": true,
+        "name": "WELSHPOOL",
+        "identifier": "WPL",
+        "type": 0,
+        "country": "GB",
+        "channel": "106Y",
+        "frequency": {
+          "value": "115.950",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 71,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -0.8041954022894704,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:52:22.215Z",
+        "updatedAt": "2022-04-21T14:52:22.236Z",
+        "createdBy": "import-script",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 53.53489719999976,
+          "hae": 124.53489719999976
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.1538888888889,
+          52.629722222222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 140,
+      "properties": {
+        "_id": "62616fa7abdcc7f0ccbc54a2",
+        "approved": true,
+        "name": "WESTCOTT",
+        "identifier": "WCO",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "335.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 84,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": 0.0709218148977788,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:52:23.584Z",
+        "updatedAt": "2022-04-25T10:07:26.412Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 47.74587500000038,
+          "hae": 131.74587500000038
+        },
+        "range": {
+          "value": 30,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.9625,
+          51.852777777778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 141,
+      "properties": {
+        "_id": "62616fababdcc7f0ccbc5539",
+        "approved": true,
+        "name": "WHITEGATE",
+        "identifier": "WHI",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "368.500",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 78,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -0.6789520128880565,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:52:27.635Z",
+        "updatedAt": "2022-04-25T10:07:49.417Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 52.1300008333335,
+          "hae": 130.1300008333335
+        },
+        "range": {
+          "value": 25,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.6230555555556,
+          53.184722222222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 142,
+      "properties": {
+        "_id": "62616fadabdcc7f0ccbc5570",
+        "approved": true,
+        "name": "WICK",
+        "identifier": "WIK",
+        "type": 4,
+        "country": "GB",
+        "channel": "83X",
+        "frequency": {
+          "value": "113.600",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 35,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -1.6338579629559917,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:52:29.165Z",
+        "updatedAt": "2022-04-25T10:08:01.819Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 51.58636213333389,
+          "hae": 86.58636213333389
+        },
+        "range": {
+          "value": 100,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.1002777777778,
+          58.458888888889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 143,
+      "properties": {
+        "_id": "62616fadabdcc7f0ccbc557b",
+        "approved": true,
+        "name": "WICK",
+        "identifier": "WCK",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "344.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 7,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -1.615635602552997,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:52:29.377Z",
+        "updatedAt": "2022-04-25T10:08:06.325Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 51.42070800000138,
+          "hae": 58.42070800000138
+        },
+        "range": {
+          "value": 30,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.0630555555556,
+          58.446666666667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 144,
+      "properties": {
+        "_id": "62616fb4abdcc7f0ccbc5686",
+        "approved": true,
+        "name": "WITTERING",
+        "identifier": "WIT",
+        "type": 1,
+        "country": "GB",
+        "channel": "123X",
+        "frequency": {
+          "value": "117.600",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 88,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": 0.15738309273370646,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:52:36.334Z",
+        "updatedAt": "2022-04-21T14:52:36.355Z",
+        "createdBy": "import-script",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 47.684208000000154,
+          "hae": 135.68420800000015
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.49861111111111,
+          52.607777777778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 145,
+      "properties": {
+        "_id": "62616fb5abdcc7f0ccbc56a7",
+        "approved": true,
+        "name": "WOLVERHAMPTON",
+        "identifier": "WOL",
+        "type": 0,
+        "country": "GB",
+        "channel": "23X",
+        "frequency": {
+          "value": "108.600",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 100,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -0.4638223755812752,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:52:37.374Z",
+        "updatedAt": "2022-04-25T10:08:44.449Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 51.16056659999927,
+          "hae": 151.16056659999927
+        },
+        "range": {
+          "value": 15,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.2619444444444,
+          52.515833333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 146,
+      "properties": {
+        "_id": "62616fb6abdcc7f0ccbc56de",
+        "approved": true,
+        "name": "WOODLEY",
+        "identifier": "WOD",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "352.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 44,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": 0.13953896162703497,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:52:38.858Z",
+        "updatedAt": "2022-04-25T10:08:48.467Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 46.86925466666705,
+          "hae": 90.86925466666705
+        },
+        "range": {
+          "value": 25,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.87888888888889,
+          51.452777777778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 147,
+      "properties": {
+        "_id": "62616fbdabdcc7f0ccbc57da",
+        "approved": true,
+        "name": "YEOVIL",
+        "identifier": "YVL",
+        "type": 0,
+        "country": "GB",
+        "channel": "27Y",
+        "frequency": {
+          "value": "109.050",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 52,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -0.42138046516294764,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:52:45.466Z",
+        "updatedAt": "2022-04-25T10:09:07.071Z",
+        "createdBy": "import-script",
+        "updatedBy": "OPONcQnzWGOLiJSceNaf8pvx1fA2",
+        "elevationGeoid": {
+          "geoidHeight": 50.01887039999977,
+          "hae": 102.01887039999977
+        },
+        "range": {
+          "value": 25,
+          "unit": 2
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.6538888888889,
+          50.940833333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 148,
+      "properties": {
+        "_id": "62616fbdabdcc7f0ccbc57e6",
+        "approved": true,
+        "name": "YEOVIL",
+        "identifier": "YVL",
+        "type": 2,
+        "country": "GB",
+        "frequency": {
+          "value": "343.000",
+          "unit": 1
+        },
+        "elevation": {
+          "value": 63,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -0.425128607183527,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:52:45.737Z",
+        "updatedAt": "2022-04-21T14:52:45.775Z",
+        "createdBy": "import-script",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 50.04693240000006,
+          "hae": 113.04693240000006
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.6644444444444,
+          50.941388888889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 149,
+      "properties": {
+        "_id": "62616fbdabdcc7f0ccbc57f1",
+        "approved": true,
+        "name": "YEOVILTON",
+        "identifier": "VLN",
+        "type": 1,
+        "country": "GB",
+        "channel": "47X",
+        "frequency": {
+          "value": "111.000",
+          "unit": 2
+        },
+        "elevation": {
+          "value": 24,
+          "unit": 0,
+          "referenceDatum": 1
+        },
+        "magneticDeclination": -0.423203125473027,
+        "alignedTrueNorth": false,
+        "createdAt": "2022-04-21T14:52:45.990Z",
+        "updatedAt": "2022-04-21T14:52:46.064Z",
+        "createdBy": "import-script",
+        "updatedBy": "import-script",
+        "elevationGeoid": {
+          "geoidHeight": 50.00757180000011,
+          "hae": 74.00757180000011
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.6386111111111,
+          51.005
+        ]
+      }
+    }
+  ]
+}
