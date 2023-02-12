@@ -113,24 +113,26 @@
       popupAnchor: [0, -20]
     });
 
-    // Add UK waypoints
+    // Add  waypoints - removed due to data set size
 
 
-	var waypointsNL = L.geoJson(Waypoints1, {
-					onEachFeature: function (feature, layer) {
-					layer.setIcon(waypointIcon);
-					layer.bindTooltip(feature.properties.name, {direction: "center", permanent: true, className: 'wpLabelstyle'});
-					}
-					});
+//	var waypoints = L.geoJson(Waypoints1, {
+//					onEachFeature: function (feature, layer) {
+//					layer.setIcon(waypointIcon);
+//					layer.bindTooltip(feature.properties.name, {direction: "center", permanent: true, className: 'wpLabelstyle'});
+//					}
+//					});
 
-    var waypointsStyle = L.geoJson(null, {
-              onEachFeature: function (feature, layer) {
-                layer.setIcon(waypointIcon);
-                layer.bindTooltip(feature.properties.name);
-              }
-            });
+ // UK Way points - also removed for consistency
 
-        var waypoints = omnivore.kml('Waypoints.kml', null, waypointsStyle);
+  //  var waypointsStyle = L.geoJson(null, {
+  //            onEachFeature: function (feature, layer) {
+  //              layer.setIcon(waypointIcon);
+  //              layer.bindTooltip(feature.properties.name);
+  //            }
+  //          });
+
+  //      var waypoints = omnivore.kml('Waypoints.kml', null, waypointsStyle);
 
 
     // Add UK civil airfields
@@ -828,7 +830,7 @@ var gliderSites = L.geoJson(gliders, {
         "UK overlays": {
         "A2A refuelling areas": aaraGroup,
         "Military radar corridors": radarGroup,
-        "Waypoints": waypoints,
+//      "Waypoints": waypoints,
 //		"Waypoints (NL)": waypointsNL,
         "Civil airfields": civilAirfields,
         "Military airfields": milAirfields,
