@@ -288,43 +288,6 @@ function onEachFeatureMilUK(feature, layer) {
 			}		
     }
 
-
-
-//function onEachFeatureMilUK(feature, layer) {
-//		layer.setIcon(milIcon);
-//        if (feature.properties) {
-//            var popupcontent;
-//			//Header and ICAO
-//            popupcontent = "<table><tr><th style='white-space:nowrap'><u>"+feature.properties.title+"</u></th></tr>";
-//			if (feature.properties.icao == undefined) {  // checks for IcaoCode - if not defined misses out ICAO row
-//				popupcontent = popupcontent;
-//			} else {
-//				popupcontent = popupcontent + "<tr><td><span style='font-weight:bold'>ICAO:</span></td><td>"+feature.properties.icao+"</td></tr>";
-//			}
-//			// Runways Row
-//			popupcontent = popupcontent + "<tr><td><b>Runways:</b></td><td><span>"+feature.properties.runways+"&nbsp;</span></br>";
-//						if (feature.properties.icao == undefined) {  // checks for IcaoCode - if not defined misses out chart row
-//				popupcontent = popupcontent;
-//			} else {
-//				popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=airports/"+feature.properties.icao+".pdf target=_blank>View</a></td></tr>";
-//			}			
-//			popupcontent = popupcontent + "<tr><td><b>Location (Long/Lat):</b></td><td>"+feature.geometry.coordinates+"</td></tr>"; // location
-//			// popupcontent = popupcontent + "<tr><td><b>Elevation: </b></td><td>"+feature.properties.elevation.value+"M</td></tr>"; //elevation
-//			popupcontent = popupcontent + "</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td></tr>"; //Padding
-//			// Frequencies Rows
-//			popupcontent = popupcontent + "<tr><th><u>Frequencies</u></th></tr>";
-//			popupcontent = popupcontent + "<tr><td><b>Approach:</b></td><td>"+feature.properties.approach+"</td></tr>";
-//			popupcontent = popupcontent + "<tr><td><b>Tower:</b></td><td>"+feature.properties.tower+"</td></tr>";
-//			popupcontent = popupcontent + "<tr><td><b>Radar:</b></td><td>"+feature.properties.radar+"</td></tr>";
-//			popupcontent = popupcontent + "<tr><td><b>Ground:</b></td><td>"+feature.properties.ground+"</td></tr>";
-//			popupcontent = popupcontent + "<tr><td><b>ATIS:</b></td><td>"+feature.properties.atis+"</td></tr>";
-//			popupcontent = popupcontent + "<tr><td><b>OPS:</b></td><td>"+feature.properties.ops+"</td></tr>";	
-//			popupcontent = popupcontent + "<tr><td><b>Other:</b></td><td>"+feature.properties.other+"</td></tr>";			
-//			popupcontent = popupcontent + "</table>";
-//            layer.bindPopup(popupcontent);
-//        }	
-//    }
-
 // Pop-up display for Civil Heliports from OpenAIP geoJson	
 
 function onEachFeatureCivHeli(feature, layer) {
