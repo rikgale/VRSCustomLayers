@@ -10,10 +10,6 @@ These two files work in tandem to insert a icon with pop up at the bottom left o
 
 Users will need to sign up for an [Open Weather 1.0 API key](https://openweathermap.org/api/weathermaps) and also an [OpenAIP Key](https://www.openaip.net/). These keys need to be inserted at lines 20 & 21 of `EndOfBody.html`. Ensure that the `' '` are kept. 
 
-## Localisation
-
-to be added
-
 #### `Fullscreen.html`
 
 Adds a full screen button to the VRS map under the zoom +/- buttons and moves the +/- buttons to the top right of the screen.
@@ -27,6 +23,14 @@ Adds a distance scale next to the VRS menu in the top left of the map
 Put the HTML files in the required folder for the Custom Content plugin as per Custom Content plugin instructions and the entire contents of `Put these files in VRS root folder` folder into the root folder referenced by the Custom Content plugin and then set up the files injections as per the bottom 4 lines in the below image:
 
 ![Screenshot](https://github.com/rikgale/VRSCustomLayers/blob/main/customcontentoptions.jpeg)
+
+### Localisation
+
+Defaults to GB airports etc. If you wish to change to airports for your country remove the country code  e.g. `DE` from the end of the .geojson files in the `Put these files in VRS root folder` before placing them in the root folder for your VRS
+
+`airportsDE.geojson` --> `airports.geojson`
+
+Countries added on request - please open an issue to request
 
 ##### IMPORTANT NOTICE: These overlays contain aviation airscape, weather, navigational aids, airfield information, etc. All of these are purely for entertainment / hobby use and MUST NEVER be relied upon to any extent for real world aviation / flying. You should always use the latest legal airspace charts and weather information as published by official sources. This is not an official source. By using this code you agree to make users of your webpage aware of this, and agree that the publisher is not responsible for any loss or damage resulting from the use of this code. The airspace charts, navigational aids,aerodrome information, weather, etc will not be 100% complete or accurate and will contain errors.
 
