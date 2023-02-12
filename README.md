@@ -10,6 +10,10 @@ These two files work in tandem to insert a icon with pop up at the bottom left o
 
 Users will need to sign up for an [Open Weather 1.0 API key](https://openweathermap.org/api/weathermaps) and also an [OpenAIP Key](https://www.openaip.net/). These keys need to be inserted at lines 20 & 21 of `EndOfBody.html`. Ensure that the `' '` are kept. 
 
+## Localisation
+
+to be added
+
 #### `Fullscreen.html`
 
 Adds a full screen button to the VRS map under the zoom +/- buttons and moves the +/- buttons to the top right of the screen.
