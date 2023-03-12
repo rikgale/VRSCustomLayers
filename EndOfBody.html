@@ -28,8 +28,8 @@
 
 //		var OPENWXAPIKEY = 'My OPEN Weather API Key'; // replace "My OPEN Weather API Key" with your key and KEEP the ' '
 //		var OPENAIPKEY = 'My OpenAIP KEY';  // replace "My OpenAIP API Key" with your key and KEEP the ' '
-		var OPENWXAPIKEY = 'BlahBlahBlah';
-		var OPENAIPKEY = 'BlahBlahBlah';
+		var OPENWXAPIKEY = 'xxxxxxxxxxxxxxxx';
+		var OPENAIPKEY = 'yyyyyyyyyyyyyyyyyyyy';
 		
     // Add TACAN, VOR and NDB icons
 
@@ -113,7 +113,7 @@
       popupAnchor: [0, -20]
     });
 
-    // Add  waypoints - removed due to data set size
+     // Add  waypoints - removed due to data set size
 
 
 //	var waypoints = L.geoJson(Waypoints1, {
@@ -290,7 +290,8 @@ function onEachFeatureMilUK(feature, layer) {
 			}		
     }
 
-// Pop-up display for Civil Heliports from OpenAIP geoJson	
+
+
 
 function onEachFeatureCivHeli(feature, layer) {
 		layer.setIcon(civHeliIcon);
@@ -725,7 +726,7 @@ var gliderSites = L.geoJson(gliders, {
 			var openAIPairspacev2 = L.tileLayer('https://{s}.api.tiles.openaip.net/api/data/airspaces/{z}/{x}/{y}.png?apiKey='+ OPENAIPKEY, {
                     opacity: 0.6,
 					maxZoom: 19,
-					minZoom: 6,
+					minZoom: 13,
 					id: 'OpenAIPas',
 					attribution: '<a href="https://www.openaip.net"> OpenAIP</a>',
 					transparent: true,
@@ -734,7 +735,7 @@ var gliderSites = L.geoJson(gliders, {
 			var openAIPairportv2 = L.tileLayer('https://{s}.api.tiles.openaip.net/api/data/airports/{z}/{x}/{y}.png?apiKey='+ OPENAIPKEY, {
                     opacity: 0.6,
 					maxZoom: 19,
-					minZoom: 6,
+					minZoom: 13,
 					id: 'OpenAIPap',
 					transparent: true,
                 });	
@@ -742,8 +743,20 @@ var gliderSites = L.geoJson(gliders, {
    	////	var openAIPairspacev2 = L.layerGroup([openAIPairspacev2]);
 		
 
- 
-    		var openAIPairspace = L.layerGroup([openAIPairportv2, openAIPairspacev2]).addTo(map);
+/////////////////////////////////////////////////
+
+    // Add Open AIP airspace mapping
+
+    		var openAIPairspace = L.tileLayer('https://map.adsbexchange.com/mapproxy/tiles/1.0.0/openaip/ul_grid/{z}/{x}/{y}.png', {
+                    opacity: 0.6,
+					maxZoom: 12,
+					minZoom: 1,
+					id: 'OpenAIP',
+					attribution: '<a href="https://www.openaip.net"> OpenAIP</a>',
+					transparent: true,
+                });
+
+    		var openAIPairspace = L.layerGroup([openAIPairspace, openAIPairportv2, openAIPairspacev2]).addTo(map);
 
 	// Add OpenAIP Reporting points.
 
@@ -767,6 +780,25 @@ var gliderSites = L.geoJson(gliders, {
                 });		
 
 		var openSeaMap = L.layerGroup([openSEA]).addTo(map);
+		
+	// Add open TrainMap Tiles
+
+		let trainFilter = [
+	//	'brightness:50%',
+		'contrast:80%',
+		'saturate:40%',
+	 ];
+
+		var OpenRailwayMap = L.tileLayer.colorFilter('https://{s}.tiles.openrailwaymap.org/standard/{z}/{x}/{y}.png', {
+					opacity: 0.6,
+					minzoon: 12,
+					maxZoom: 19,
+					attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors | Map style: &copy; <a href="https://www.OpenRailwayMap.org">OpenRailwayMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)',
+					id: 'OpenTRAIN',
+					transparent: true,
+					filter: trainFilter,
+		});	
+		
 
     // Add OpenWeather Tiles
 
@@ -808,8 +840,70 @@ var gliderSites = L.geoJson(gliders, {
 							dayNight.setTime();
 							}, 5000); // Every 5sec
 
+	//Some base layer fun??
+	
+	let osm50CentBright = [
+      //  'grayscale:100%',
+		'brightness:50%',
+     //   'invert:100%',
+	 //   'blur:0px',
+	//	'contrast:130%',
+	//	'hue:290deg',
+	//	'opacity:100%',
+	//	'saturate:300%',
+	//	'sepia:10%',
+	 ];
+	 
+	 let osmDark = [
+       'grayscale:100%',
+	//	'brightness:50%',
+        'invert:100%',
+	 //   'blur:0px',
+	//	'contrast:130%',
+	//	'hue:290deg',
+	//	'opacity:100%',
+	//	'saturate:300%',
+	//	'sepia:10%',
+	 ];
+	
+	
+				var osm50 = L.tileLayer.colorFilter('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+				attribution: '&copy; OpenWeather',
+				filter: osm50CentBright,			
+				}).addTo(map);
+				
+				var osmDarkMap = L.tileLayer.colorFilter('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+				attribution: '&copy; OpenWeather',
+				filter: osmDark,			
+				});
+				
+	            var watercolorMap = L.tileLayer.colorFilter('http://{s}.tile.stamen.com/watercolor/{z}/{x}/{y}.jpg', {
+                attribution: '<a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>', 
+				filter: osm50CentBright,					
+                });	       
+
+
+				var CartoDB_DarkMatter = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+				attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+				subdomains: 'abcd',
+				maxZoom: 20
+				});
+
+
+
+
+
+
 
     // Define menu items
+	
+	
+	var baseLayers = {
+		"OSM": osm50,
+		"OSM Dark": osmDarkMap,
+		"WaterColour": watercolorMap,
+		"CartoDark": CartoDB_DarkMatter,
+		}
 
     var groupedOverlays = {
         "Global Airspace": {
@@ -818,6 +912,7 @@ var gliderSites = L.geoJson(gliders, {
           "Navaids": tacanVOR,
 		  "Reporting Points": openAIPrp,
 		  "Sea space": openSeaMap,
+		  "Train Map": OpenRailwayMap,
         },
         "Global Weather": {
         "Cloud": openCloud,
@@ -830,7 +925,7 @@ var gliderSites = L.geoJson(gliders, {
         "UK overlays": {
         "A2A refuelling areas": aaraGroup,
         "Military radar corridors": radarGroup,
-//      "Waypoints": waypoints,
+//      "Waypoints": waypoints,	
 //		"Waypoints (NL)": waypointsNL,
         "Civil airfields": civilAirfields,
         "Military airfields": milAirfields,
@@ -842,7 +937,9 @@ var gliderSites = L.geoJson(gliders, {
 
     // Add layers and overlay menu to OSM map
 
-    L.control.groupedLayers(null, groupedOverlays, {position: 'bottomleft'}).addTo(map);
+    L.control.groupedLayers(baseLayers, groupedOverlays, {position: 'bottomleft'}).addTo(map);
+	
+
 
                     }
                 });
