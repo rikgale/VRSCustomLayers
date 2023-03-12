@@ -44,6 +44,7 @@ I am very grateful for the following resources which have been used in this code
 - Waypoint markers from [sam210723](https://github.com/sam210723/vrs-waypoints)
 - Leaflet grouped layer control from [ismyrnow](https://github.com/ismyrnow/leaflet-groupedlayercontrol)
 - Night and day overlay from [Jörg Dietrich](http://joergdietrich.github.io/Leaflet.Terminator/)
+- Baselayer colour filters from [xtk93x](https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter.git)
 - Leaflet awesome markers from [Ivoogdt](https://github.com/lvoogdt/Leaflet.awesome-markers)
 - forked/copied from [M7SPI/vrs-overlays](https://github.com/M7SPI/vrs-overlays)
 
