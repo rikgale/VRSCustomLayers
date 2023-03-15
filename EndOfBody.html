@@ -143,7 +143,7 @@ function onEachFeatureCiv(feature, layer) {
         if (feature.properties.frequencies) {
             var popupcontent;
 			//Header and ICAO
-            popupcontent = "<table><tr><th><u>"+feature.properties.name+"</u></th></tr>";
+            popupcontent = "<table><tr><th style='white-space:nowrap'><u>"+feature.properties.name+"</u></th></tr>";
 			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out ICAO row
 				popupcontent = popupcontent;
 			} else {
@@ -157,7 +157,7 @@ function onEachFeatureCiv(feature, layer) {
 			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out chart row
 				popupcontent = popupcontent;
 			} else {
-				popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=\x22https://www.airnav.com/airport/"+feature.properties.icaoCode+"\x22 target=_blank>View</a></td></tr>";
+				popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=airports/"+feature.properties.icaoCode+".pdf target=_blank>View</a></td></tr>";
 			}			
 			popupcontent = popupcontent + "<tr><td><b>Location (Long/Lat):</b></td><td>"+feature.geometry.coordinates+"</td></tr>"; // location
 			popupcontent = popupcontent + "<tr><td><b>Elevation: </b></td><td>"+feature.properties.elevation.value+"M</td></tr>"; //elevation
@@ -172,7 +172,7 @@ function onEachFeatureCiv(feature, layer) {
 			popupcontent = popupcontent + "</table>";
             layer.bindPopup(popupcontent);
         } else if (feature.properties.runways) { // if no frequencies then checks for runways
-            popupcontent = "<table><tr><th><u>"+feature.properties.name+"</u></th></tr>";
+            popupcontent = "<table><tr><th style='white-space:nowrap'><u>"+feature.properties.name+"</u></th></tr>";
 			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out ICAO row
 				popupcontent = popupcontent;
 			} else {
@@ -186,7 +186,7 @@ function onEachFeatureCiv(feature, layer) {
 			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out chart row
 				popupcontent = popupcontent;
 			} else {
-				popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=\x22https://www.airnav.com/airport/"+feature.properties.icaoCode+"\x22 target=_blank>View</a></td></tr>";
+				popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=airports/"+feature.properties.icaoCode+".pdf target=_blank>View</a></td></tr>";
 			}
 			popupcontent = popupcontent + "<tr><td><b>Location (Long/Lat):</b></td><td>"+feature.geometry.coordinates+"</td></tr>"; // location
 			popupcontent = popupcontent + "<tr><td><b>Elevation: </b></td><td>"+feature.properties.elevation.value+"M</td></tr>"; //elevation				
@@ -195,7 +195,7 @@ function onEachFeatureCiv(feature, layer) {
 		else {
             var popupcontent;
 			//Header and ICAO / Link row
-            popupcontent = "<table><tr><th><u>"+feature.properties.name+"</u></th></tr>";
+            popupcontent = "<table><tr><th style='white-space:nowrap'><u>"+feature.properties.name+"</u></th></tr>";
 			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out ICAO row
 				popupcontent = popupcontent;
 			} else {
@@ -204,7 +204,7 @@ function onEachFeatureCiv(feature, layer) {
 			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out chart row
 				popupcontent = popupcontent;
 			} else {
-				popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=\x22https://www.airnav.com/airport/"+feature.properties.icaoCode+"\x22 target=_blank>View</a></td></tr>";
+				popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=airports/"+feature.properties.icaoCode+".pdf target=_blank>View</a></td></tr>";
 			}
 			popupcontent = popupcontent + "<tr><td><b>Location (Long/Lat):</b></td><td>"+feature.geometry.coordinates+"</td></tr>"; // location
 			popupcontent = popupcontent + "<tr><td><b>Elevation: </b></td><td>"+feature.properties.elevation.value+"M</td></tr>"; //elevation			
@@ -220,7 +220,7 @@ function onEachFeatureMilUK(feature, layer) {
         if (feature.properties.frequencies) {
             var popupcontent;
 			//Header and ICAO
-            popupcontent = "<table><tr><th><u>"+feature.properties.name+"</u></th></tr>";
+            popupcontent = "<table><tr><th style='white-space:nowrap'><u>"+feature.properties.name+"</u></th></tr>";
 			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out ICAO row
 				popupcontent = popupcontent;
 			} else {
@@ -234,7 +234,7 @@ function onEachFeatureMilUK(feature, layer) {
 			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out chart row
 				popupcontent = popupcontent;
 			} else {
-				popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=\x22https://www.airnav.com/airport/"+feature.properties.icaoCode+"\x22 target=_blank>View</a></td></tr>";
+				popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=airports/"+feature.properties.icaoCode+".pdf target=_blank>View</a></td></tr>";
 			}			
 			popupcontent = popupcontent + "<tr><td><b>Location (Long/Lat):</b></td><td>"+feature.geometry.coordinates+"</td></tr>"; // location
 			popupcontent = popupcontent + "<tr><td><b>Elevation: </b></td><td>"+feature.properties.elevation.value+"M</td></tr>"; //elevation
@@ -249,7 +249,7 @@ function onEachFeatureMilUK(feature, layer) {
 			popupcontent = popupcontent + "</table>";
             layer.bindPopup(popupcontent);
         } else if (feature.properties.runways) { // if no frequencies then checks for runways
-            popupcontent = "<table><tr><th><u>"+feature.properties.name+"</u></th></tr>";
+            popupcontent = "<table><tr><th style='white-space:nowrap'><u>"+feature.properties.name+"</u></th></tr>";
 			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out ICAO row
 				popupcontent = popupcontent;
 			} else {
@@ -263,7 +263,7 @@ function onEachFeatureMilUK(feature, layer) {
 			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out chart row
 				popupcontent = popupcontent;
 			} else {
-				popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=\x22https://www.airnav.com/airport/"+feature.properties.icaoCode+"\x22 target=_blank>View</a></td></tr>";
+				popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=airports/"+feature.properties.icaoCode+".pdf target=_blank>View</a></td></tr>";
 			}
 			popupcontent = popupcontent + "<tr><td><b>Location (Long/Lat):</b></td><td>"+feature.geometry.coordinates+"</td></tr>"; // location
 			popupcontent = popupcontent + "<tr><td><b>Elevation: </b></td><td>"+feature.properties.elevation.value+"M</td></tr>"; //elevation				
@@ -272,7 +272,7 @@ function onEachFeatureMilUK(feature, layer) {
 		else {
             var popupcontent;
 			//Header and ICAO / Link row
-            popupcontent = "<table><tr><th><u>"+feature.properties.name+"</u></th></tr>";
+            popupcontent = "<table><tr><th style='white-space:nowrap'><u>"+feature.properties.name+"</u></th></tr>";
 			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out ICAO row
 				popupcontent = popupcontent;
 			} else {
@@ -281,7 +281,7 @@ function onEachFeatureMilUK(feature, layer) {
 			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out chart row
 				popupcontent = popupcontent;
 			} else {
-				popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=\x22https://www.airnav.com/airport/"+feature.properties.icaoCode+"\x22 target=_blank>View</a></td></tr>";
+				popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=airports/"+feature.properties.icaoCode+".pdf target=_blank>View</a></td></tr>";
 			}
 			popupcontent = popupcontent + "<tr><td><b>Location (Long/Lat):</b></td><td>"+feature.geometry.coordinates+"</td></tr>"; // location
 			popupcontent = popupcontent + "<tr><td><b>Elevation: </b></td><td>"+feature.properties.elevation.value+"M</td></tr>"; //elevation			
@@ -297,7 +297,7 @@ function onEachFeatureCivHeli(feature, layer) {
         if (feature.properties.frequencies) {
             var popupcontent;
 			//Header and ICAO
-            popupcontent = "<table><tr><th><u>"+feature.properties.name+"</u></th></tr>";
+            popupcontent = "<table><tr><th style='white-space:nowrap'><u>"+feature.properties.name+"</u></th></tr>";
 			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out ICAO row
 				popupcontent = popupcontent;
 			} else {
@@ -306,7 +306,7 @@ function onEachFeatureCivHeli(feature, layer) {
 			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out chart row
 				popupcontent = popupcontent;
 			} else {
-				popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=\x22https://www.airnav.com/airport/"+feature.properties.icaoCode+"\x22 target=_blank>View</a></td></tr>";
+				popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=airports/"+feature.properties.icaoCode+".pdf target=_blank>View</a></td></tr>";
 			}			
 			popupcontent = popupcontent + "<tr><td><b>Location (Long/Lat):</b></td><td>"+feature.geometry.coordinates+"</td></tr>"; // location
 			popupcontent = popupcontent + "<tr><td><b>Elevation: </b></td><td>"+feature.properties.elevation.value+"M</td></tr>"; //elevation
@@ -321,7 +321,7 @@ function onEachFeatureCivHeli(feature, layer) {
 			popupcontent = popupcontent + "</table>";
             layer.bindPopup(popupcontent);
         } else if (feature.properties.runways) { // if no frequencies then checks for runways
-            popupcontent = "<table><tr><th><u>"+feature.properties.name+"</u></th></tr>";
+            popupcontent = "<table><tr><th style='white-space:nowrap'><u>"+feature.properties.name+"</u></th></tr>";
 			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out ICAO row
 				popupcontent = popupcontent;
 			} else {
@@ -330,7 +330,7 @@ function onEachFeatureCivHeli(feature, layer) {
 			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out chart row
 				popupcontent = popupcontent;
 			} else {
-				popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=\x22https://www.airnav.com/airport/"+feature.properties.icaoCode+"\x22 target=_blank>View</a></td></tr>";
+				popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=airports/"+feature.properties.icaoCode+".pdf target=_blank>View</a></td></tr>";
 			}
 			popupcontent = popupcontent + "<tr><td><b>Location (Long/Lat):</b></td><td>"+feature.geometry.coordinates+"</td></tr>"; // location
 			popupcontent = popupcontent + "<tr><td><b>Elevation: </b></td><td>"+feature.properties.elevation.value+"M</td></tr>"; //elevation				
@@ -339,7 +339,7 @@ function onEachFeatureCivHeli(feature, layer) {
 		else {
             var popupcontent;
 			//Header and ICAO / Link row
-            popupcontent = "<table><tr><th><u>"+feature.properties.name+"</u></th></tr>";
+            popupcontent = "<table><tr><th style='white-space:nowrap'><u>"+feature.properties.name+"</u></th></tr>";
 			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out ICAO row
 				popupcontent = popupcontent;
 			} else {
@@ -348,7 +348,7 @@ function onEachFeatureCivHeli(feature, layer) {
 			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out chart row
 				popupcontent = popupcontent;
 			} else {
-				popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=\x22https://www.airnav.com/airport/"+feature.properties.icaoCode+"\x22 target=_blank>View</a></td></tr>";
+				popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=airports/"+feature.properties.icaoCode+".pdf target=_blank>View</a></td></tr>";
 			}
 			popupcontent = popupcontent + "<tr><td><b>Location (Long/Lat):</b></td><td>"+feature.geometry.coordinates+"</td></tr>"; // location
 			popupcontent = popupcontent + "<tr><td><b>Elevation: </b></td><td>"+feature.properties.elevation.value+"M</td></tr>"; //elevation			
@@ -363,7 +363,7 @@ function onEachFeatureGlid(feature, layer) {
         if (feature.properties.frequencies && feature.properties.runways) {
             var popupcontent;
 			//Header and ICAO
-            popupcontent = "<table><tr><th><u>"+feature.properties.name+"</u></th></tr>";
+            popupcontent = "<table><tr><th style='white-space:nowrap'><u>"+feature.properties.name+"</u></th></tr>";
 			// Runways Row
 			popupcontent = popupcontent + "<tr><td><b>Runways:</b></td><td>";
 			for (k=0;k<feature.properties.runways.length;k=k+1){
@@ -383,7 +383,7 @@ function onEachFeatureGlid(feature, layer) {
             layer.bindPopup(popupcontent);
         } 
 		else if (feature.properties.runways) { // if no frequencies then checks for runways
-            popupcontent = "<table><tr><th><u>"+feature.properties.name+"</u></th></tr>";
+            popupcontent = "<table><tr><th style='white-space:nowrap'><u>"+feature.properties.name+"</u></th></tr>";
 			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out ICAO row
 				popupcontent = popupcontent;
 			} else {
@@ -397,7 +397,7 @@ function onEachFeatureGlid(feature, layer) {
 			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out chart row
 				popupcontent = popupcontent;
 			} else {
-				popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=\x22https://www.airnav.com/airport/"+feature.properties.icaoCode+"\x22 target=_blank>View</a></td></tr>";
+				popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=airports/"+feature.properties.icaoCode+".pdf target=_blank>View</a></td></tr>";
 			}
 			popupcontent = popupcontent + "<tr><td><b>Location (Long/Lat):</b></td><td>"+feature.geometry.coordinates+"</td></tr>"; // location
 			popupcontent = popupcontent + "<tr><td><b>Elevation: </b></td><td>"+feature.properties.elevation.value+"M</td></tr>"; //elevation				
@@ -406,7 +406,7 @@ function onEachFeatureGlid(feature, layer) {
 		//else {
         //    var popupcontent;
 		//	//Header and ICAO / Link row
-        //    popupcontent = "<table><tr><th><u>"+feature.properties.name+"</u></th></tr>";
+        //    popupcontent = "<table><tr><th style='white-space:nowrap'><u>"+feature.properties.name+"</u></th></tr>";
 		//	if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out ICAO row
 		//		popupcontent = popupcontent;
 		//	} else {
@@ -415,7 +415,7 @@ function onEachFeatureGlid(feature, layer) {
 		//	if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out chart row
 		//		popupcontent = popupcontent;
 		//	} else {
-		//		popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=\x22https://www.airnav.com/airport/"+feature.properties.icaoCode+"\x22 target=_blank>View</a></td></tr>";
+		//		popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=airports/"+feature.properties.icaoCode+".pdf target=_blank>View</a></td></tr>";
 		//	}
 		//	popupcontent = popupcontent + "<tr><td><b>Location (Long/Lat):</b></td><td>"+feature.geometry.coordinates+"</td></tr>"; // location
 		//	popupcontent = popupcontent + "<tr><td><b>Elevation: </b></td><td>"+feature.properties.elevation.value+"M</td></tr>"; //elevation			
