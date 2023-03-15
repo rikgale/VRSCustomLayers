@@ -1,0 +1,14 @@
+<script type="text/javascript">
+    // Has the VRS JavaScript been loaded?
+    if(VRS && VRS.globalDispatch) {
+        // Hook the global event that is raised when the bootstrap object has been created
+        VRS.globalDispatch.hook(VRS.globalEvent.bootstrapCreated, function(bootStrap) {
+            // Hook the event that is raised when the page settings have been established
+            // but the page has not yet been created.
+            bootStrap.hookInitialising(function(pageSettings) {
+                // Turn off the layers menu
+                pageSettings.showLayersMenu = false;
+            });
+        });
+    }
+</script>
