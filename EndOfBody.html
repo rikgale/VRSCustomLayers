@@ -876,8 +876,8 @@ var gliderSites = L.geoJson(gliders, {
 				filter: osmDark,			
 				});
 				
-	            var watercolorMap = L.tileLayer.colorFilter('http://{s}.tile.stamen.com/watercolor/{z}/{x}/{y}.jpg', {
-                attribution: '<a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>', 
+	            var watercolorMap = L.tileLayer.colorFilter('http://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg', {
+                attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.', 
 				filter: osm50CentBright,					
                 });	       
 
