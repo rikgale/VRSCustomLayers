@@ -160,11 +160,11 @@ function onEachFeatureCiv(feature, layer) {
 			} else {
 				popupcontent = popupcontent + "<tr><td><b>Airport METAR:</b></td><td><a href=\x22https://e6bx.com/weather/"+feature.properties.icaoCode+"/?showDecoded=1&focuspoint=metardecoder\x22 target=_blank>View</a></td></tr>";
 			}	
-	//		if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out chart row
-	//			popupcontent = popupcontent;
-	//		} else {
-	//			popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=airports/"+feature.properties.icaoCode+".pdf target=_blank>View</a></td></tr>";
-	//		}			
+			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out chart row
+				popupcontent = popupcontent;
+			} else {
+				popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=\x22https://skyvector.com/airport/"+feature.properties.icaoCode+"\x22 target=_blank>SkyVector</a> /\ <a href=\x22https://ourairports.com/airports/"+feature.properties.icaoCode+"\x22 target=_blank>OurAirports</a></td></tr>";
+			}			
 			popupcontent = popupcontent + "<tr><td><b>Location (Long/Lat):</b></td><td>"+feature.geometry.coordinates+"</td></tr>"; // location
 			popupcontent = popupcontent + "<tr><td><b>Elevation: </b></td><td>"+feature.properties.elevation.value+"M</td></tr>"; //elevation
 			popupcontent = popupcontent + "</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td></tr>"; //Padding
@@ -194,11 +194,11 @@ function onEachFeatureCiv(feature, layer) {
 			} else {
 				popupcontent = popupcontent + "<tr><td><b>Airport METAR:</b></td><td><a href=\x22https://e6bx.com/weather/"+feature.properties.icaoCode+"/?showDecoded=1&focuspoint=metardecoder\x22 target=_blank>View</a></td></tr>";
 			}				
-	//		if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out chart row
-	//			popupcontent = popupcontent;
-	//		} else {
-	//			popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=airports/"+feature.properties.icaoCode+".pdf target=_blank>View</a></td></tr>";
-	//		}
+			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out chart row
+				popupcontent = popupcontent;
+			} else {
+				popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=\x22https://skyvector.com/airport/"+feature.properties.icaoCode+"\x22 target=_blank>SkyVector</a> /\ <a href=\x22https://ourairports.com/airports/"+feature.properties.icaoCode+"\x22 target=_blank>OurAirports</a></td></tr>";
+			}
 			popupcontent = popupcontent + "<tr><td><b>Location (Long/Lat):</b></td><td>"+feature.geometry.coordinates+"</td></tr>"; // location
 			popupcontent = popupcontent + "<tr><td><b>Elevation: </b></td><td>"+feature.properties.elevation.value+"M</td></tr>"; //elevation				
 			layer.bindPopup(popupcontent);
@@ -217,11 +217,11 @@ function onEachFeatureCiv(feature, layer) {
 			} else {
 				popupcontent = popupcontent + "<tr><td><b>Airport METAR:</b></td><td><a href=\x22https://e6bx.com/weather/"+feature.properties.icaoCode+"/?showDecoded=1&focuspoint=metardecoder\x22 target=_blank>View</a></td></tr>";
 			}			
-	//		if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out chart row
-	//			popupcontent = popupcontent;
-	//		} else {
-	//			popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=airports/"+feature.properties.icaoCode+".pdf target=_blank>View</a></td></tr>";
-	//		}
+			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out chart row
+				popupcontent = popupcontent;
+			} else {
+				popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=\x22https://skyvector.com/airport/"+feature.properties.icaoCode+"\x22 target=_blank>SkyVector</a> /\ <a href=\x22https://ourairports.com/airports/"+feature.properties.icaoCode+"\x22 target=_blank>OurAirports</a></td></tr>";
+			}
 			popupcontent = popupcontent + "<tr><td><b>Location (Long/Lat):</b></td><td>"+feature.geometry.coordinates+"</td></tr>"; // location
 			popupcontent = popupcontent + "<tr><td><b>Elevation: </b></td><td>"+feature.properties.elevation.value+"M</td></tr>"; //elevation			
 			layer.bindPopup(popupcontent);	
@@ -252,11 +252,11 @@ function onEachFeatureMilUK(feature, layer) {
 			} else {
 				popupcontent = popupcontent + "<tr><td><b>Airport METAR:</b></td><td><a href=\x22https://e6bx.com/weather/"+feature.properties.icaoCode+"/?showDecoded=1&focuspoint=metardecoder\x22 target=_blank>View</a></td></tr>";
 			}				
-		//	if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out chart row
-		//		popupcontent = popupcontent;
-		//	} else {
-		//		popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=airports/"+feature.properties.icaoCode+".pdf target=_blank>View</a></td></tr>";
-		//	}			
+			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out chart row
+				popupcontent = popupcontent;
+			} else {
+				popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=\x22https://skyvector.com/airport/"+feature.properties.icaoCode+"\x22 target=_blank>SkyVector</a> /\ <a href=\x22https://ourairports.com/airports/"+feature.properties.icaoCode+"\x22 target=_blank>OurAirports</a></td></tr>";
+			}			
 			popupcontent = popupcontent + "<tr><td><b>Location (Long/Lat):</b></td><td>"+feature.geometry.coordinates+"</td></tr>"; // location
 			popupcontent = popupcontent + "<tr><td><b>Elevation: </b></td><td>"+feature.properties.elevation.value+"M</td></tr>"; //elevation
 			popupcontent = popupcontent + "</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td></tr>"; //Padding
@@ -286,11 +286,11 @@ function onEachFeatureMilUK(feature, layer) {
 			} else {
 				popupcontent = popupcontent + "<tr><td><b>Airport METAR:</b></td><td><a href=\x22https://e6bx.com/weather/"+feature.properties.icaoCode+"/?showDecoded=1&focuspoint=metardecoder\x22 target=_blank>View</a></td></tr>";
 			}				
-		//	if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out chart row
-		//		popupcontent = popupcontent;
-		//	} else {
-		//		popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=airports/"+feature.properties.icaoCode+".pdf target=_blank>View</a></td></tr>";
-		//	}
+			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out chart row
+				popupcontent = popupcontent;
+			} else {
+				popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=\x22https://skyvector.com/airport/"+feature.properties.icaoCode+"\x22 target=_blank>SkyVector</a> /\ <a href=\x22https://ourairports.com/airports/"+feature.properties.icaoCode+"\x22 target=_blank>OurAirports</a></td></tr>";
+			}
 			popupcontent = popupcontent + "<tr><td><b>Location (Long/Lat):</b></td><td>"+feature.geometry.coordinates+"</td></tr>"; // location
 			popupcontent = popupcontent + "<tr><td><b>Elevation: </b></td><td>"+feature.properties.elevation.value+"M</td></tr>"; //elevation				
 			layer.bindPopup(popupcontent);
@@ -309,11 +309,11 @@ function onEachFeatureMilUK(feature, layer) {
 			} else {
 				popupcontent = popupcontent + "<tr><td><b>Airport METAR:</b></td><td><a href=\x22https://e6bx.com/weather/"+feature.properties.icaoCode+"/?showDecoded=1&focuspoint=metardecoder\x22 target=_blank>View</a></td></tr>";
 			}			
-		//	if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out chart row
-		//		popupcontent = popupcontent;
-		//	} else {
-		//		popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=airports/"+feature.properties.icaoCode+".pdf target=_blank>View</a></td></tr>";
-		//	}
+			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out chart row
+				popupcontent = popupcontent;
+			} else {
+				popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=\x22https://skyvector.com/airport/"+feature.properties.icaoCode+"\x22 target=_blank>SkyVector</a> /\ <a href=\x22https://ourairports.com/airports/"+feature.properties.icaoCode+"\x22 target=_blank>OurAirports</a></td></tr>";
+			}
 			popupcontent = popupcontent + "<tr><td><b>Location (Long/Lat):</b></td><td>"+feature.geometry.coordinates+"</td></tr>"; // location
 			popupcontent = popupcontent + "<tr><td><b>Elevation: </b></td><td>"+feature.properties.elevation.value+"M</td></tr>"; //elevation			
 			layer.bindPopup(popupcontent);	
@@ -339,11 +339,11 @@ function onEachFeatureCivHeli(feature, layer) {
 			} else {
 				popupcontent = popupcontent + "<tr><td><b>Airport METAR:</b></td><td><a href=\x22https://e6bx.com/weather/"+feature.properties.icaoCode+"/?showDecoded=1&focuspoint=metardecoder\x22 target=_blank>View</a></td></tr>";
 			}			
-		//	if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out chart row
-		//		popupcontent = popupcontent;
-		//	} else {
-		//		popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=airports/"+feature.properties.icaoCode+".pdf target=_blank>View</a></td></tr>";
-		//	}			
+			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out chart row
+				popupcontent = popupcontent;
+			} else {
+				popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=\x22https://skyvector.com/airport/"+feature.properties.icaoCode+"\x22 target=_blank>SkyVector</a> /\ <a href=\x22https://ourairports.com/airports/"+feature.properties.icaoCode+"\x22 target=_blank>OurAirports</a></td></tr>";
+			}			
 			popupcontent = popupcontent + "<tr><td><b>Location (Long/Lat):</b></td><td>"+feature.geometry.coordinates+"</td></tr>"; // location
 			popupcontent = popupcontent + "<tr><td><b>Elevation: </b></td><td>"+feature.properties.elevation.value+"M</td></tr>"; //elevation
 			popupcontent = popupcontent + "</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td></tr>"; //Padding
@@ -368,11 +368,11 @@ function onEachFeatureCivHeli(feature, layer) {
 			} else {
 				popupcontent = popupcontent + "<tr><td><b>Airport METAR:</b></td><td><a href=\x22https://e6bx.com/weather/"+feature.properties.icaoCode+"/?showDecoded=1&focuspoint=metardecoder\x22 target=_blank>View</a></td></tr>";
 			}			
-		//	if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out chart row
-		//		popupcontent = popupcontent;
-		//	} else {
-		//		popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=airports/"+feature.properties.icaoCode+".pdf target=_blank>View</a></td></tr>";
-		//	}
+			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out chart row
+				popupcontent = popupcontent;
+			} else {
+				popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=\x22https://skyvector.com/airport/"+feature.properties.icaoCode+"\x22 target=_blank>SkyVector</a> /\ <a href=\x22https://ourairports.com/airports/"+feature.properties.icaoCode+"\x22 target=_blank>OurAirports</a></td></tr>";
+			}
 			popupcontent = popupcontent + "<tr><td><b>Location (Long/Lat):</b></td><td>"+feature.geometry.coordinates+"</td></tr>"; // location
 			popupcontent = popupcontent + "<tr><td><b>Elevation: </b></td><td>"+feature.properties.elevation.value+"M</td></tr>"; //elevation				
 			layer.bindPopup(popupcontent);
@@ -391,11 +391,11 @@ function onEachFeatureCivHeli(feature, layer) {
 			} else {
 				popupcontent = popupcontent + "<tr><td><b>Airport METAR:</b></td><td><a href=\x22https://e6bx.com/weather/"+feature.properties.icaoCode+"/?showDecoded=1&focuspoint=metardecoder\x22 target=_blank>View</a></td></tr>";
 			}			
-		//	if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out chart row
-		//		popupcontent = popupcontent;
-		//	} else {
-		//		popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=airports/"+feature.properties.icaoCode+".pdf target=_blank>View</a></td></tr>";
-		//	}
+			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out chart row
+				popupcontent = popupcontent;
+			} else {
+				popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=\x22https://skyvector.com/airport/"+feature.properties.icaoCode+"\x22 target=_blank>SkyVector</a> /\ <a href=\x22https://ourairports.com/airports/"+feature.properties.icaoCode+"\x22 target=_blank>OurAirports</a></td></tr>";
+			}
 			popupcontent = popupcontent + "<tr><td><b>Location (Long/Lat):</b></td><td>"+feature.geometry.coordinates+"</td></tr>"; // location
 			popupcontent = popupcontent + "<tr><td><b>Elevation: </b></td><td>"+feature.properties.elevation.value+"M</td></tr>"; //elevation			
 			layer.bindPopup(popupcontent);	
@@ -445,11 +445,11 @@ function onEachFeatureGlid(feature, layer) {
 			} else {
 				popupcontent = popupcontent + "<tr><td><b>Airport METAR:</b></td><td><a href=\x22https://e6bx.com/weather/"+feature.properties.icaoCode+"/?showDecoded=1&focuspoint=metardecoder\x22 target=_blank>View</a></td></tr>";
 			}
-		//	if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out chart row
-		//		popupcontent = popupcontent;
-		//	} else {
-		//		popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=airports/"+feature.properties.icaoCode+".pdf target=_blank>View</a></td></tr>";
-		//	}
+			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out chart row
+				popupcontent = popupcontent;
+			} else {
+				popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=\x22https://skyvector.com/airport/"+feature.properties.icaoCode+"\x22 target=_blank>SkyVector</a> /\ <a href=\x22https://ourairports.com/airports/"+feature.properties.icaoCode+"\x22 target=_blank>OurAirports</a></td></tr>";
+			}
 			popupcontent = popupcontent + "<tr><td><b>Location (Long/Lat):</b></td><td>"+feature.geometry.coordinates+"</td></tr>"; // location
 			popupcontent = popupcontent + "<tr><td><b>Elevation: </b></td><td>"+feature.properties.elevation.value+"M</td></tr>"; //elevation				
 			layer.bindPopup(popupcontent);
