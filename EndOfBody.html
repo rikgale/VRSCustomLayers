@@ -29,6 +29,7 @@
 
 		var OPENWXAPIKEY = '##OPENWXAPIKEY##';    // replace ##OPENWXAPIKEY## with your key and KEEP the ' '
 		var OPENAIPKEY = '##OPENAIPKEY##';        // replace ##OPENAIPKEY##  with your key and KEEP the ' '
+
 		
     // Add TACAN, VOR and NDB icons
 
@@ -154,6 +155,11 @@ function onEachFeatureCiv(feature, layer) {
 			for (j=0;j<feature.properties.runways.length;j=j+1){
 				var runstring = "<span>"+feature.properties.runways[j].designator+"&nbsp;</span>";
 				popupcontent = popupcontent+runstring}
+			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out METAR row
+				popupcontent = popupcontent;
+			} else {
+				popupcontent = popupcontent + "<tr><td><b>Airport METAR:</b></td><td><a href=\x22https://e6bx.com/weather/"+feature.properties.icaoCode+"/?showDecoded=1&focuspoint=metardecoder\x22 target=_blank>View</a></td></tr>";
+			}	
 	//		if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out chart row
 	//			popupcontent = popupcontent;
 	//		} else {
@@ -183,6 +189,11 @@ function onEachFeatureCiv(feature, layer) {
 			for (j=0;j<feature.properties.runways.length;j=j+1){
 				var runstring = "<span>"+feature.properties.runways[j].designator+"&nbsp;</span>";
 				popupcontent = popupcontent+runstring}
+			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out METAR row
+				popupcontent = popupcontent;
+			} else {
+				popupcontent = popupcontent + "<tr><td><b>Airport METAR:</b></td><td><a href=\x22https://e6bx.com/weather/"+feature.properties.icaoCode+"/?showDecoded=1&focuspoint=metardecoder\x22 target=_blank>View</a></td></tr>";
+			}				
 	//		if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out chart row
 	//			popupcontent = popupcontent;
 	//		} else {
@@ -200,7 +211,12 @@ function onEachFeatureCiv(feature, layer) {
 				popupcontent = popupcontent;
 			} else {
 				popupcontent = popupcontent + "<tr><td><span style='font-weight:bold'>ICAO:</span></td><td>"+feature.properties.icaoCode+"</td></tr>";
-			}	
+			}
+			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out METAR row
+				popupcontent = popupcontent;
+			} else {
+				popupcontent = popupcontent + "<tr><td><b>Airport METAR:</b></td><td><a href=\x22https://e6bx.com/weather/"+feature.properties.icaoCode+"/?showDecoded=1&focuspoint=metardecoder\x22 target=_blank>View</a></td></tr>";
+			}			
 	//		if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out chart row
 	//			popupcontent = popupcontent;
 	//		} else {
@@ -231,6 +247,11 @@ function onEachFeatureMilUK(feature, layer) {
 			for (j=0;j<feature.properties.runways.length;j=j+1){
 				var runstring = "<span>"+feature.properties.runways[j].designator+"&nbsp;</span>";
 				popupcontent = popupcontent+runstring}
+			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out METAR row
+				popupcontent = popupcontent;
+			} else {
+				popupcontent = popupcontent + "<tr><td><b>Airport METAR:</b></td><td><a href=\x22https://e6bx.com/weather/"+feature.properties.icaoCode+"/?showDecoded=1&focuspoint=metardecoder\x22 target=_blank>View</a></td></tr>";
+			}				
 		//	if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out chart row
 		//		popupcontent = popupcontent;
 		//	} else {
@@ -260,6 +281,11 @@ function onEachFeatureMilUK(feature, layer) {
 			for (j=0;j<feature.properties.runways.length;j=j+1){
 				var runstring = "<span>"+feature.properties.runways[j].designator+"&nbsp;</span>";
 				popupcontent = popupcontent+runstring}
+			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out METAR row
+				popupcontent = popupcontent;
+			} else {
+				popupcontent = popupcontent + "<tr><td><b>Airport METAR:</b></td><td><a href=\x22https://e6bx.com/weather/"+feature.properties.icaoCode+"/?showDecoded=1&focuspoint=metardecoder\x22 target=_blank>View</a></td></tr>";
+			}				
 		//	if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out chart row
 		//		popupcontent = popupcontent;
 		//	} else {
@@ -277,7 +303,12 @@ function onEachFeatureMilUK(feature, layer) {
 				popupcontent = popupcontent;
 			} else {
 				popupcontent = popupcontent + "<tr><td><span style='font-weight:bold'>ICAO:</span></td><td>"+feature.properties.icaoCode+"</td></tr>";
-			}	
+			}
+			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out METAR row
+				popupcontent = popupcontent;
+			} else {
+				popupcontent = popupcontent + "<tr><td><b>Airport METAR:</b></td><td><a href=\x22https://e6bx.com/weather/"+feature.properties.icaoCode+"/?showDecoded=1&focuspoint=metardecoder\x22 target=_blank>View</a></td></tr>";
+			}			
 		//	if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out chart row
 		//		popupcontent = popupcontent;
 		//	} else {
@@ -303,6 +334,11 @@ function onEachFeatureCivHeli(feature, layer) {
 			} else {
 				popupcontent = popupcontent + "<tr><td><span style='font-weight:bold'>ICAO:</span></td><td>"+feature.properties.icaoCode+"</td></tr>";
 			}
+			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out METAR row
+				popupcontent = popupcontent;
+			} else {
+				popupcontent = popupcontent + "<tr><td><b>Airport METAR:</b></td><td><a href=\x22https://e6bx.com/weather/"+feature.properties.icaoCode+"/?showDecoded=1&focuspoint=metardecoder\x22 target=_blank>View</a></td></tr>";
+			}			
 		//	if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out chart row
 		//		popupcontent = popupcontent;
 		//	} else {
@@ -327,6 +363,11 @@ function onEachFeatureCivHeli(feature, layer) {
 			} else {
 				popupcontent = popupcontent + "<tr><td><span style='font-weight:bold'>ICAO:</span></td><td>"+feature.properties.icaoCode+"</td></tr>";
 			}
+			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out METAR row
+				popupcontent = popupcontent;
+			} else {
+				popupcontent = popupcontent + "<tr><td><b>Airport METAR:</b></td><td><a href=\x22https://e6bx.com/weather/"+feature.properties.icaoCode+"/?showDecoded=1&focuspoint=metardecoder\x22 target=_blank>View</a></td></tr>";
+			}			
 		//	if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out chart row
 		//		popupcontent = popupcontent;
 		//	} else {
@@ -344,7 +385,12 @@ function onEachFeatureCivHeli(feature, layer) {
 				popupcontent = popupcontent;
 			} else {
 				popupcontent = popupcontent + "<tr><td><span style='font-weight:bold'>ICAO:</span></td><td>"+feature.properties.icaoCode+"</td></tr>";
-			}	
+			}
+			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out METAR row
+				popupcontent = popupcontent;
+			} else {
+				popupcontent = popupcontent + "<tr><td><b>Airport METAR:</b></td><td><a href=\x22https://e6bx.com/weather/"+feature.properties.icaoCode+"/?showDecoded=1&focuspoint=metardecoder\x22 target=_blank>View</a></td></tr>";
+			}			
 		//	if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out chart row
 		//		popupcontent = popupcontent;
 		//	} else {
@@ -394,6 +440,11 @@ function onEachFeatureGlid(feature, layer) {
 			for (k=0;k<feature.properties.runways.length;k=k+1){
 				var runstring = "<span>"+feature.properties.runways[k].designator+"&nbsp;</span>";
 				popupcontent = popupcontent+runstring}
+			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out METAR row
+				popupcontent = popupcontent;
+			} else {
+				popupcontent = popupcontent + "<tr><td><b>Airport METAR:</b></td><td><a href=\x22https://e6bx.com/weather/"+feature.properties.icaoCode+"/?showDecoded=1&focuspoint=metardecoder\x22 target=_blank>View</a></td></tr>";
+			}
 		//	if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out chart row
 		//		popupcontent = popupcontent;
 		//	} else {
