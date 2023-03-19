@@ -29,7 +29,7 @@
 
 		var OPENWXAPIKEY = '##OPENWXAPIKEY##';    // replace ##OPENWXAPIKEY## with your key and KEEP the ' '
 		var OPENAIPKEY = '##OPENAIPKEY##';        // replace ##OPENAIPKEY##  with your key and KEEP the ' '
-
+		
 		
     // Add TACAN, VOR and NDB icons
 
@@ -141,10 +141,10 @@
 
 function onEachFeatureCiv(feature, layer) {
 		layer.setIcon(civIcon);
-        if (feature.properties.frequencies) {
-            var popupcontent;
+		if (feature.properties.frequencies) {
+			var popupcontent;
 			//Header and ICAO
-            popupcontent = "<table><tr><th><u>"+feature.properties.name+"</u></th></tr>";
+			popupcontent = "<table><tr><th><u>"+feature.properties.name+"</u></th></tr>";
 			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out ICAO row
 				popupcontent = popupcontent;
 			} else {
@@ -170,15 +170,15 @@ function onEachFeatureCiv(feature, layer) {
 			popupcontent = popupcontent + "</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td></tr>"; //Padding
 			// Frequencies Rows
 			popupcontent = popupcontent + "<tr><th><u>Frequencies</u></th></tr>";
-            for (i=0;i<feature.properties.frequencies.length;i=i+1){
-                var freqstring = "<tr><td><span>"+feature.properties.frequencies[i].name+": </span></td><td>"
-                +feature.properties.frequencies[i].value+" MHz</td></tr>";
-                popupcontent = popupcontent+freqstring;
-            }
+			for (i=0;i<feature.properties.frequencies.length;i=i+1){
+				var freqstring = "<tr><td><span>"+feature.properties.frequencies[i].name+": </span></td><td>"
+				+feature.properties.frequencies[i].value+" MHz</td></tr>";
+				popupcontent = popupcontent+freqstring;
+			}
 			popupcontent = popupcontent + "</table>";
-            layer.bindPopup(popupcontent);
-        } else if (feature.properties.runways) { // if no frequencies then checks for runways
-            popupcontent = "<table><tr><th><u>"+feature.properties.name+"</u></th></tr>";
+			layer.bindPopup(popupcontent);
+			} else if (feature.properties.runways) { // if no frequencies then checks for runways
+			popupcontent = "<table><tr><th><u>"+feature.properties.name+"</u></th></tr>";
 			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out ICAO row
 				popupcontent = popupcontent;
 			} else {
@@ -204,9 +204,9 @@ function onEachFeatureCiv(feature, layer) {
 			layer.bindPopup(popupcontent);
 		} 
 		else {
-            var popupcontent;
+			var popupcontent;
 			//Header and ICAO / Link row
-            popupcontent = "<table><tr><th><u>"+feature.properties.name+"</u></th></tr>";
+			popupcontent = "<table><tr><th><u>"+feature.properties.name+"</u></th></tr>";
 			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out ICAO row
 				popupcontent = popupcontent;
 			} else {
@@ -226,17 +226,17 @@ function onEachFeatureCiv(feature, layer) {
 			popupcontent = popupcontent + "<tr><td><b>Elevation: </b></td><td>"+feature.properties.elevation.value+"M</td></tr>"; //elevation			
 			layer.bindPopup(popupcontent);	
 			}		
-    }
+	}
 
 // Pop-up display for Military airports from OpenAIP geoJson	
 
 
 function onEachFeatureMilUK(feature, layer) {
 		layer.setIcon(milIcon);
-        if (feature.properties.frequencies) {
-            var popupcontent;
+		if (feature.properties.frequencies) {
+			var popupcontent;
 			//Header and ICAO
-            popupcontent = "<table><tr><th><u>"+feature.properties.name+"</u></th></tr>";
+			popupcontent = "<table><tr><th><u>"+feature.properties.name+"</u></th></tr>";
 			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out ICAO row
 				popupcontent = popupcontent;
 			} else {
@@ -262,15 +262,15 @@ function onEachFeatureMilUK(feature, layer) {
 			popupcontent = popupcontent + "</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td></tr>"; //Padding
 			// Frequencies Rows
 			popupcontent = popupcontent + "<tr><th><u>Frequencies</u></th></tr>";
-            for (i=0;i<feature.properties.frequencies.length;i=i+1){
-                var freqstring = "<tr><td><span>"+feature.properties.frequencies[i].name+": </span></td><td>"
-                +feature.properties.frequencies[i].value+" MHz</td></tr>";
-                popupcontent = popupcontent+freqstring;
-            }
+			for (i=0;i<feature.properties.frequencies.length;i=i+1){
+				var freqstring = "<tr><td><span>"+feature.properties.frequencies[i].name+": </span></td><td>"
+				+feature.properties.frequencies[i].value+" MHz</td></tr>";
+				popupcontent = popupcontent+freqstring;
+			}
 			popupcontent = popupcontent + "</table>";
-            layer.bindPopup(popupcontent);
-        } else if (feature.properties.runways) { // if no frequencies then checks for runways
-            popupcontent = "<table><tr><th><u>"+feature.properties.name+"</u></th></tr>";
+			layer.bindPopup(popupcontent);
+		} else if (feature.properties.runways) { // if no frequencies then checks for runways
+			popupcontent = "<table><tr><th><u>"+feature.properties.name+"</u></th></tr>";
 			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out ICAO row
 				popupcontent = popupcontent;
 			} else {
@@ -296,9 +296,9 @@ function onEachFeatureMilUK(feature, layer) {
 			layer.bindPopup(popupcontent);
 		} 
 		else {
-            var popupcontent;
+			var popupcontent;
 			//Header and ICAO / Link row
-            popupcontent = "<table><tr><th><u>"+feature.properties.name+"</u></th></tr>";
+			popupcontent = "<table><tr><th><u>"+feature.properties.name+"</u></th></tr>";
 			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out ICAO row
 				popupcontent = popupcontent;
 			} else {
@@ -927,10 +927,10 @@ var gliderSites = L.geoJson(gliders, {
 				filter: osmDark,			
 				});
 				
-	            		var watercolorMap = L.tileLayer.colorFilter('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg', {
-                		attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.', 
+				var watercolorMap = L.tileLayer.colorFilter('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg', {
+				attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.', 
 				filter: osm50CentBright,					
-               			 });	       
+				});	
 
 
 				var CartoDB_DarkMatter = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
@@ -939,14 +939,18 @@ var gliderSites = L.geoJson(gliders, {
 				maxZoom: 20
 				});
 			    
-			    var Stamen_Terrain = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}{r}.{ext}', {
+				var Stamen_Terrain = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}{r}.{ext}', {
 				attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 				subdomains: 'abcd',
 				filter: osm50CentBright,
 				minZoom: 0,
 				maxZoom: 18,
 				ext: 'png'
-});
+				});
+				
+				var Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+				attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+				});	
 
 
 
@@ -963,6 +967,7 @@ var gliderSites = L.geoJson(gliders, {
 		"WaterColour": watercolorMap,
 		"CartoDark": CartoDB_DarkMatter,
 		"Terrain": Stamen_Terrain,
+		"Satellite": Esri_WorldImagery,
 		}
 
     var groupedOverlays = {
