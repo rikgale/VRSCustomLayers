@@ -50,6 +50,6 @@ I am very grateful for the following resources which have been used in this code
 
 Screenshot of working example:
 
-![Screenshot](https://github.com/rikgale/VRSCustomLayers/blob/main/screenshot.jpeg)
+
 
 Also can be seen working on my VRS page - [cornwallvrs.duckdns.org/vrs](https://www.cornwallvrs.duckdns.org/vrs).
