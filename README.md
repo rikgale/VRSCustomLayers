@@ -22,7 +22,7 @@ Adds a distance scale next to the VRS menu in the top left of the map
 
 Put the HTML files in the required folder for the Custom Content plugin as per Custom Content plugin instructions and the entire contents of `Put these files in VRS root folder` folder into the root folder referenced by the Custom Content plugin and then set up the files injections as per the bottom 4 lines in the below image:
 
-![Screenshot](https://github.com/rikgale/VRSCustomLayers/blob/main/customcontentoptions.jpeg)
+![Screenshot](https://github.com/rikgale/VRSCustomLayers/blob/main/customcontentoptions1.jpeg)
 
 ### Localisation
 
