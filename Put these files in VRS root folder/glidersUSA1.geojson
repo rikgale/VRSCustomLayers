@@ -1,1 +1,4 @@
-var gliders = {}
+var gliders = {
+  "type": "FeatureCollection",
+  "features": []
+}
