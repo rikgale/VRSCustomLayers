@@ -1,47 +1,33 @@
-<!-- <script src="L.Terminator.js"></script>
-<script src="leaflet-omnivore.min.js"></script>
-<script src="ionicons.js"></script>
-<script src="icons/leaflet.awesome-markers.js"></script>
-<script type="text/javascript"> -->
-
 <script src="https://unpkg.com/@joergdietrich/leaflet.terminator@1.0.0/L.Terminator.js"></script>
 <script src="https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js"></script>
 <script src="https://unpkg.com/ionicons@4.3.0/dist/ionicons.js"></script>
 <script src="icons/leaflet.awesome-markers.js"></script>
 <script type="text/javascript">
 
-
-
-
 // Orginally written by Chris Gault chrisgault@gmail.com
 // Updated by Richard Gale rikgale@hotmail.com
 // Please see https://github.com/rikgale/VRSCustomLayers for latest version
 
-    if(VRS && VRS.globalDispatch && VRS.serverConfig) {
-        VRS.globalDispatch.hook(VRS.globalEvent.bootstrapCreated, function(bootStrap) {
-            if(bootStrap.hookMapInitialised) {
-                bootStrap.hookMapInitialised(function(pageSettings) {
-                    if(pageSettings.mapPlugin && pageSettings.mapPlugin.getNativeType() === 'OpenStreetMap') {
-                        var map = pageSettings.mapPlugin.getNative();
+if(VRS && VRS.globalDispatch && VRS.serverConfig) {
+    VRS.globalDispatch.hook(VRS.globalEvent.bootstrapCreated, function(bootStrap) {
+        if(bootStrap.hookMapInitialised) {
+            bootStrap.hookMapInitialised(function(pageSettings) {
+                if(pageSettings.mapPlugin && pageSettings.mapPlugin.getNativeType() === 'OpenStreetMap') {
+                    var map = pageSettings.mapPlugin.getNative();
 
 //Add API Keys here
+		var OPENWXAPIKEY = '26a8e5189c9a898d278eed3dcbdfe068';    // replace 26a8e5189c9a898d278eed3dcbdfe068 with your key and KEEP the ' '
+		var OPENAIPKEY = '3a4835136112557ada1fe76c3a579dff';        // replace 3a4835136112557ada1fe76c3a579dff  with your key and KEEP the ' '
 
+// Add TACAN, VOR and NDB icons
+   		var vorIcon = L.icon({
+       		iconUrl: 'navaid.png',
+       		iconSize:     [16, 16], // size of the icon
+       		iconAnchor:   [8, 8], // point of the icon which will correspond to marker's location
+       		popupAnchor:  [0, -20] // point from which the popup should open relative to the iconAnchor
+   		});
 
-		var OPENWXAPIKEY = '##OPENWXAPIKEY##';    // replace ##OPENWXAPIKEY## with your key and KEEP the ' '
-		var OPENAIPKEY = '##OPENAIPKEY##';        // replace ##OPENAIPKEY##  with your key and KEEP the ' '
-		
-		
-    // Add TACAN, VOR and NDB icons
-
-    		var vorIcon = L.icon({
-        			iconUrl: 'navaid.png',
-        			iconSize:     [16, 16], // size of the icon
-        			iconAnchor:   [8, 8], // point of the icon which will correspond to marker's location
-        			popupAnchor:  [0, -20] // point from which the popup should open relative to the iconAnchor
-    		});
-
-    // Add navaids from GeoJSON file
-
+// Add navaids from GeoJSON file
         var ukNavaidsGeoJSON = L.geoJson(Navaids, {
           onEachFeature: function (feature, layer) {
             layer.setIcon(vorIcon);
@@ -49,21 +35,17 @@
           }
         });
 
-    // Add Open AIP navaids
+// Add Open AIP navaids
+   		var openAIPnav = L.tileLayer('https://{s}.api.tiles.openaip.net/api/data/navaids/{z}/{x}/{y}.png?apiKey='+ OPENAIPKEY, {
+            opacity: 0.6,
+			maxZoom: 19,
+			minZoom: 1,
+			id: 'OpenAIPna',
+			transparent: true,
+        });
+   		var tacanVOR = L.layerGroup([openAIPnav, ukNavaidsGeoJSON]);
 
-    		var openAIPnav = L.tileLayer('https://{s}.api.tiles.openaip.net/api/data/navaids/{z}/{x}/{y}.png?apiKey='+ OPENAIPKEY, {
-                    opacity: 0.6,
-					maxZoom: 19,
-					minZoom: 1,
-					id: 'OpenAIPna',
-					transparent: true,
-                });
-
-    		var tacanVOR = L.layerGroup([openAIPnav, ukNavaidsGeoJSON]);
-
-
-    // Add marker icons
-
+// Add marker icons
     var civIcon = L.AwesomeMarkers.icon({
       icon: 'plane',
       markerColor: 'darkgreen',
@@ -113,9 +95,7 @@
       popupAnchor: [0, -20]
     });
 
-     // Add  waypoints - removed due to data set size
-
-
+// Add  waypoints - removed due to data set size
 //	var waypoints = L.geoJson(Waypoints1, {
 //					onEachFeature: function (feature, layer) {
 //					layer.setIcon(waypointIcon);
@@ -123,22 +103,16 @@
 //					}
 //					});
 
- // UK Way points - also removed for consistency
+// UK Way points - also removed for consistency
+//  var waypointsStyle = L.geoJson(null, {
+//            onEachFeature: function (feature, layer) {
+//              layer.setIcon(waypointIcon);
+//              layer.bindTooltip(feature.properties.name);
+//            }
+//          });
+//      var waypoints = omnivore.kml('Waypoints.kml', null, waypointsStyle);
 
-  //  var waypointsStyle = L.geoJson(null, {
-  //            onEachFeature: function (feature, layer) {
-  //              layer.setIcon(waypointIcon);
-  //              layer.bindTooltip(feature.properties.name);
-  //            }
-  //          });
-
-  //      var waypoints = omnivore.kml('Waypoints.kml', null, waypointsStyle);
-
-
-    // Add UK civil airfields
-	
 // Pop-up display for Civil airports from OpenAIP geoJson	
-
 function onEachFeatureCiv(feature, layer) {
 		layer.setIcon(civIcon);
 		if (feature.properties.frequencies) {
@@ -228,9 +202,7 @@ function onEachFeatureCiv(feature, layer) {
 			}		
 	}
 
-// Pop-up display for Military airports from OpenAIP geoJson	
-
-
+// Pop-up display for Military airports from OpenAIP geoJson
 function onEachFeatureMilUK(feature, layer) {
 		layer.setIcon(milIcon);
 		if (feature.properties.frequencies) {
@@ -320,9 +292,7 @@ function onEachFeatureMilUK(feature, layer) {
 			}		
     }
 
-
-
-
+// Pop-up display for heliports from OpenAIP geoJson
 function onEachFeatureCivHeli(feature, layer) {
 		layer.setIcon(civHeliIcon);
         if (feature.properties.frequencies) {
@@ -403,7 +373,6 @@ function onEachFeatureCivHeli(feature, layer) {
     }
 
 // Pop-up display for glider sites from OpenAIP geoJson	
-
 function onEachFeatureGlid(feature, layer) {
 		layer.setIcon(gliderIcon);
         if (feature.properties.frequencies && feature.properties.runways) {
@@ -474,6 +443,16 @@ function onEachFeatureGlid(feature, layer) {
 		//	}		
     }
 
+// Pop-up display for TFRs
+function onEachFeatureTFR(feature, layer) {
+	// layer.setIcon(notamIcon);
+	if (feature.properties.name) {
+		var popupcontent;
+		popupcontent = "<strong><span style=\x22color:#df2230;font-size:larger\x22><u>Temporary Flight Restriction</u>:</span><br>"+feature.properties.name+"</strong>";
+        layer.bindPopup(popupcontent);
+	}
+}
+
 var civilAirfields = L.geoJson(airports, {
     onEachFeature: onEachFeatureCiv
 });
@@ -488,6 +467,15 @@ var civilHeliports = L.geoJson(civheliport, {
 
 var gliderSites = L.geoJson(gliders, {
     onEachFeature: onEachFeatureGlid
+});
+
+var tfrStyle = {
+	"color": "#df2230",
+	"opacity": 0.8
+};
+var tfrsgroup = L.geoJson(tfrs, {
+    onEachFeature: onEachFeatureTFR,
+	style: tfrStyle
 });
 	
 //        var ukAirportsGeoJSON = L.geoJson(airports, {
@@ -766,37 +754,29 @@ var gliderSites = L.geoJson(gliders, {
 			var aara13 = L.polygon(aara13_points, aaraStyle).bindTooltip("AARA 13", {direction: "center", permanent: true, className: 'arLabelstyle'});
 			var aara14 = L.polygon(aara14_points, aaraStyle).bindTooltip("AARA 14", {direction: "center", permanent: true, className: 'arLabelstyle'});
 
-    		
     		var aaraGroup = L.layerGroup([aara1, aara2, aara3, aara4, aara5, aara6, aara7, aara8, aara9, aara10E, aara10W, aara11, aara12, aara13, aara14]);
 
-
-////////////////////////////////////////////////
-    // Add Open AIP airspace mapping v2
-
-			var openAIPairspacev2 = L.tileLayer('https://{s}.api.tiles.openaip.net/api/data/airspaces/{z}/{x}/{y}.png?apiKey='+ OPENAIPKEY, {
-                    opacity: 0.6,
-					maxZoom: 19,
-					minZoom: 13,
-					id: 'OpenAIPas',
-					attribution: '<a href="https://www.openaip.net"> OpenAIP</a>',
-					transparent: true,
-                });
+// Add Open AIP airspace mapping v2
+			// var openAIPairspacev2 = L.tileLayer('https://{s}.api.tiles.openaip.net/api/data/airspaces/{z}/{x}/{y}.png?apiKey='+ OPENAIPKEY, {
+            //         opacity: 0.6,
+			// 		maxZoom: 19,
+			// 		minZoom: 13,
+			// 		id: 'OpenAIPas',
+			// 		attribution: '<a href="https://www.openaip.net"> OpenAIP</a>',
+			// 		transparent: true,
+            //     });
 				
-			var openAIPairportv2 = L.tileLayer('https://{s}.api.tiles.openaip.net/api/data/airports/{z}/{x}/{y}.png?apiKey='+ OPENAIPKEY, {
-                    opacity: 0.6,
-					maxZoom: 19,
-					minZoom: 13,
-					id: 'OpenAIPap',
-					transparent: true,
-                });	
+			// var openAIPairportv2 = L.tileLayer('https://{s}.api.tiles.openaip.net/api/data/airports/{z}/{x}/{y}.png?apiKey='+ OPENAIPKEY, {
+            //         opacity: 0.6,
+			// 		maxZoom: 19,
+			// 		minZoom: 13,
+			// 		id: 'OpenAIPap',
+			// 		transparent: true,
+            //     });	
 
-   	////	var openAIPairspacev2 = L.layerGroup([openAIPairspacev2]);
+//	var openAIPairspacev2 = L.layerGroup([openAIPairspacev2]);
 		
-
-/////////////////////////////////////////////////
-
-    // Add Open AIP airspace mapping
-
+// Add Open AIP airspace mapping
     		var openAIPairspace = L.tileLayer('https://map.adsbexchange.com/mapproxy/tiles/1.0.0/openaip/ul_grid/{z}/{x}/{y}.png', {
                     opacity: 0.6,
 					maxZoom: 12,
@@ -806,10 +786,10 @@ var gliderSites = L.geoJson(gliders, {
 					transparent: true,
                 });
 
-    		var openAIPairspace = L.layerGroup([openAIPairspace, openAIPairportv2, openAIPairspacev2]).addTo(map);
+//    		var openAIPairspace = L.layerGroup([openAIPairspace, openAIPairportv2, openAIPairspacev2]).addTo(map);
+			var openAIPairspace = L.layerGroup([openAIPairspace]).addTo(map);
 
-	// Add OpenAIP Reporting points.
-
+// Add OpenAIP Reporting points.
    		var openAIPrp = L.tileLayer('https://{s}.api.tiles.openaip.net/api/data/reporting-points/{z}/{x}/{y}.png?apiKey='+ OPENAIPKEY, {
                     opacity: 0.6,
 					maxZoom: 19,
@@ -818,8 +798,7 @@ var gliderSites = L.geoJson(gliders, {
 					transparent: true,
                 });				
 	
-	// Add OpenSeaMap Tiles
-	
+// Add OpenSeaMap Tiles
    		var openSEA = L.tileLayer('https://tiles.openseamap.org/seamark/{z}/{x}/{y}.png', {
                     opacity: 0.6,
 					maxZoom: 19,
@@ -831,14 +810,12 @@ var gliderSites = L.geoJson(gliders, {
 
 		var openSeaMap = L.layerGroup([openSEA]).addTo(map);
 		
-	// Add open TrainMap Tiles
-
+// Add open TrainMap Tiles
 		let trainFilter = [
 	//	'brightness:50%',
 		'contrast:80%',
 		'saturate:40%',
 	 ];
-
 		var OpenRailwayMap = L.tileLayer.colorFilter('https://{s}.tiles.openrailwaymap.org/standard/{z}/{x}/{y}.png', {
 					opacity: 0.6,
 					minzoon: 12,
@@ -848,10 +825,8 @@ var gliderSites = L.geoJson(gliders, {
 					transparent: true,
 					filter: trainFilter,
 		});	
-		
 
-    // Add OpenWeather Tiles
-
+// Add OpenWeather Tiles
                 var openCloud = L.tileLayer('https://tile.openweathermap.org/map/clouds_new/{z}/{x}/{y}.png?appid='+ OPENWXAPIKEY, {
                     subdomains: '1234',
                     opacity: 0.6,
@@ -882,16 +857,13 @@ var gliderSites = L.geoJson(gliders, {
     				attribution: '&copy; OpenWeather'
                 });
 
-    // Add day night overlay
-
-	
+// Add day night overlay
 			var dayNight = L.terminator().addTo(map);
 							setInterval(function() {
 							dayNight.setTime();
 							}, 5000); // Every 5sec
 
-	//Some base layer fun??
-	
+//Some base layer fun??
 	let osm50CentBright = [
       //  'grayscale:100%',
 		'brightness:50%',
@@ -914,8 +886,7 @@ var gliderSites = L.geoJson(gliders, {
 	//	'opacity:100%',
 	//	'saturate:300%',
 	//	'sepia:10%',
-	 ];
-	
+	 ];	
 	
 				var osm50 = L.tileLayer.colorFilter('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 				attribution: '&copy; OpenWeather',
@@ -931,7 +902,6 @@ var gliderSites = L.geoJson(gliders, {
 				attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.', 
 				filter: osm50CentBright,					
 				});	
-
 
 				var CartoDB_DarkMatter = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
 				attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
@@ -952,15 +922,7 @@ var gliderSites = L.geoJson(gliders, {
 				attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
 				});	
 
-
-
-
-
-
-
-    // Define menu items
-	
-	
+// Define menu items
 	var baseLayers = {
 		"OSM": osm50,
 		"OSM Dark": osmDarkMap,
@@ -969,11 +931,10 @@ var gliderSites = L.geoJson(gliders, {
 		"Terrain": Stamen_Terrain,
 		"Satellite": Esri_WorldImagery,
 		}
-
     var groupedOverlays = {
         "Global Airspace": {
           "Airspace / Airports": openAIPairspace,
-	//	  "Airspace / Airports v2": openAIPairspacev2,
+//		  "Airspace / Airports v2": openAIPairspacev2,
           "Navaids": tacanVOR,
 		  "Reporting Points": openAIPrp,
 		  "Sea space": openSeaMap,
@@ -982,33 +943,27 @@ var gliderSites = L.geoJson(gliders, {
         "Global Weather": {
         "Cloud": openCloud,
         "Rain radar": openRain,
-		"Temperature" : openTemp,
-        "Wind" : openWind,
+		"Temperature": openTemp,
+        "Wind": openWind,
         "Air pressure (QNH)": openPressure,
-        "Daylight and Night" : dayNight,
+        "Daylight and Night": dayNight,
         },
         "Airport overlays": {
-//        "A2A refuelling areas": aaraGroup,
- //       "Military radar corridors": radarGroup,
-//      "Waypoints": waypoints,	
-//		"Waypoints (NL)": waypointsNL,
+        //"A2A refuelling areas": aaraGroup,
+        //"Military radar corridors": radarGroup,
         "Civil airfields": civilAirfields,
         "Military airfields": milAirfields,
 		"Civil heliports": civilHeliports,
 		"Gliding / Ultralight Sites": gliderSites,
+		"TFRs": tfrsgroup,
         },
-
     };
 
     // Add layers and overlay menu to OSM map
-
     L.control.groupedLayers(baseLayers, groupedOverlays, {position: 'bottomleft'}).addTo(map);
-	
-
-
-                    }
-                });
-            }
-        });
     }
-    </script>
+   });
+  }
+ });
+}
+</script>
