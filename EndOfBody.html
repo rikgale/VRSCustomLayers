@@ -15,6 +15,9 @@ if(VRS && VRS.globalDispatch && VRS.serverConfig) {
                 if(pageSettings.mapPlugin && pageSettings.mapPlugin.getNativeType() === 'OpenStreetMap') {
                     var map = pageSettings.mapPlugin.getNative();
 
+// Set Default Map Here
+		var DEFAULTMAP = '##DEFAULTMAP##';    // 1: OpenStreetMap, 2: OpenStreetMap Dark, 3: OpenTopoMap, 4: WaterColour, 5: CartoDark, 6: Terrain, 7: Satellite
+
 //Add API Keys here
 		var OPENWXAPIKEY = '##OPENWXAPIKEY##';    // replace ##OPENWXAPIKEY## with your key and KEEP the ' '
 		var OPENAIPKEY = '##OPENAIPKEY##';        // replace ##OPENAIPKEY##  with your key and KEEP the ' '
@@ -901,13 +904,18 @@ var gliderSites = L.geoJson(gliders, {
 				var osm50 = L.tileLayer.colorFilter('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 				attribution: '&copy; OpenWeather',
 				filter: osm50CentBright,			
-				}).addTo(map);
+				});
 				
 				var osmDarkMap = L.tileLayer.colorFilter('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 				attribution: '&copy; OpenWeather',
 				filter: osmDark,			
 				});
-				
+
+				var topoMap = L.tileLayer.colorFilter('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+				attribution: 'Map Data: &copy; OpenStreetMap contributors, SRTM | Map Style: &copy; OpenTopoMap (CC-BY-SA)',
+				filter: osm50CentBright,			
+				});
+
 				var watercolorMap = L.tileLayer.colorFilter('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg', {
 				attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.', 
 				filter: osm50CentBright,					
@@ -932,10 +940,24 @@ var gliderSites = L.geoJson(gliders, {
 				attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
 				});	
 
+				// Set Default Map
+				switch(DEFAULTMAP)
+				{
+					default:
+					case '1': osm50             .addTo(map); break; // OpenStreetMap
+					case '2': osmDarkMap        .addTo(map); break; // OpenStreetMap Dark
+					case '3': topoMap           .addTo(map); break; // OpenTopoMap
+					case '4': watercolorMap     .addTo(map); break; // WaterColour
+					case '5': CartoDB_DarkMatter.addTo(map); break; // CaTerrainoDark
+					case '6': Stamen_Terrain    .addTo(map); break; // Terrain
+					case '7': Esri_WorldImagery .addTo(map); break; // Satellite
+				}
+
 // Define menu items
 	var baseLayers = {
 		"OSM": osm50,
 		"OSM Dark": osmDarkMap,
+		"Topo": topoMap,
 		"WaterColour": watercolorMap,
 		"CartoDark": CartoDB_DarkMatter,
 		"Terrain": Stamen_Terrain,
