@@ -15,8 +15,31 @@ if(VRS && VRS.globalDispatch && VRS.serverConfig) {
                 if(pageSettings.mapPlugin && pageSettings.mapPlugin.getNativeType() === 'OpenStreetMap') {
                     var map = pageSettings.mapPlugin.getNative();
 
-// Set Default Map Here
-		var DEFAULTMAP = '##DEFAULTMAP##';    // 1: OpenStreetMap, 2: OpenStreetMap Dark, 3: OpenTopoMap, 4: WaterColour, 5: CartoDark, 6: Terrain, 7: Satellite
+// Configuration
+		var config =
+		{
+			/* Map Config */
+			defaultMap: 1,                      // 1: OpenStreetMap, 2: OpenStreetMap Dark, 3: OpenTopoMap, 4: WaterColour, 5: CartoDark, 6: Terrain, 7: Satellite
+			layerMenuPosition: 'bottomleft',    // Valid positions: 'topleft', 'topright', 'bottomleft' or 'bottomright'
+
+			/* Enable Layers */
+			airspace: 0,
+			navAids: 0,
+			reportingPoints: 0,
+			tfrUSA: 0,
+			seaMarkers: 0,
+			trainMap: 0,
+			clouds: 0,
+			rain: 0,
+			temps: 0,
+			wind: 0,
+			pressure: 0,
+			dayNight: 0,
+			civilAirfields: 0,
+			militaryAirfields: 0,
+			heliports: 0,
+			glidingSpots: 0
+		};
 
 //Add API Keys here
 		var OPENWXAPIKEY = '##OPENWXAPIKEY##';    // replace ##OPENWXAPIKEY## with your key and KEEP the ' '
@@ -797,7 +820,7 @@ var gliderSites = L.geoJson(gliders, {
    //             });
 //
 
-   		var openAIPairspace = L.layerGroup([openAIPairportv2, openAIPairspacev2]).addTo(map)
+   		var openAIPairspace = L.layerGroup([openAIPairportv2, openAIPairspacev2]);
 
  //   		var openAIPairspace = L.layerGroup([openAIPairspace, openAIPairportv2, openAIPairspacev2]).addTo(map);
 
@@ -821,7 +844,7 @@ var gliderSites = L.geoJson(gliders, {
 			transparent: true,
                 });		
 
-		var openSeaMap = L.layerGroup([openSEA]).addTo(map);
+		var openSeaMap = L.layerGroup([openSEA]);
 		
 // Add open TrainMap Tiles
 		let trainFilter = [
@@ -871,7 +894,7 @@ var gliderSites = L.geoJson(gliders, {
                 });
 
 // Add day night overlay
-			var dayNight = L.terminator().addTo(map);
+			var dayNight = L.terminator();
 							setInterval(function() {
 							dayNight.setTime();
 							}, 5000); // Every 5sec
@@ -940,18 +963,43 @@ var gliderSites = L.geoJson(gliders, {
 				attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
 				});	
 
+				// Try Parsing External Config (Replaces Config Set Above)
+				try
+				{
+					config = JSON.parse('##EXTERNALCONFIG##');
+				}
+				catch (e) {}
+
 				// Set Default Map
-				switch(DEFAULTMAP)
+				switch(config['defaultMap'])
 				{
 					default:
-					case '1': osm50             .addTo(map); break; // OpenStreetMap
-					case '2': osmDarkMap        .addTo(map); break; // OpenStreetMap Dark
-					case '3': topoMap           .addTo(map); break; // OpenTopoMap
-					case '4': watercolorMap     .addTo(map); break; // WaterColour
-					case '5': CartoDB_DarkMatter.addTo(map); break; // CaTerrainoDark
-					case '6': Stamen_Terrain    .addTo(map); break; // Terrain
-					case '7': Esri_WorldImagery .addTo(map); break; // Satellite
+					case 1: osm50             .addTo(map); break; // OpenStreetMap
+					case 2: osmDarkMap        .addTo(map); break; // OpenStreetMap Dark
+					case 3: topoMap           .addTo(map); break; // OpenTopoMap
+					case 4: watercolorMap     .addTo(map); break; // WaterColour
+					case 5: CartoDB_DarkMatter.addTo(map); break; // CaTerrainoDark
+					case 6: Stamen_Terrain    .addTo(map); break; // Terrain
+					case 7: Esri_WorldImagery .addTo(map); break; // Satellite
 				}
+                
+				// Enable Layers
+				if (config['airspace'         ]) openAIPairspace.addTo(map);
+				if (config['navAids'          ]) tacanVOR       .addTo(map);
+				if (config['reportingPoints'  ]) openAIPrp      .addTo(map);
+				if (config['tfrUSA'           ]) tfrsgroup      .addTo(map);
+				if (config['seaMarkers'       ]) openSeaMap     .addTo(map);
+				if (config['trainMap'         ]) OpenRailwayMap .addTo(map);
+				if (config['clouds'           ]) openCloud      .addTo(map);
+				if (config['rain'             ]) openRain       .addTo(map);
+				if (config['temps'            ]) openTemp       .addTo(map);
+				if (config['wind'             ]) openWind       .addTo(map);
+				if (config['pressure'         ]) openPressure   .addTo(map);
+				if (config['dayNight'         ]) dayNight       .addTo(map);
+				if (config['civilAirfields'   ]) civilAirfields .addTo(map);
+				if (config['militaryAirfields']) milAirfields   .addTo(map);
+				if (config['heliports'        ]) civilHeliports .addTo(map);
+				if (config['glidingSpots'     ]) gliderSites    .addTo(map);
 
 // Define menu items
 	var baseLayers = {
@@ -991,7 +1039,7 @@ var gliderSites = L.geoJson(gliders, {
 		},
 		};
 	// Add layers and overlay menu to OSM map
-	L.control.groupedLayers(baseLayers, groupedOverlays, {position: 'bottomleft'}).addTo(map);
+	L.control.groupedLayers(baseLayers, groupedOverlays, {position: ((config['layerMenuPosition']) ? config['layerMenuPosition'] : 'bottomleft')}).addTo(map);
 	}
    });
   }
