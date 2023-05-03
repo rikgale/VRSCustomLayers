@@ -25,7 +25,6 @@ if(VRS && VRS.globalDispatch && VRS.serverConfig) {
 			/* Enable Layers */
 			airspace: 0,
 			navAids: 0,
-			reportingPoints: 0,
 			tfrUSA: 0,
 			seaMarkers: 0,
 			trainMap: 0,
@@ -790,7 +789,7 @@ var gliderSites = L.geoJson(gliders, {
     		var aaraGroup = L.layerGroup([aara1, aara2, aara3, aara4, aara5, aara6, aara7, aara8, aara9, aara10E, aara10W, aara11, aara12, aara13, aara14]);
 
 // Add Open AIP airspace mapping v2
-		var openAIPairspacev2 = L.tileLayer('https://{s}.api.tiles.openaip.net/api/data/airspaces/{z}/{x}/{y}.png?apiKey='+ OPENAIPKEY, {
+		var openAIPairspacev2 = L.tileLayer('https://{s}.api.tiles.openaip.net/api/data/openaip/{z}/{x}/{y}.png?apiKey='+ OPENAIPKEY, {
 			opacity: 0.7,
 			maxZoom: 19,
 			minZoom: 7,
@@ -798,41 +797,13 @@ var gliderSites = L.geoJson(gliders, {
 			attribution: '<a href="https://www.openaip.net"> OpenAIP</a>',
 			transparent: true,
 		});
-				
-		var openAIPairportv2 = L.tileLayer('https://{s}.api.tiles.openaip.net/api/data/airports/{z}/{x}/{y}.png?apiKey='+ OPENAIPKEY, {
-			opacity: 0.6,
-			maxZoom: 19,
-			minZoom: 9,
-			id: 'OpenAIPap',
-			transparent: true,
-		});	
 
 		var openAIPairspacev2 = L.layerGroup([openAIPairspacev2]);
 		
-//// Add Open AIP airspace mapping
-  //  		var openAIPairspace = L.tileLayer('https://map.adsbexchange.com/mapproxy/tiles/1.0.0/openaip/ul_grid/{z}/{x}/{y}.png', {
-	//		opacity: 0.6,
-	//		maxZoom: 12,
-	//		minZoom: 1,
-	//		id: 'OpenAIP',
-	//		attribution: '<a href="https://www.openaip.net"> OpenAIP</a>',
-	//		transparent: true,
-   //             });
-//
-
-   		var openAIPairspace = L.layerGroup([openAIPairportv2, openAIPairspacev2]);
-
- //   		var openAIPairspace = L.layerGroup([openAIPairspace, openAIPairportv2, openAIPairspacev2]).addTo(map);
 
 
-// Add OpenAIP Reporting points.
-   		var openAIPrp = L.tileLayer('https://{s}.api.tiles.openaip.net/api/data/reporting-points/{z}/{x}/{y}.png?apiKey='+ OPENAIPKEY, {
-			opacity: 0.6,
-			maxZoom: 19,
-			minZoom: 10,
-			id: 'OpenAIP',
-			transparent: true,
-                });				
+
+	
 	
 // Add OpenSeaMap Tiles
    		var openSEA = L.tileLayer('https://tiles.openseamap.org/seamark/{z}/{x}/{y}.png', {
@@ -984,7 +955,7 @@ var gliderSites = L.geoJson(gliders, {
 				}
                 
 				// Enable Layers
-				if (config['airspace'         ]) openAIPairspace.addTo(map);
+				if (config['airspace'         ]) openAIPairspacev2.addTo(map);
 				if (config['navAids'          ]) tacanVOR       .addTo(map);
 				if (config['reportingPoints'  ]) openAIPrp      .addTo(map);
 				if (config['tfrUSA'           ]) tfrsgroup      .addTo(map);
@@ -1013,10 +984,8 @@ var gliderSites = L.geoJson(gliders, {
 		}
 	var groupedOverlays = {
 		"Global Airspace": {
-		"Airspace / Airports": openAIPairspace,
-		//"Airspace / Airports v2": openAIPairspacev2,
+		"Airspace / Airports": openAIPairspacev2,
 		"Navaids": tacanVOR,
-		"Reporting Points": openAIPrp,
 		"Temp Flt Restrctions (US)": tfrsgroup,
 		"Sea space": openSeaMap,
 		"Train Map": OpenRailwayMap,
