@@ -60,15 +60,7 @@ if(VRS && VRS.globalDispatch && VRS.serverConfig) {
           }
         });
 
-// Add Open AIP navaids
-   		var openAIPnav = L.tileLayer('https://{s}.api.tiles.openaip.net/api/data/navaids/{z}/{x}/{y}.png?apiKey='+ OPENAIPKEY, {
-            opacity: 0.6,
-			maxZoom: 19,
-			minZoom: 1,
-			id: 'OpenAIPna',
-			transparent: true,
-        });
-   		var tacanVOR = L.layerGroup([openAIPnav, ukNavaidsGeoJSON]);
+   		var tacanVOR = L.layerGroup([ukNavaidsGeoJSON]);
 
 // Add marker icons
     var civIcon = L.AwesomeMarkers.icon({
