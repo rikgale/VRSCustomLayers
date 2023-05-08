@@ -785,6 +785,7 @@ var gliderSites = L.geoJson(gliders, {
 
 // Add Open AIP airspace mapping v2
 		var openAIPairspacev2 = L.tileLayer('https://{s}.api.tiles.openaip.net/api/data/openaip/{z}/{x}/{y}.png?apiKey='+ OPENAIPKEY, {
+//		var openAIPairspacev2 = L.tileLayer('/mapproxy/tiles/openaip/openaip_grid/{z}/{x}/{y}.png', {   // using own local mapproxy. comment out the above line and uncomment this one
 			opacity: 0.7,
 			maxZoom: 19,
 			minZoom: 7,
@@ -891,11 +892,13 @@ var gliderSites = L.geoJson(gliders, {
 	 ];	
 	
 				var osm50 = L.tileLayer.colorFilter('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+//				var osm50 = L.tileLayer.colorFilter('/mapproxy/tiles/osm/osm_grid/{z}/{x}/{y}.png', {   // using own local mapproxy. comment out the above line and uncomment this one
 				attribution: '&copy; OpenWeather',
 				filter: osm50CentBright,			
 				});
 				
 				var osmDarkMap = L.tileLayer.colorFilter('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+//				var osmDarkMap = L.tileLayer.colorFilter('/mapproxy/tiles/osm/osm_grid/{z}/{x}/{y}.png', {		// using own local mapproxy. comment out the above line and uncomment this one		
 				attribution: '&copy; OpenWeather',
 				filter: osmDark,			
 				});
