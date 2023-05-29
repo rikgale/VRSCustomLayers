@@ -144,11 +144,13 @@ function onEachFeatureCiv(feature, layer) {
 			} else {
 				popupcontent = popupcontent + "<tr><td><span style='font-weight:bold'>ICAO:</span></td><td>"+feature.properties.icaoCode+"</td></tr>";
 			}
+			if (feature.properties.runways != undefined) {
 			// Runways Row
 			popupcontent = popupcontent + "<tr><td><b>Runways:</b></td><td>";
 			for (j=0;j<feature.properties.runways.length;j=j+1){
 				var runstring = "<span>"+feature.properties.runways[j].designator+"&nbsp;</span>";
 				popupcontent = popupcontent+runstring}
+				}
 			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out METAR row
 				popupcontent = popupcontent;
 			} else {
