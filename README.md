@@ -40,7 +40,7 @@ I am very grateful for the following resources which have been used in this code
 
 - Airspace overlay data courtesy of [Open AIP](http://www.openaip.net)
 - Weather overlay images courtesy of [Open Weather](https://openweathermap.org)
-- Original script work for EndOfHead and EndOfBody from [Charlie GOlf Aviation](https://www.youtube.com/channel/UCcy9zUttQEi-yRMEXTtBpRg)
+- Original script work for EndOfHead and EndOfBody from [Charlie Golf Aviation](https://www.youtube.com/channel/UCcy9zUttQEi-yRMEXTtBpRg)
 - Waypoint markers from [sam210723](https://github.com/sam210723/vrs-waypoints)
 - Leaflet grouped layer control from [ismyrnow](https://github.com/ismyrnow/leaflet-groupedlayercontrol)
 - Night and day overlay from [Jörg Dietrich](http://joergdietrich.github.io/Leaflet.Terminator/)
