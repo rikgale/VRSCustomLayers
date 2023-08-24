@@ -834,15 +834,15 @@ var gliderSites = L.geoJson(gliders, {
 		});	
 
 // Add OpenWeather Tiles
-                var openCloud = L.tileLayer('https://tile.openweathermap.org/map/clouds_new/{z}/{x}/{y}.png?appid='+ OPENWXAPIKEY, {
+                var openCloud = L.tileLayer('https://tilecache.rainviewer.com/v2/satellite/6074b8a0ad04/512/{z}/{x}/{y}/0/0_0.png', {
                     subdomains: '1234',
                     opacity: 0.6,
     				attribution: '&copy; OpenWeather'
                 });
 
-                var openRain = L.tileLayer('https://tile.openweathermap.org/map/precipitation_new/{z}/{x}/{y}.png?appid='+ OPENWXAPIKEY, {
+                var openRain = L.tileLayer('https://tilecache.rainviewer.com/v2/radar/1692910800/512/{z}/{x}/{y}/1/1_1.png', {
                     subdomains: '1234',
-                    opacity: 0.99,
+                    opacity: 0.6,
     				attribution: '&copy; OpenWeather'
                 });
 				
