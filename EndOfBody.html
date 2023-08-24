@@ -837,13 +837,13 @@ var gliderSites = L.geoJson(gliders, {
                 var openCloud = L.tileLayer('https://tilecache.rainviewer.com/v2/satellite/6074b8a0ad04/512/{z}/{x}/{y}/0/0_0.png', {
                     subdomains: '1234',
                     opacity: 0.6,
-    				attribution: '&copy; OpenWeather'
+    				attribution: '&copy; <a href="https://www.rainviewer.com/">RainViewer</a>'
                 });
 
                 var openRain = L.tileLayer('https://tilecache.rainviewer.com/v2/radar/1692910800/512/{z}/{x}/{y}/1/1_1.png', {
                     subdomains: '1234',
                     opacity: 0.6,
-    				attribution: '&copy; OpenWeather'
+    				attribution: '&copy; <a href="https://www.rainviewer.com/">RainViewer</a>'
                 });
 				
 				var openTemp = L.tileLayer('https://tile.openweathermap.org/map/temp_new/{z}/{x}/{y}.png?appid='+ OPENWXAPIKEY, {
@@ -897,13 +897,11 @@ var gliderSites = L.geoJson(gliders, {
 	
 				var osm50 = L.tileLayer.colorFilter('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 //				var osm50 = L.tileLayer.colorFilter('/mapproxy/tiles/osm/osm_grid/{z}/{x}/{y}.png', {   // using own local mapproxy. comment out the above line and uncomment this one
-				attribution: '&copy; OpenWeather',
 				filter: osm50CentBright,			
 				});
 				
 				var osmDarkMap = L.tileLayer.colorFilter('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 //				var osmDarkMap = L.tileLayer.colorFilter('/mapproxy/tiles/osm/osm_grid/{z}/{x}/{y}.png', {		// using own local mapproxy. comment out the above line and uncomment this one		
-				attribution: '&copy; OpenWeather',
 				filter: osmDark,			
 				});
 
