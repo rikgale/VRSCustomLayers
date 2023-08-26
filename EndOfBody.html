@@ -719,7 +719,7 @@ if(VRS && VRS.globalDispatch && VRS.serverConfig)
                     // Try Parsing External Config (Replaces Config Set Above)
                     try
                     {
-                        config = JSON.parse(`{"defaultMap":3,"layerMenuPosition":"bottomleft","airspace":0,"navAids":0,"tfrUSA":0,"seaMarkers":0,"trainMap":0,"clouds":0,"rain":0,"temps":0,"wind":0,"pressure":0,"dayNight":0,"civilAirfields":0,"militaryAirfields":0,"heliports":0,"glidingSpots":0}`);
+                        config = JSON.parse('##EXTERNALCONFIG##');
                     }
                     catch (e) {}
 
