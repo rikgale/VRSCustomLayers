@@ -8,1009 +8,797 @@
 // Updated by Richard Gale rikgale@hotmail.com
 // Please see https://github.com/rikgale/VRSCustomLayers for latest version
 
-if(VRS && VRS.globalDispatch && VRS.serverConfig) {
-    VRS.globalDispatch.hook(VRS.globalEvent.bootstrapCreated, function(bootStrap) {
-        if(bootStrap.hookMapInitialised) {
-            bootStrap.hookMapInitialised(function(pageSettings) {
-                if(pageSettings.mapPlugin && pageSettings.mapPlugin.getNativeType() === 'OpenStreetMap') {
+if(VRS && VRS.globalDispatch && VRS.serverConfig)
+{
+    VRS.globalDispatch.hook(VRS.globalEvent.bootstrapCreated, function(bootStrap)
+    {
+        if(bootStrap.hookMapInitialised)
+        {
+            bootStrap.hookMapInitialised(function(pageSettings)
+            {
+                if(pageSettings.mapPlugin && pageSettings.mapPlugin.getNativeType() === `OpenStreetMap`)
+                {
                     var map = pageSettings.mapPlugin.getNative();
 
-// Configuration
-		var config =
-		{
-			/* Map Config */
-			defaultMap: 1,                      // 1: OpenStreetMap, 2: OpenStreetMap Dark, 3: OpenTopoMap, 4: WaterColour, 5: CartoDark, 6: Terrain, 7: Satellite
-			layerMenuPosition: 'bottomleft',    // Valid positions: 'topleft', 'topright', 'bottomleft' or 'bottomright'
+                    // Configuration
+                    var config =
+                    {
+                        /* Map Config */
+                        defaultMap: 1,                      // 1: OpenStreetMap, 2: OpenStreetMap Dark, 3: OpenTopoMap, 4: WaterColour, 5: CartoDark, 6: Terrain, 7: Satellite
+                        layerMenuPosition: `bottomleft`,    // Valid positions: `topleft`, `topright`, `bottomleft` or `bottomright`
 
-			/* Enable Layers */
-			airspace: 0,
-			navAids: 0,
-			tfrUSA: 0,
-			seaMarkers: 0,
-			trainMap: 0,
-			clouds: 0,
-			rain: 0,
-			temps: 0,
-			wind: 0,
-			pressure: 0,
-			dayNight: 0,
-			civilAirfields: 0,
-			militaryAirfields: 0,
-			heliports: 0,
-			glidingSpots: 0
-		};
+                        /* Enable Layers */
+                        airspace: 0,
+                        navAids: 0,
+                        tfrUSA: 0,
+                        seaMarkers: 0,
+                        trainMap: 0,
+                        clouds: 0,
+                        rain: 0,
+                        temps: 0,
+                        wind: 0,
+                        pressure: 0,
+                        dayNight: 0,
+                        civilAirfields: 0,
+                        militaryAirfields: 0,
+                        heliports: 0,
+                        glidingSpots: 0
+                    };
 
-//Add API Keys here
-		var OPENWXAPIKEY = '##OPENWXAPIKEY##';    // replace ##OPENWXAPIKEY## with your key and KEEP the ' '
-		var OPENAIPKEY = '##OPENAIPKEY##';        // replace ##OPENAIPKEY##  with your key and KEEP the ' '
+                    //Add API Keys here
+                    var OPENWXAPIKEY = `##OPENWXAPIKEY##`;    // replace ##OPENWXAPIKEY## with your key and KEEP the ` `
+                    var OPENAIPKEY = `##OPENAIPKEY##`;        // replace ##OPENAIPKEY##  with your key and KEEP the ` `
 
-// Add TACAN, VOR and NDB icons
-   		var vorIcon = L.icon({
-       		iconUrl: 'navaid.png',
-       		iconSize:     [16, 16], // size of the icon
-       		iconAnchor:   [8, 8], // point of the icon which will correspond to marker's location
-       		popupAnchor:  [0, -20] // point from which the popup should open relative to the iconAnchor
-   		});
+                    // Add TACAN, VOR and NDB icons
+                    var vorIcon = L.icon
+                    ({
+                        iconUrl:      `navaid.png`,
+                        iconSize:     [16, 16], // size of the icon
+                        iconAnchor:   [8, 8], // point of the icon which will correspond to marker's location
+                        popupAnchor:  [0, -20] // point from which the popup should open relative to the iconAnchor
+                    });
 
-// Add navaids from GeoJSON file
-        var ukNavaidsGeoJSON = L.geoJson(Navaids, {
-          onEachFeature: function (feature, layer) {
-            layer.setIcon(vorIcon);
-            layer.bindPopup('<table><tr><th>Name</th><th>' + feature.properties.name + '</th></tr><tr><td><span style="font-weight:bold">ID</span></td><td>' + feature.properties.identifier + '</td></tr><tr><td><span style="font-weight:bold">Type</span></td><td>' + feature.properties.type + '</td></tr><tr><td><span style="font-weight:bold">Frequency</span></td><td>' + feature.properties.frequency.value + ' MHz</td></tr></table>');
-          }
-        });
+                    // Add navaids from GeoJSON file
+                    var ukNavaidsGeoJSON = L.geoJson(Navaids,
+                    {
+                        onEachFeature: function(feature, layer)
+                        {
+                            layer.setIcon(vorIcon);
 
+                            layer.bindPopup(`<table><tr><th>Name</th><th>${feature.properties.name}</th></tr><tr><td><span style="font-weight:bold">ID</span></td><td>${feature.properties.identifier}</td></tr><tr><td><span style="font-weight:bold">Type</span></td><td>${feature.properties.type}</td></tr><tr><td><span style="font-weight:bold">Frequency</span></td><td>${feature.properties.frequency.value} MHz</td></tr></table>`);
+                        }
+                    });
 
+                       var tacanVOR = L.layerGroup([ukNavaidsGeoJSON]);
 
-   		var tacanVOR = L.layerGroup([ukNavaidsGeoJSON]);
+                    // Add marker icons
+                    var civIcon = L.AwesomeMarkers.icon
+                    ({
+                        icon: `plane`,
+                        markerColor: `darkgreen`,
+                        prefix: `fa`,
+                        iconColor: `white`
+                    });
 
+                    var milIcon = L.AwesomeMarkers.icon
+                    ({
+                        icon: `fighter-jet`,
+                        markerColor: `cadetblue`,
+                        prefix: `fa`,
+                        iconColor: `white`
+                    });
 
-// Add marker icons
-    var civIcon = L.AwesomeMarkers.icon({
-      icon: 'plane',
-      markerColor: 'darkgreen',
-      prefix: 'fa',
-      iconColor: 'white'
+                    var civHeliIcon = L.AwesomeMarkers.icon
+                    ({
+                        icon: `helicopter`,
+                        markerColor: `green`,
+                        prefix: `fa`,
+                        iconColor: `white`
+                    });
+
+                    var milHeliIcon = L.AwesomeMarkers.icon
+                    ({
+                        icon: `helicopter-symbol`,
+                        markerColor: `blue`,
+                        prefix: `fa`,
+                        iconColor: `white`
+                    });
+
+                    var gliderIcon = L.AwesomeMarkers.icon
+                    ({
+                        icon: `paper-plane`,
+                        markerColor: `blue`,
+                        prefix: `fa`,
+                        iconColor: `white`
+                    });
+
+                    var notamIcon = L.AwesomeMarkers.icon
+                    ({
+                        icon: `exclamation-triangle`,
+                        markerColor: `blue`,
+                        prefix: `fa`,
+                        iconColor: `white`
+                    });
+
+                    var waypointIcon = new L.Icon
+                    ({
+                        iconUrl: `waypoint.png`,
+                        iconSize: [16, 16],
+                        iconAnchor: [8, 8],
+                        popupAnchor: [0, -20]
+                    });
+
+                    /*
+                    // Add waypoints - removed due to data set size
+                    var waypoints = L.geoJson(Waypoints1,
+                    {
+                        onEachFeature: function (feature, layer)
+                        {
+                            layer.setIcon(waypointIcon);
+                            layer.bindTooltip(feature.properties.name, {direction: `center`, permanent: true, className: `wpLabelstyle`});
+                        }
+                    });
+                    */
+                    /*
+                    // UK Way points - also removed for consistency
+                    var waypointsStyle = L.geoJson(null,
+                    {
+                        onEachFeature: function (feature, layer)
+                        {
+                            layer.setIcon(waypointIcon);
+                            layer.bindTooltip(feature.properties.name);
+                        }
+                    });
+                    var waypoints = omnivore.kml(`Waypoints.kml`, null, waypointsStyle);
+                    */
+
+                    // Main Popup
+                    function onEachFeatureMain(feature, layer, icon)
+                    {
+                        // Variables
+                        var popupcontent;
+
+                        // Set Icon
+                        layer.setIcon(icon);
+
+                        // Header and ICAO
+                        popupcontent = `<table><tr><th><u>${feature.properties.name}</u></th></tr>`;
+
+                        // Set ICAO If ICAO Code Is Available
+                        if (feature.properties.icaoCode != undefined)
+                        {
+                            popupcontent += `<tr><td><span style="font-weight:bold">ICAO:</span></td><td>${feature.properties.icaoCode}</td></tr>`;
+                        }
+
+                        // Show Runways If Available
+                        if (feature.properties.runways != undefined)
+                        {
+                            // Runway Rows
+                            popupcontent += `<tr><td><b>Runways:</b></td><td>`;
+                            for (i = 0; i < feature.properties.runways.length; ++i)
+                            {
+                                popupcontent += `<span>${feature.properties.runways[i].designator}&nbsp;</span>`;
+                            }
+                        }
+
+                        // Set METAR & Charts If ICAO Code Is Available
+                        if (feature.properties.icaoCode != undefined)
+                        {
+                            popupcontent += `<tr><td><b>Airport METAR:</b></td><td><a href="https://e6bx.com/weather/${feature.properties.icaoCode}/?showDecoded=1&focuspoint=metardecoder" target=_blank>View</a></td></tr>`;
+                            popupcontent += `<tr><td><b>Airport Chart:</b></td><td><a href="https://skyvector.com/airport/${feature.properties.icaoCode}" target=_blank>SkyVector</a> /\ <a href="https://ourairports.com/airports/${feature.properties.icaoCode}" target=_blank>OurAirports</a></td></tr>`;
+                        }
+
+                        // Set Location
+                        popupcontent += `<tr><td><b>Location (Lat / Long):</b></td><td>${feature.geometry.coordinates[1].toPrecision(6)}, ${feature.geometry.coordinates[0].toPrecision(6)}</td></tr>`;
+
+                        // Set Elevation
+                        popupcontent += `<tr><td><b>Elevation: </b></td><td>${feature.properties.elevation.value} M</td></tr>`;
+
+                        // Show Frequencies If Available
+                        if (feature.properties.frequencies != undefined)
+                        {
+                            // Padding
+                            popupcontent += `</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td></tr>`;
+
+                            // Frequency Rows
+                            popupcontent += `<tr><th><u>Frequencies</u></th></tr>`;
+                            for (i = 0; i < feature.properties.frequencies.length; i = i + 1)
+                            {
+                                popupcontent += `<tr><td><span>${feature.properties.frequencies[i].name}: </span></td><td>${feature.properties.frequencies[i].value} MHz</td></tr>`;
+                            }
+                        }
+
+                        // Table End
+                        popupcontent += `</table>`;
+
+                        // Bind Popup
+                        layer.bindPopup(popupcontent);
+                    }
+
+                    // Civ Popup
+                    function onEachFeatureCiv(feature, layer)
+                    {
+                        onEachFeatureMain(feature, layer, civIcon);
+                    }
+
+                    // Mil UK Popup
+                    function onEachFeatureMilUK(feature, layer)
+                    {
+                        onEachFeatureMain(feature, layer, milIcon);
+                    }
+
+                    // Civ Heli Popup
+                    function onEachFeatureCivHeli(feature, layer)
+                    {
+                        onEachFeatureMain(feature, layer, civHeliIcon);
+                    }
+
+                    // Glider Popup
+                    function onEachFeatureGlid(feature, layer)
+                    {
+                        onEachFeatureMain(feature, layer, gliderIcon);
+                    }
+
+                    // TFR Popup
+                    function onEachFeatureTFR(feature, layer)
+                    {
+                        if (feature.properties.name)
+                        {
+                            layer.bindPopup(`<strong><span style="color:#df2230;font-size:larger"><u>Temporary Flight Restriction</u>:</span><br>${feature.properties.name}</strong>`);
+                        }
+                    }
+
+                    var tfrStyle =
+                    {
+                        "color"   : `#df2230`,
+                        "opacity" : 0.8
+                    };
+                    var tfrsgroup = L.geoJson(tfrs,
+                    {
+                        onEachFeature: onEachFeatureTFR,
+                        style: tfrStyle
+                    });
+
+                    var civilAirfields = L.geoJson(airports,
+                    {
+                        onEachFeature: onEachFeatureCiv
+                    });
+
+                    var milAirfields = L.geoJson(milairport,
+                    {
+                        onEachFeature: onEachFeatureMilUK
+                    });
+
+                    var civilHeliports = L.geoJson(civheliport,
+                    {
+                        onEachFeature: onEachFeatureCivHeli
+                    });
+
+                    var gliderSites = L.geoJson(gliders,
+                    {
+                        onEachFeature: onEachFeatureGlid
+                    });
+
+                    // Define colours and style for AARA boxes and radar corridors
+                    var aaraStyle =
+                    {
+                        fillColor   : `#A17FFF`,
+                        fillOpacity : 0.1,
+                        color       : `#A17FFF`,
+                        weight      : 2,
+                        opacity     : 1
+                    };
+
+                    var radarStyle =
+                    {
+                        fillColor   : `#507D28`,
+                        fillOpacity : 0.1,
+                        color       : `#507D28`,
+                        weight      : 2,
+                        opacity     : 1
+                    };
+
+                    // Add radar corridors
+                    var radarSwindon_points =
+                    [
+                        [51.37, -2.2766666666666664],
+                        [51.35027777777778, -2.0219444444444443],
+                        [51.67833333333333, -1.557777777777778],
+                        [51.738055555555555, -1.9138888888888888],
+                        [51.64722222222222, -1.8877777777777778]
+                    ];
+
+                    var radarDaventry_points =
+                    [
+                        [52.075833333333335, -1.6594444444444443],
+                        [52.346944444444446, -0.8261111111111111],
+                        [52.249722222222225, -0.6605555555555556],
+                        [51.94694444444444, -1.5925000000000002]
+                    ];
+
+                    var radarDaventry2_points =
+                    [
+                        [51.99472222222222, -1.9030555555555555],
+                        [52.42027777777778, -0.5955555555555556],
+                        [52.30583333333333, -0.48388888888888887],
+                        [51.88333333333333, -1.7841666666666665]
+                    ];
+
+                    var radarDean_points =
+                    [
+                        [54.816111111111105, -3.857222222222222],
+                        [54.644999999999996, -3.631388888888889],
+                        [54.61972222222222, -2.6191666666666666],
+                        [54.78972222222222, -2.740277777777778]
+                    ];
+
+                    var radarGamston_points =
+                    [
+                        [53.28583333333333, -1.0322222222222222],
+                        [53.61222222222222, -0.77],
+                        [53.540277777777774, -0.5177777777777778],
+                        [53.236111111111114, -0.7641666666666667]
+                    ];
+
+                    var radarLich_points =
+                    [
+                        [52.698611111111106, -2.3191666666666664],
+                        [52.538333333333334, -2.093888888888889],
+                        [52.80166666666666, -0.9725],
+                        [52.97166666666667, -1.1427777777777777]
+                    ];
+
+                    var radarLich2_points =
+                    [
+                        [52.63638888888889, -2.578333333333333],
+                        [52.54805555555556, -2.5030555555555556],
+                        [52.46194444444445, -2.408333333333333],
+                        [52.80166666666666, -0.9725],
+                        [52.97166666666667, -1.1427777777777777]
+                    ];
+
+                    var radarWest_points =
+                    [
+                        [51.88333333333333, -1.7841666666666665],
+                        [51.88333333333333, -1.478888888888889],
+                        [52.43611111111111, -0.1661111111111111],
+                        [52.4375, 0.23],
+                        [51.70194444444445, -1.5227777777777778],
+                        [51.67833333333333, -1.557777777777778]
+                    ];
+
+                    var radarManSpec_points =
+                    [
+                        [53.52333333, -2.51722222],
+                        [53.23638889, -2.51805556],
+                        [53.18055556, -2.47055556],
+                        [53.18055556, -2.54000000],
+                        [53.19166667, -2.62888889],
+                        [53.45222222, -2.62888889],
+                        [53.50305556, -2.68972222],
+                        [53.52333333, -2.51722222]
+                    ];
+
+                    var radarLynas1_points =
+                    [
+                        [53.37277778, -4.72472222],
+                        [53.35888889, -4.33250000],
+                        [53.64888889, -3.98583333],
+                        [53.76277778, -4.26222222]
+                    ];
+
+                    var radarLynas2_points =
+                    [
+                        [53.76277778, -4.26222222],
+                        [53.64888889, -3.98583333],
+                        [53.78388889, -3.82222222],
+                        [53.89805556, -4.09916667]
+                    ];
+
+                    var radarTilni_points =
+                    [
+                        [54.73222222, -2.00111111],
+                        [54.56833333, -2.05222222],
+                        [54.52638889, -1.65805556],
+                        [54.69027778, -1.60527778]
+                    ];
+
+                    var radarSwindon   = L.polygon(radarSwindon_points  , radarStyle);
+                    var radarDaventry  = L.polygon(radarDaventry_points , radarStyle);
+                    var radarDaventry2 = L.polygon(radarDaventry2_points, radarStyle);
+                    var radarDean      = L.polygon(radarDean_points     , radarStyle);
+                    var radarGamston   = L.polygon(radarGamston_points  , radarStyle);
+                    var radarLich      = L.polygon(radarLich_points     , radarStyle);
+                    var radarLich2     = L.polygon(radarLich2_points    , radarStyle);
+                    var radarWestcott  = L.polygon(radarWest_points     , radarStyle);
+                    var radarManSpec   = L.polygon(radarManSpec_points  , radarStyle);
+                    var radarLynas1    = L.polygon(radarLynas1_points   , radarStyle);
+                    var radarLynas2    = L.polygon(radarLynas2_points   , radarStyle);
+                    var radarTilni     = L.polygon(radarTilni_points    , radarStyle);
+
+                    var radarGroup     = L.layerGroup([radarSwindon, radarDaventry, radarDaventry2, radarDean, radarGamston, radarLich, radarLich2, radarWestcott, radarManSpec, radarLynas1, radarLynas2, radarTilni]);
+
+                    // Add A2A refuelling areas
+                    var aara1_points =
+                    [
+                        [58.2, -4.5],
+                        [56.35, -4.5],
+                        [56.35, -5.083333],
+                        [58.2, -5.083333]
+                    ];
+
+                    var aara2_points =
+                    [
+                        [59.31666, -0.51666],
+                        [59.4666, 0.0666],
+                        [58.21666, 1.25],
+                        [58.0666, 0.68333]
+                    ];
+
+                    var aara3_points =
+                    [
+                        [57.883333, 0.83333],
+                        [58.016666666666666, 1.4],
+                        [56.416666666666664, 2.7666666666666666],
+                        [56.28333333333333, 2.216666666666667]
+                    ];
+
+                    var aara4_points =
+                    [
+                        [58.266666666666666, 0.016666666666666666],
+                        [57.96666666666667, 0.25],
+                        [57.583333333333336, -1.4833333333333334],
+                        [57.88333333333333, -1.7166666666666668]
+                    ];
+
+                    var aara5_points =
+                    [
+                        [56.05, -0.25],
+                        [56.03333333333333, 1.6666666666666665],
+                        [55.7, 1.65],
+                        [55.71666666666667, -0.26666666666666666]
+                    ];
+
+                    var aara6_points =
+                    [
+                        [55.266666666666666, 0.18333333333333332],
+                        [54.68333333333333, -0.8833333333333333],
+                        [54.4, -0.4166666666666667],
+                        [55.0, 0.6166666666666667]
+                    ];
+
+                    var aara7_points =
+                    [
+                        [55.43333333333333, 1.2666666666666666],
+                        [55, 2.9833333333333334],
+                        [54.7, 2.75],
+                        [55.13333333333333, 1.0333333333333334]
+                    ];
+
+                    var aara8_points =
+                    [
+                        [53.6, 0.7166666666666667],
+                        [53.45, 2.5],
+                        [53.11666666666667, 2.4333333333333336],
+                        [53.266666666666666, 0.65]
+                    ];
+                    var aara9_points =
+                    [
+                        [52.666666666666664, 1.8333333333333335],
+                        [52.35, 1.8333333333333335],
+                        [52.35, 2.6666666666666665],
+                        [52.666666666666664, 2.9333333333333336]
+                    ];
+
+                    var aara10E_points =
+                    [
+                        [51.28333333333333, -2.3833333333333333],
+                        [51, -2.0833333333333335],
+                        [50.46611111111111, -3.978888888888889],
+                        [50.86611111111111, -3.89]
+                    ];
+
+                    var aara10W_points =
+                    [
+                        [50.86611111111111, -3.89],
+                        [50.46611111111111, -3.978888888888889],
+                        [49.612500000000004, -6.728611111111111],
+                        [49.93111111111111, -6.956388888888889]
+                    ];
+
+                    var aara11_points =
+                    [
+                        [50.37555555555556, -5.673611111111112],
+                        [50.051111111111105, -5.5552777777777775],
+                        [49.69972222222222, -7.743055555555555],
+                        [50.021388888888886, -7.875277777777778]
+                    ];
+
+                    var aara12_points =
+                    [
+                        [50.4800000000000041, -7.916666666666667],
+                        [50.980000000000004, -5.581666666666666],
+                        [50.794999999999995, -4.761666666666667],
+                        [50.666666666666664, -5.421666666666667],
+                        [50.166666666666664, -7.743333333333333]
+                    ];
+
+                    var aara13_points =
+                    [
+                        [53.983333333333334, -3.716666666666667],
+                        [54.7, -4.116666666666666],
+                        [54.63333333333333, -4.4],
+                        [53.93333333333333, -3.9833333333333334]
+                    ];
+
+                    var aara14_points =
+                    [
+                        [57.31666666666667, -6.483333333333333],
+                        [55.766666666666666, -7.283333333333333],
+                        [55.866666666666673, -7.883333333333333],
+                        [57.416666666666664, -7.083333333333333]
+                    ];
+
+                    var aara1   = L.polygon(aara1_points  , aaraStyle).bindTooltip(`AARA 1`  , {direction: `center`, permanent: true, className: `arLabelstyle`});
+                    var aara2   = L.polygon(aara2_points  , aaraStyle).bindTooltip(`AARA 2`  , {direction: `center`, permanent: true, className: `arLabelstyle`});
+                    var aara3   = L.polygon(aara3_points  , aaraStyle).bindTooltip(`AARA 3`  , {direction: `center`, permanent: true, className: `arLabelstyle`});
+                    var aara4   = L.polygon(aara4_points  , aaraStyle).bindTooltip(`AARA 4`  , {direction: `center`, permanent: true, className: `arLabelstyle`});
+                    var aara5   = L.polygon(aara5_points  , aaraStyle).bindTooltip(`AARA 5`  , {direction: `center`, permanent: true, className: `arLabelstyle`});
+                    var aara6   = L.polygon(aara6_points  , aaraStyle).bindTooltip(`AARA 6`  , {direction: `center`, permanent: true, className: `arLabelstyle`});
+                    var aara7   = L.polygon(aara7_points  , aaraStyle).bindTooltip(`AARA 7`  , {direction: `center`, permanent: true, className: `arLabelstyle`});
+                    var aara8   = L.polygon(aara8_points  , aaraStyle).bindTooltip(`AARA 8`  , {direction: `center`, permanent: true, className: `arLabelstyle`});
+                    var aara9   = L.polygon(aara9_points  , aaraStyle).bindTooltip(`AARA 9`  , {direction: `center`, permanent: true, className: `arLabelstyle`});
+                    var aara10E = L.polygon(aara10E_points, aaraStyle).bindTooltip(`AARA 10E`, {direction: `center`, permanent: true, className: `arLabelstyle`});
+                    var aara10W = L.polygon(aara10W_points, aaraStyle).bindTooltip(`AARA 10W`, {direction: `center`, permanent: true, className: `arLabelstyle`});
+                    var aara11  = L.polygon(aara11_points , aaraStyle).bindTooltip(`AARA 11` , {direction: `center`, permanent: true, className: `arLabelstyle`});
+                    var aara12  = L.polygon(aara12_points , aaraStyle).bindTooltip(`AARA 12` , {direction: `center`, permanent: true, className: `arLabelstyle`});
+                    var aara13  = L.polygon(aara13_points , aaraStyle).bindTooltip(`AARA 13` , {direction: `center`, permanent: true, className: `arLabelstyle`});
+                    var aara14  = L.polygon(aara14_points , aaraStyle).bindTooltip(`AARA 14` , {direction: `center`, permanent: true, className: `arLabelstyle`});
+
+                    var aaraGroup = L.layerGroup([aara1, aara2, aara3, aara4, aara5, aara6, aara7, aara8, aara9, aara10E, aara10W, aara11, aara12, aara13, aara14]);
+
+                    // Add Open AIP airspace mapping v2
+                    var openAIPairspacev2 = L.tileLayer(`https://{s}.api.tiles.openaip.net/api/data/openaip/{z}/{x}/{y}.png?apiKey=${OPENAIPKEY}`, {
+                    //var openAIPairspacev2 = L.tileLayer(`/mapproxy/tiles/openaip/openaip_grid/{z}/{x}/{y}.png`, {   // using own local mapproxy. comment out the above line and uncomment this one
+                        opacity: 0.7,
+                        maxZoom: 19,
+                        minZoom: 7,
+                        id: `OpenAIPas`,
+                        attribution: `<a href="https://www.openaip.net"> OpenAIP</a>`,
+                        transparent: true,
+                    });
+
+                    var openAIPairspacev2 = L.layerGroup([openAIPairspacev2]);
+
+                    // Add OpenSeaMap Tiles
+                    var openSEA = L.tileLayer(`https://tiles.openseamap.org/seamark/{z}/{x}/{y}.png`, {
+                    // var openSEA = L.tileLayer(`/mapproxy/tiles/opensea/opensea_grid/{z}/{x}/{y}.png`, { // using own local mapproxy. comment out the above line and uncomment this one
+                        opacity: 0.6,
+                        maxZoom: 19,
+                        minZoom: 1,
+                        id: `OpenSEA`,
+                        attribution: `<a href="http://www.openseamap.org">OpenSeaMap</a>`,
+                        transparent: true,
+                    });
+
+                    var openSeaMap = L.layerGroup([openSEA]);
+
+                    // Add open TrainMap Tiles
+                    let trainFilter =
+                    [
+                        `brightness:50%`,
+                        `contrast:80%`,
+                        `saturate:40%`,
+                    ];
+                    var OpenRailwayMap = L.tileLayer.colorFilter(`https://{s}.tiles.openrailwaymap.org/standard/{z}/{x}/{y}.png`, {
+                    // var OpenRailwayMap = L.tileLayer.colorFilter(`/mapproxy/tiles/openrailway/openrailway_grid/{z}/{x}/{y}.png`, { // using own local mapproxy. comment out the above line and uncomment this one
+                        opacity: 0.6,
+                        minzoon: 12,
+                        maxZoom: 19,
+                        attribution: `Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors | Map style: &copy; <a href="https://www.OpenRailwayMap.org">OpenRailwayMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)`,
+                        id: `OpenTRAIN`,
+                        transparent: true,
+                        filter: trainFilter,
+                    });
+
+                    // Add OpenWeather Tiles
+                    var openCloud = L.tileLayer(`https://tilecache.rainviewer.com/v2/satellite/6074b8a0ad04/512/{z}/{x}/{y}/0/0_0.png`,
+                    {
+                        subdomains: `1234`,
+                        opacity: 0.6,
+                        attribution: `&copy; <a href="https://www.rainviewer.com/">RainViewer</a>`
+                    });
+
+                    var openRain = L.tileLayer(`https://tilecache.rainviewer.com/v2/radar/1692910800/512/{z}/{x}/{y}/1/1_1.png`,
+                    {
+                        subdomains: `1234`,
+                        opacity: 0.6,
+                        attribution: `&copy; <a href="https://www.rainviewer.com/">RainViewer</a>`
+                    });
+
+                    var openTemp = L.tileLayer(`https://tile.openweathermap.org/map/temp_new/{z}/{x}/{y}.png?appid=${OPENWXAPIKEY}`,
+                    {
+                        subdomains: `1234`,
+                        opacity: 0.75,
+                        attribution: `&copy; OpenWeather`
+                    });
+
+                    var openPressure = L.tileLayer(`https://tile.openweathermap.org/map/pressure_new/{z}/{x}/{y}.png?appid=${OPENWXAPIKEY}`,
+                    {
+                        subdomains: `1234`,
+                        opacity: 0.5,
+                        attribution: `&copy; OpenWeather`
+                    });
+
+                    var openWind = L.tileLayer(`https://tile.openweathermap.org/map/wind_new/{z}/{x}/{y}.png?appid=${OPENWXAPIKEY}`,
+                    {
+                        subdomains: `1234`,
+                        opacity: 0.5,
+                        attribution: `&copy; OpenWeather`
+                    });
+
+                    // Add day night overlay
+                    var dayNight = L.terminator();
+                    setInterval(function()
+                    {
+                        dayNight.setTime();
+                    }
+                    , 5000); // Every 5sec
+
+                    //Some base layer fun??
+                    let osm50CentBright =
+                    [
+                        // `grayscale:100%`,
+                        `brightness:50%`,
+                        // `invert:100%`,
+                        // `blur:0px`,
+                        // `contrast:130%`,
+                        // `hue:290deg`,
+                        // `opacity:100%`,
+                        // `saturate:300%`,
+                        // `sepia:10%`,
+                    ];
+
+                    let osmDark =
+                    [
+                        `grayscale:100%`,
+                        // `brightness:50%`,
+                        `invert:100%`,
+                        // `blur:0px`,
+                        // `contrast:130%`,
+                        // `hue:290deg`,
+                        // `opacity:100%`,
+                        // `saturate:300%`,
+                        // `sepia:10%`,
+                    ];
+
+                    var osm50 = L.tileLayer.colorFilter(`https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png`, {
+                    // var osm50 = L.tileLayer.colorFilter(`/mapproxy/tiles/osm/osm_grid/{z}/{x}/{y}.png`, { // using own local mapproxy. comment out the above line and uncomment this one
+                        filter: osm50CentBright,
+                    });
+
+                    var osmDarkMap = L.tileLayer.colorFilter(`https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png`, {
+                    // var osmDarkMap = L.tileLayer.colorFilter(`/mapproxy/tiles/osm/osm_grid/{z}/{x}/{y}.png`, { // using own local mapproxy. comment out the above line and uncomment this one
+                        filter: osmDark,
+                    });
+
+                    var topoMap = L.tileLayer.colorFilter(`https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png`,
+                    {
+                        attribution: `Map Data: &copy; OpenStreetMap contributors, SRTM | Map Style: &copy; OpenTopoMap (CC-BY-SA)`,
+                        filter: osm50CentBright,
+                    });
+
+                    var watercolorMap = L.tileLayer.colorFilter(`https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg`,
+                    {
+                        attribution: `Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.`,
+                        filter: osm50CentBright,
+                    });
+
+                    var CartoDB_DarkMatter = L.tileLayer(`https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png`,
+                    {
+                        attribution: `&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>`,
+                        subdomains: `abcd`,
+                        maxZoom: 20
+                    });
+
+                    var Stamen_Terrain = L.tileLayer(`https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}{r}.{ext}`,
+                    {
+                        attribution: `Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors`,
+                        subdomains: `abcd`,
+                        filter: osm50CentBright,
+                        minZoom: 0,
+                        maxZoom: 18,
+                        ext: `png`
+                    });
+
+                    var Esri_WorldImagery = L.tileLayer(`https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}`,
+                    {
+                        attribution: `Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community`
+                    });
+
+                    // Try Parsing External Config (Replaces Config Set Above)
+                    try
+                    {
+                        config = JSON.parse(`{"defaultMap":3,"layerMenuPosition":"bottomleft","airspace":0,"navAids":0,"tfrUSA":0,"seaMarkers":0,"trainMap":0,"clouds":0,"rain":0,"temps":0,"wind":0,"pressure":0,"dayNight":0,"civilAirfields":0,"militaryAirfields":0,"heliports":0,"glidingSpots":0}`);
+                    }
+                    catch (e) {}
+
+                    // Set Default Map
+                    switch(config[`defaultMap`])
+                    {
+                        default:
+                        case 1: osm50             .addTo(map); break; // OpenStreetMap
+                        case 2: osmDarkMap        .addTo(map); break; // OpenStreetMap Dark
+                        case 3: topoMap           .addTo(map); break; // OpenTopoMap
+                        case 4: watercolorMap     .addTo(map); break; // WaterColour
+                        case 5: CartoDB_DarkMatter.addTo(map); break; // CaTerrainoDark
+                        case 6: Stamen_Terrain    .addTo(map); break; // Terrain
+                        case 7: Esri_WorldImagery .addTo(map); break; // Satellite
+                    }
+
+                    // Enable Layers
+                    if (config[`airspace`         ]) openAIPairspacev2.addTo(map);
+                    if (config[`navAids`          ]) tacanVOR         .addTo(map);
+                    if (config[`tfrUSA`           ]) tfrsgroup        .addTo(map);
+                    if (config[`seaMarkers`       ]) openSeaMap       .addTo(map);
+                    if (config[`trainMap`         ]) OpenRailwayMap   .addTo(map);
+                    if (config[`clouds`           ]) openCloud        .addTo(map);
+                    if (config[`rain`             ]) openRain         .addTo(map);
+                    if (config[`temps`            ]) openTemp         .addTo(map);
+                    if (config[`wind`             ]) openWind         .addTo(map);
+                    if (config[`pressure`         ]) openPressure     .addTo(map);
+                    if (config[`dayNight`         ]) dayNight         .addTo(map);
+                    if (config[`civilAirfields`   ]) civilAirfields   .addTo(map);
+                    if (config[`militaryAirfields`]) milAirfields     .addTo(map);
+                    if (config[`heliports`        ]) civilHeliports   .addTo(map);
+                    if (config[`glidingSpots`     ]) gliderSites      .addTo(map);
+
+                    // Define menu items
+                    var baseLayers =
+                    {
+                        "OSM"         : osm50,
+                        "OSM Dark"    : osmDarkMap,
+                        "Topo"        : topoMap,
+                        "WaterColour" : watercolorMap,
+                        "CartoDark"   : CartoDB_DarkMatter,
+                        "Terrain"     : Stamen_Terrain,
+                        "Satellite"   : Esri_WorldImagery,
+                    }
+                    var groupedOverlays =
+                    {
+                        "Global Airspace":
+                        {
+                            "Airspace / Airports"       : openAIPairspacev2,
+                            "Navaids"                   : tacanVOR,
+                            "Temp Flt Restrctions (US)" : tfrsgroup,
+                            "Sea space"                 : openSeaMap,
+                            "Train Map"                 : OpenRailwayMap,
+                        },
+                        "Global Weather":
+                        {
+                            "Cloud"              : openCloud,
+                            "Rain radar"         : openRain,
+                            "Temperature"        : openTemp,
+                            "Wind"               : openWind,
+                            "Air pressure (QNH)" : openPressure,
+                            "Daylight and Night" : dayNight,
+                        },
+                        "Airport overlays":
+                        {
+                            //"A2A refuelling areas"       : aaraGroup,
+                            //"Military radar corridors"   : radarGroup,
+                            "Civil airfields"            : civilAirfields,
+                            "Military airfields"         : milAirfields,
+                            "Civil heliports"            : civilHeliports,
+                            "Gliding / Ultralight Sites" : gliderSites,
+                        },
+                    };
+
+                    // Add layers and overlay menu to OSM map
+                    L.control.groupedLayers(baseLayers, groupedOverlays, {position: ((config[`layerMenuPosition`]) ? config[`layerMenuPosition`] : `bottomleft`)}).addTo(map);
+                }
+            });
+        }
     });
-
-    var milIcon = L.AwesomeMarkers.icon({
-      icon: 'fighter-jet',
-      markerColor: 'cadetblue',
-      prefix: 'fa',
-      iconColor: 'white'
-    });
-	
-	var civHeliIcon = L.AwesomeMarkers.icon({
-      icon: 'helicopter',
-      markerColor: 'green',
-      prefix: 'fa',
-      iconColor: 'white'
-    });
-	
-	var milHeliIcon = L.AwesomeMarkers.icon({
-      icon: 'helicopter-symbol',
-      markerColor: 'blue',
-      prefix: 'fa',
-      iconColor: 'white'
-    });
-	
-	var gliderIcon = L.AwesomeMarkers.icon({
-      icon: 'paper-plane',
-      markerColor: 'blue',
-      prefix: 'fa',
-      iconColor: 'white'
-    });
-
-    var notamIcon = L.AwesomeMarkers.icon({
-      icon: 'exclamation-triangle',
-      markerColor: 'blue',
-      prefix: 'fa',
-      iconColor: 'white'
-    });
-
-    var waypointIcon = new L.Icon({
-      iconUrl: 'waypoint.png',
-      iconSize: [16, 16],
-      iconAnchor: [8, 8],
-      popupAnchor: [0, -20]
-    });
-
-// Add  waypoints - removed due to data set size
-//	var waypoints = L.geoJson(Waypoints1, {
-//					onEachFeature: function (feature, layer) {
-//					layer.setIcon(waypointIcon);
-//					layer.bindTooltip(feature.properties.name, {direction: "center", permanent: true, className: 'wpLabelstyle'});
-//					}
-//					});
-
-// UK Way points - also removed for consistency
-//  var waypointsStyle = L.geoJson(null, {
-//            onEachFeature: function (feature, layer) {
-//              layer.setIcon(waypointIcon);
-//              layer.bindTooltip(feature.properties.name);
-//            }
-//          });
-//      var waypoints = omnivore.kml('Waypoints.kml', null, waypointsStyle);
-
-// Pop-up display for Civil airports from OpenAIP geoJson	
-function onEachFeatureCiv(feature, layer) {
-		layer.setIcon(civIcon);
-		if (feature.properties.frequencies) {
-			var popupcontent;
-			//Header and ICAO
-			popupcontent = "<table><tr><th><u>"+feature.properties.name+"</u></th></tr>";
-			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out ICAO row
-				popupcontent = popupcontent;
-			} else {
-				popupcontent = popupcontent + "<tr><td><span style='font-weight:bold'>ICAO:</span></td><td>"+feature.properties.icaoCode+"</td></tr>";
-			}
-			if (feature.properties.runways != undefined) {
-			// Runways Row
-			popupcontent = popupcontent + "<tr><td><b>Runways:</b></td><td>";
-			for (j=0;j<feature.properties.runways.length;j=j+1){
-				var runstring = "<span>"+feature.properties.runways[j].designator+"&nbsp;</span>";
-				popupcontent = popupcontent+runstring}
-				}
-			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out METAR row
-				popupcontent = popupcontent;
-			} else {
-				popupcontent = popupcontent + "<tr><td><b>Airport METAR:</b></td><td><a href=\x22https://e6bx.com/weather/"+feature.properties.icaoCode+"/?showDecoded=1&focuspoint=metardecoder\x22 target=_blank>View</a></td></tr>";
-			}	
-			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out chart row
-				popupcontent = popupcontent;
-			} else {
-				popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=\x22https://skyvector.com/airport/"+feature.properties.icaoCode+"\x22 target=_blank>SkyVector</a> /\ <a href=\x22https://ourairports.com/airports/"+feature.properties.icaoCode+"\x22 target=_blank>OurAirports</a></td></tr>";
-			}			
-			popupcontent = popupcontent + "<tr><td><b>Location (Long/Lat):</b></td><td>"+feature.geometry.coordinates+"</td></tr>"; // location
-			popupcontent = popupcontent + "<tr><td><b>Elevation: </b></td><td>"+feature.properties.elevation.value+"M</td></tr>"; //elevation
-			popupcontent = popupcontent + "</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td></tr>"; //Padding
-			// Frequencies Rows
-			popupcontent = popupcontent + "<tr><th><u>Frequencies</u></th></tr>";
-			for (i=0;i<feature.properties.frequencies.length;i=i+1){
-				var freqstring = "<tr><td><span>"+feature.properties.frequencies[i].name+": </span></td><td>"
-				+feature.properties.frequencies[i].value+" MHz</td></tr>";
-				popupcontent = popupcontent+freqstring;
-			}
-			popupcontent = popupcontent + "</table>";
-			layer.bindPopup(popupcontent);
-			} else if (feature.properties.runways) { // if no frequencies then checks for runways
-			popupcontent = "<table><tr><th><u>"+feature.properties.name+"</u></th></tr>";
-			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out ICAO row
-				popupcontent = popupcontent;
-			} else {
-				popupcontent = popupcontent + "<tr><td><span style='font-weight:bold'>ICAO:</span></td><td>"+feature.properties.icaoCode+"</td></tr>";
-			}
-			// Runways Row
-			popupcontent = popupcontent + "<tr><td><b>Runways:</b></td><td>";
-			for (j=0;j<feature.properties.runways.length;j=j+1){
-				var runstring = "<span>"+feature.properties.runways[j].designator+"&nbsp;</span>";
-				popupcontent = popupcontent+runstring}
-			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out METAR row
-				popupcontent = popupcontent;
-			} else {
-				popupcontent = popupcontent + "<tr><td><b>Airport METAR:</b></td><td><a href=\x22https://e6bx.com/weather/"+feature.properties.icaoCode+"/?showDecoded=1&focuspoint=metardecoder\x22 target=_blank>View</a></td></tr>";
-			}				
-			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out chart row
-				popupcontent = popupcontent;
-			} else {
-				popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=\x22https://skyvector.com/airport/"+feature.properties.icaoCode+"\x22 target=_blank>SkyVector</a> /\ <a href=\x22https://ourairports.com/airports/"+feature.properties.icaoCode+"\x22 target=_blank>OurAirports</a></td></tr>";
-			}
-			popupcontent = popupcontent + "<tr><td><b>Location (Long/Lat):</b></td><td>"+feature.geometry.coordinates+"</td></tr>"; // location
-			popupcontent = popupcontent + "<tr><td><b>Elevation: </b></td><td>"+feature.properties.elevation.value+"M</td></tr>"; //elevation				
-			layer.bindPopup(popupcontent);
-		} 
-		else {
-			var popupcontent;
-			//Header and ICAO / Link row
-			popupcontent = "<table><tr><th><u>"+feature.properties.name+"</u></th></tr>";
-			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out ICAO row
-				popupcontent = popupcontent;
-			} else {
-				popupcontent = popupcontent + "<tr><td><span style='font-weight:bold'>ICAO:</span></td><td>"+feature.properties.icaoCode+"</td></tr>";
-			}
-			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out METAR row
-				popupcontent = popupcontent;
-			} else {
-				popupcontent = popupcontent + "<tr><td><b>Airport METAR:</b></td><td><a href=\x22https://e6bx.com/weather/"+feature.properties.icaoCode+"/?showDecoded=1&focuspoint=metardecoder\x22 target=_blank>View</a></td></tr>";
-			}			
-			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out chart row
-				popupcontent = popupcontent;
-			} else {
-				popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=\x22https://skyvector.com/airport/"+feature.properties.icaoCode+"\x22 target=_blank>SkyVector</a> /\ <a href=\x22https://ourairports.com/airports/"+feature.properties.icaoCode+"\x22 target=_blank>OurAirports</a></td></tr>";
-			}
-			popupcontent = popupcontent + "<tr><td><b>Location (Long/Lat):</b></td><td>"+feature.geometry.coordinates+"</td></tr>"; // location
-			popupcontent = popupcontent + "<tr><td><b>Elevation: </b></td><td>"+feature.properties.elevation.value+"M</td></tr>"; //elevation			
-			layer.bindPopup(popupcontent);	
-			}		
-	}
-
-// Pop-up display for Military airports from OpenAIP geoJson
-function onEachFeatureMilUK(feature, layer) {
-		layer.setIcon(milIcon);
-		if (feature.properties.frequencies) {
-			var popupcontent;
-			//Header and ICAO
-			popupcontent = "<table><tr><th><u>"+feature.properties.name+"</u></th></tr>";
-			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out ICAO row
-				popupcontent = popupcontent;
-			} else {
-				popupcontent = popupcontent + "<tr><td><span style='font-weight:bold'>ICAO:</span></td><td>"+feature.properties.icaoCode+"</td></tr>";
-			}
-			// Runways Row
-			popupcontent = popupcontent + "<tr><td><b>Runways:</b></td><td>";
-			for (j=0;j<feature.properties.runways.length;j=j+1){
-				var runstring = "<span>"+feature.properties.runways[j].designator+"&nbsp;</span>";
-				popupcontent = popupcontent+runstring}
-			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out METAR row
-				popupcontent = popupcontent;
-			} else {
-				popupcontent = popupcontent + "<tr><td><b>Airport METAR:</b></td><td><a href=\x22https://e6bx.com/weather/"+feature.properties.icaoCode+"/?showDecoded=1&focuspoint=metardecoder\x22 target=_blank>View</a></td></tr>";
-			}				
-			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out chart row
-				popupcontent = popupcontent;
-			} else {
-				popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=\x22https://skyvector.com/airport/"+feature.properties.icaoCode+"\x22 target=_blank>SkyVector</a> /\ <a href=\x22https://ourairports.com/airports/"+feature.properties.icaoCode+"\x22 target=_blank>OurAirports</a></td></tr>";
-			}			
-			popupcontent = popupcontent + "<tr><td><b>Location (Long/Lat):</b></td><td>"+feature.geometry.coordinates+"</td></tr>"; // location
-			popupcontent = popupcontent + "<tr><td><b>Elevation: </b></td><td>"+feature.properties.elevation.value+"M</td></tr>"; //elevation
-			popupcontent = popupcontent + "</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td></tr>"; //Padding
-			// Frequencies Rows
-			popupcontent = popupcontent + "<tr><th><u>Frequencies</u></th></tr>";
-			for (i=0;i<feature.properties.frequencies.length;i=i+1){
-				var freqstring = "<tr><td><span>"+feature.properties.frequencies[i].name+": </span></td><td>"
-				+feature.properties.frequencies[i].value+" MHz</td></tr>";
-				popupcontent = popupcontent+freqstring;
-			}
-			popupcontent = popupcontent + "</table>";
-			layer.bindPopup(popupcontent);
-		} else if (feature.properties.runways) { // if no frequencies then checks for runways
-			popupcontent = "<table><tr><th><u>"+feature.properties.name+"</u></th></tr>";
-			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out ICAO row
-				popupcontent = popupcontent;
-			} else {
-				popupcontent = popupcontent + "<tr><td><span style='font-weight:bold'>ICAO:</span></td><td>"+feature.properties.icaoCode+"</td></tr>";
-			}
-			// Runways Row
-			popupcontent = popupcontent + "<tr><td><b>Runways:</b></td><td>";
-			for (j=0;j<feature.properties.runways.length;j=j+1){
-				var runstring = "<span>"+feature.properties.runways[j].designator+"&nbsp;</span>";
-				popupcontent = popupcontent+runstring}
-			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out METAR row
-				popupcontent = popupcontent;
-			} else {
-				popupcontent = popupcontent + "<tr><td><b>Airport METAR:</b></td><td><a href=\x22https://e6bx.com/weather/"+feature.properties.icaoCode+"/?showDecoded=1&focuspoint=metardecoder\x22 target=_blank>View</a></td></tr>";
-			}				
-			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out chart row
-				popupcontent = popupcontent;
-			} else {
-				popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=\x22https://skyvector.com/airport/"+feature.properties.icaoCode+"\x22 target=_blank>SkyVector</a> /\ <a href=\x22https://ourairports.com/airports/"+feature.properties.icaoCode+"\x22 target=_blank>OurAirports</a></td></tr>";
-			}
-			popupcontent = popupcontent + "<tr><td><b>Location (Long/Lat):</b></td><td>"+feature.geometry.coordinates+"</td></tr>"; // location
-			popupcontent = popupcontent + "<tr><td><b>Elevation: </b></td><td>"+feature.properties.elevation.value+"M</td></tr>"; //elevation				
-			layer.bindPopup(popupcontent);
-		} 
-		else {
-			var popupcontent;
-			//Header and ICAO / Link row
-			popupcontent = "<table><tr><th><u>"+feature.properties.name+"</u></th></tr>";
-			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out ICAO row
-				popupcontent = popupcontent;
-			} else {
-				popupcontent = popupcontent + "<tr><td><span style='font-weight:bold'>ICAO:</span></td><td>"+feature.properties.icaoCode+"</td></tr>";
-			}
-			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out METAR row
-				popupcontent = popupcontent;
-			} else {
-				popupcontent = popupcontent + "<tr><td><b>Airport METAR:</b></td><td><a href=\x22https://e6bx.com/weather/"+feature.properties.icaoCode+"/?showDecoded=1&focuspoint=metardecoder\x22 target=_blank>View</a></td></tr>";
-			}			
-			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out chart row
-				popupcontent = popupcontent;
-			} else {
-				popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=\x22https://skyvector.com/airport/"+feature.properties.icaoCode+"\x22 target=_blank>SkyVector</a> /\ <a href=\x22https://ourairports.com/airports/"+feature.properties.icaoCode+"\x22 target=_blank>OurAirports</a></td></tr>";
-			}
-			popupcontent = popupcontent + "<tr><td><b>Location (Long/Lat):</b></td><td>"+feature.geometry.coordinates+"</td></tr>"; // location
-			popupcontent = popupcontent + "<tr><td><b>Elevation: </b></td><td>"+feature.properties.elevation.value+"M</td></tr>"; //elevation			
-			layer.bindPopup(popupcontent);	
-			}		
-    }
-
-// Pop-up display for heliports from OpenAIP geoJson
-function onEachFeatureCivHeli(feature, layer) {
-		layer.setIcon(civHeliIcon);
-        if (feature.properties.frequencies) {
-            var popupcontent;
-			//Header and ICAO
-            popupcontent = "<table><tr><th><u>"+feature.properties.name+"</u></th></tr>";
-			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out ICAO row
-				popupcontent = popupcontent;
-			} else {
-				popupcontent = popupcontent + "<tr><td><span style='font-weight:bold'>ICAO:</span></td><td>"+feature.properties.icaoCode+"</td></tr>";
-			}
-			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out METAR row
-				popupcontent = popupcontent;
-			} else {
-				popupcontent = popupcontent + "<tr><td><b>Airport METAR:</b></td><td><a href=\x22https://e6bx.com/weather/"+feature.properties.icaoCode+"/?showDecoded=1&focuspoint=metardecoder\x22 target=_blank>View</a></td></tr>";
-			}			
-			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out chart row
-				popupcontent = popupcontent;
-			} else {
-				popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=\x22https://skyvector.com/airport/"+feature.properties.icaoCode+"\x22 target=_blank>SkyVector</a> /\ <a href=\x22https://ourairports.com/airports/"+feature.properties.icaoCode+"\x22 target=_blank>OurAirports</a></td></tr>";
-			}			
-			popupcontent = popupcontent + "<tr><td><b>Location (Long/Lat):</b></td><td>"+feature.geometry.coordinates+"</td></tr>"; // location
-			popupcontent = popupcontent + "<tr><td><b>Elevation: </b></td><td>"+feature.properties.elevation.value+"M</td></tr>"; //elevation
-			popupcontent = popupcontent + "</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td></tr>"; //Padding
-			// Frequencies Rows
-			popupcontent = popupcontent + "<tr><th><u>Frequencies</u></th></tr>";
-            for (i=0;i<feature.properties.frequencies.length;i=i+1){
-                var freqstring = "<tr><td><span>"+feature.properties.frequencies[i].name+": </span></td><td>"
-                +feature.properties.frequencies[i].value+" MHz</td></tr>";
-                popupcontent = popupcontent+freqstring;
-            }
-			popupcontent = popupcontent + "</table>";
-            layer.bindPopup(popupcontent);
-        } else if (feature.properties.runways) { // if no frequencies then checks for runways
-            popupcontent = "<table><tr><th><u>"+feature.properties.name+"</u></th></tr>";
-			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out ICAO row
-				popupcontent = popupcontent;
-			} else {
-				popupcontent = popupcontent + "<tr><td><span style='font-weight:bold'>ICAO:</span></td><td>"+feature.properties.icaoCode+"</td></tr>";
-			}
-			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out METAR row
-				popupcontent = popupcontent;
-			} else {
-				popupcontent = popupcontent + "<tr><td><b>Airport METAR:</b></td><td><a href=\x22https://e6bx.com/weather/"+feature.properties.icaoCode+"/?showDecoded=1&focuspoint=metardecoder\x22 target=_blank>View</a></td></tr>";
-			}			
-			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out chart row
-				popupcontent = popupcontent;
-			} else {
-				popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=\x22https://skyvector.com/airport/"+feature.properties.icaoCode+"\x22 target=_blank>SkyVector</a> /\ <a href=\x22https://ourairports.com/airports/"+feature.properties.icaoCode+"\x22 target=_blank>OurAirports</a></td></tr>";
-			}
-			popupcontent = popupcontent + "<tr><td><b>Location (Long/Lat):</b></td><td>"+feature.geometry.coordinates+"</td></tr>"; // location
-			popupcontent = popupcontent + "<tr><td><b>Elevation: </b></td><td>"+feature.properties.elevation.value+"M</td></tr>"; //elevation				
-			layer.bindPopup(popupcontent);
-		} 
-		else {
-            var popupcontent;
-			//Header and ICAO / Link row
-            popupcontent = "<table><tr><th><u>"+feature.properties.name+"</u></th></tr>";
-			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out ICAO row
-				popupcontent = popupcontent;
-			} else {
-				popupcontent = popupcontent + "<tr><td><span style='font-weight:bold'>ICAO:</span></td><td>"+feature.properties.icaoCode+"</td></tr>";
-			}
-			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out METAR row
-				popupcontent = popupcontent;
-			} else {
-				popupcontent = popupcontent + "<tr><td><b>Airport METAR:</b></td><td><a href=\x22https://e6bx.com/weather/"+feature.properties.icaoCode+"/?showDecoded=1&focuspoint=metardecoder\x22 target=_blank>View</a></td></tr>";
-			}			
-			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out chart row
-				popupcontent = popupcontent;
-			} else {
-				popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=\x22https://skyvector.com/airport/"+feature.properties.icaoCode+"\x22 target=_blank>SkyVector</a> /\ <a href=\x22https://ourairports.com/airports/"+feature.properties.icaoCode+"\x22 target=_blank>OurAirports</a></td></tr>";
-			}
-			popupcontent = popupcontent + "<tr><td><b>Location (Long/Lat):</b></td><td>"+feature.geometry.coordinates+"</td></tr>"; // location
-			popupcontent = popupcontent + "<tr><td><b>Elevation: </b></td><td>"+feature.properties.elevation.value+"M</td></tr>"; //elevation			
-			layer.bindPopup(popupcontent);	
-			}		
-    }
-
-// Pop-up display for glider sites from OpenAIP geoJson	
-function onEachFeatureGlid(feature, layer) {
-		layer.setIcon(gliderIcon);
-        if (feature.properties.frequencies && feature.properties.runways) {
-            var popupcontent;
-			//Header and ICAO
-            popupcontent = "<table><tr><th><u>"+feature.properties.name+"</u></th></tr>";
-			// Runways Row
-			popupcontent = popupcontent + "<tr><td><b>Runways:</b></td><td>";
-			for (k=0;k<feature.properties.runways.length;k=k+1){
-				var runstring = "<span>"+feature.properties.runways[k].designator+"&nbsp;</span>";
-				popupcontent = popupcontent+runstring}
-			popupcontent = popupcontent + "<tr><td><b>Location (Long/Lat):</b></td><td>"+feature.geometry.coordinates+"</td></tr>"; // location
-			popupcontent = popupcontent + "<tr><td><b>Elevation: </b></td><td>"+feature.properties.elevation.value+"M</td></tr>"; //elevation
-			popupcontent = popupcontent + "</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td></tr>"; //Padding
-			// Frequencies Rows
-			popupcontent = popupcontent + "<tr><th><u>Frequencies</u></th></tr>";
-            for (i=0;i<feature.properties.frequencies.length;i=i+1){
-                var freqstring = "<tr><td><span>"+feature.properties.frequencies[i].name+": </span></td><td>"
-                +feature.properties.frequencies[i].value+" MHz</td></tr>";
-                popupcontent = popupcontent+freqstring;
-            }
-			popupcontent = popupcontent + "</table>";
-            layer.bindPopup(popupcontent);
-        } 
-		else if (feature.properties.runways) { // if no frequencies then checks for runways
-            popupcontent = "<table><tr><th><u>"+feature.properties.name+"</u></th></tr>";
-			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out ICAO row
-				popupcontent = popupcontent;
-			} else {
-				popupcontent = popupcontent + "<tr><td><span style='font-weight:bold'>ICAO:</span></td><td>"+feature.properties.icaoCode+"</td></tr>";
-			}
-			// Runways Row
-			popupcontent = popupcontent + "<tr><td><b>Runways:</b></td><td>";
-			for (k=0;k<feature.properties.runways.length;k=k+1){
-				var runstring = "<span>"+feature.properties.runways[k].designator+"&nbsp;</span>";
-				popupcontent = popupcontent+runstring}
-			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out METAR row
-				popupcontent = popupcontent;
-			} else {
-				popupcontent = popupcontent + "<tr><td><b>Airport METAR:</b></td><td><a href=\x22https://e6bx.com/weather/"+feature.properties.icaoCode+"/?showDecoded=1&focuspoint=metardecoder\x22 target=_blank>View</a></td></tr>";
-			}
-			if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out chart row
-				popupcontent = popupcontent;
-			} else {
-				popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=\x22https://skyvector.com/airport/"+feature.properties.icaoCode+"\x22 target=_blank>SkyVector</a> /\ <a href=\x22https://ourairports.com/airports/"+feature.properties.icaoCode+"\x22 target=_blank>OurAirports</a></td></tr>";
-			}
-			popupcontent = popupcontent + "<tr><td><b>Location (Long/Lat):</b></td><td>"+feature.geometry.coordinates+"</td></tr>"; // location
-			popupcontent = popupcontent + "<tr><td><b>Elevation: </b></td><td>"+feature.properties.elevation.value+"M</td></tr>"; //elevation				
-			layer.bindPopup(popupcontent);
-		} 
-		//else {
-        //    var popupcontent;
-		//	//Header and ICAO / Link row
-        //    popupcontent = "<table><tr><th><u>"+feature.properties.name+"</u></th></tr>";
-		//	if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out ICAO row
-		//		popupcontent = popupcontent;
-		//	} else {
-		//		popupcontent = popupcontent + "<tr><td><span style='font-weight:bold'>ICAO:</span></td><td>"+feature.properties.icaoCode+"</td></tr>";
-		//	}	
-		//	if (feature.properties.icaoCode == undefined) {  // checks for IcaoCode - if not defined misses out chart row
-		//		popupcontent = popupcontent;
-		//	} else {
-		//		popupcontent = popupcontent + "<tr><td><b>Airport Chart:</b></td><td><a href=airports/"+feature.properties.icaoCode+".pdf target=_blank>View</a></td></tr>";
-		//	}
-		//	popupcontent = popupcontent + "<tr><td><b>Location (Long/Lat):</b></td><td>"+feature.geometry.coordinates+"</td></tr>"; // location
-		//	popupcontent = popupcontent + "<tr><td><b>Elevation: </b></td><td>"+feature.properties.elevation.value+"M</td></tr>"; //elevation			
-		//	layer.bindPopup(popupcontent);	
-		//	}		
-    }
-	
-	
-		// Pop-up display for TFRs
-		
-function onEachFeatureTFR(feature, layer) {
-	// layer.setIcon(notamIcon);
-	if (feature.properties.name) {
-		var popupcontent;
-		popupcontent = "<strong><span style=\x22color:#df2230;font-size:larger\x22><u>Temporary Flight Restriction</u>:</span><br>"+feature.properties.name+"</strong>";
-        layer.bindPopup(popupcontent);
-	}
-}
-
-var tfrStyle = {
-	"color": "#df2230",
-	"opacity": 0.8
-};
-var tfrsgroup = L.geoJson(tfrs, {
-    onEachFeature: onEachFeatureTFR,
-	style: tfrStyle
-});
-
-	// End of TFRs stuff
-
-
-var civilAirfields = L.geoJson(airports, {
-    onEachFeature: onEachFeatureCiv
-});
-
-var milAirfields = L.geoJson(milairport, {
-    onEachFeature: onEachFeatureMilUK
-});
-
-var civilHeliports = L.geoJson(civheliport, {
-    onEachFeature: onEachFeatureCivHeli
-});
-
-var gliderSites = L.geoJson(gliders, {
-    onEachFeature: onEachFeatureGlid
-});
-
-
-	
-//        var ukAirportsGeoJSON = L.geoJson(airports, {
-//          onEachFeature: function (feature, layer) {
-//            layer.setIcon(vorIcon);
-//            layer.bindPopup('<table><tr><th>Name</th><th>' + feature.properties.name + '</th></tr><tr><td><span style="font-weight:bold">ICAO</span></td><td>' + feature.properties.icaoCode + '</td></tr><tr><td><span style="font-weight:bold">Type</span></td><td>' + feature.properties.type + '</td></tr><tr><td><span style="font-weight:bold">Frequency</span></td><td>' + feature.properties.frequencies.value + ' MHz</td></tr></table>');
-//          }
-//        });	
-		
-//    		var civilAirfields = L.layerGroup([ukAirportsGeoJSON]);		
-
-//    var civAirfieldsStyle = L.geoJson(null, {
-//          onEachFeature: function (feature, layer) {
-//            layer.setIcon(civIcon);
-//            layer.bindPopup('<table><tr><th><u>' + feature.properties.title + '</u></th></tr><tr><td>ICAO</td><td>' + feature.properties.icao + '</td></tr><tr><td>IATA</td><td>' + feature.properties.iata + '</td></tr><tr><td>Runways</td><td>' + feature.properties.runways + '</td></tr><tr><td>Chart</td><td><a href=' + feature.properties.chart + ' target ="charts">View</a></td></tr><tr><td>Approach Frequency:</td><td>' + feature.properties.approach + '</td></tr><tr><td>Tower Frequency:</td><td>' + feature.properties.tower+ '</td></tr><tr><td>Radar Frequency:</td><td>' + feature.properties.radar + '</td></tr><tr><td>Ground Frequency:</td><td>' + feature.properties.ground + '</td></tr><tr><td>ATIS Frequency:</td><td>' + feature.properties.atis + '</td></tr><tr><td>Other Frequencies:</td><td>' + feature.properties.other + '</td></tr></table>');
-//          }
-//        });
-
-//    var civilAirfields = omnivore.csv('civairfields.csv', null, civAirfieldsStyle);
-
-    // Add UK mil airfields
-
-//    var milAirfieldsStyle = L.geoJson(null, {
-//      onEachFeature: function (feature, layer) {
-//        layer.setIcon(milIcon);
-//        layer.bindPopup('<table><tr><th><u>' + feature.properties.title + '</u></th></tr><tr><td>ICAO</td><td>' + feature.properties.icao + '</td></tr><tr><td>IATA</td><td>' + feature.properties.iata + '</td></tr><tr><td>Runways</td><td>' + feature.properties.runways + '</td></tr><tr><td>Chart</td><td><a href=' + feature.properties.chart + ' target ="charts">View</a></td></tr><tr><td>Approach Frequencies:</td><td>' + feature.properties.approach + '</td></tr><tr><td>Tower Frequencies:</td><td>' + feature.properties.tower + '</td></tr><tr><td>Radar Frequencies:</td><td>' + feature.properties.radar + '</td></tr><tr><td>Ground Frequencies:</td><td>' + feature.properties.ground + '</td></tr><tr><td>ATIS Frequencies:</td><td>' + feature.properties.atis + '</td></tr><tr><td>Ops Frequencies:</td><td>' + feature.properties.ops + '</td></tr><tr><td>Other Frequencies:</td><td>' + feature.properties.other + '</td></tr><tr><td>Notes:</td><td>' + feature.properties.note + '</td></tr></table>');
- //     }
- //   });
-
-//    var milAirfields = omnivore.csv('milairfields.csv', null, milAirfieldsStyle);
-
-    //Define colours and style for AARA boxes and radar corridors
-
-    		var aaraStyle = {
-    			fillColor: "#A17FFF",
-				fillOpacity: 0.1,
-    			color: "#A17FFF",
-    			weight: 2,
-    			opacity: 1
-    		};
-
-    		var radarStyle = {
-    			fillColor: "#507D28",
-				fillOpacity: 0.1,
-    			color: "#507D28",
-    			weight: 2,
-    			opacity: 1
-    		};
-
-
-    // Add radar corridors
-
-    		var radarSwindon_points = [
-    			[51.37, -2.2766666666666664],
-        		[51.35027777777778, -2.0219444444444443],
-        		[51.67833333333333, -1.557777777777778],
-        		[51.738055555555555, -1.9138888888888888],
-    			[51.64722222222222, -1.8877777777777778]
-        	];
-
-        	var radarDaventry_points = [
-    			[52.075833333333335, -1.6594444444444443],
-        		[52.346944444444446, -0.8261111111111111],
-        		[52.249722222222225, -0.6605555555555556],
-        		[51.94694444444444, -1.5925000000000002]
-        	];
-
-        	var radarDaventry2_points = [
-    			[51.99472222222222, -1.9030555555555555],
-        		[52.42027777777778, -0.5955555555555556],
-        		[52.30583333333333, -0.48388888888888887],
-        		[51.88333333333333, -1.7841666666666665]
-        	];
-
-        	var radarDean_points = [
-    			[54.816111111111105, -3.857222222222222],
-        		[54.644999999999996, -3.631388888888889],
-        		[54.61972222222222, -2.6191666666666666],
-        		[54.78972222222222, -2.740277777777778]
-        	];
-
-            var radarGamston_points = [
-    			[53.28583333333333, -1.0322222222222222],
-        		[53.61222222222222, -0.77],
-        		[53.540277777777774, -0.5177777777777778],
-        		[53.236111111111114, -0.7641666666666667]
-        	];
-
-            var radarLich_points = [
-    			[52.698611111111106, -2.3191666666666664],
-        		[52.538333333333334, -2.093888888888889],
-        		[52.80166666666666, -0.9725],
-        		[52.97166666666667, -1.1427777777777777]
-        	];
-
-            var radarLich2_points = [
-    			[52.63638888888889, -2.578333333333333],
-        		[52.54805555555556, -2.5030555555555556],
-        		[52.46194444444445, -2.408333333333333],
-        		[52.80166666666666, -0.9725],
-        		[52.97166666666667, -1.1427777777777777]
-        	];
-
-            var radarWest_points = [
-    			[51.88333333333333, -1.7841666666666665],
-        		[51.88333333333333, -1.478888888888889],
-        		[52.43611111111111, -0.1661111111111111],
-        		[52.4375, 0.23],
-        		[51.70194444444445, -1.5227777777777778],
-        		[51.67833333333333, -1.557777777777778]
-        	];
-			var radarManSpec_points = [
-    			[53.52333333, -2.51722222],
-        		[53.23638889, -2.51805556],
-        		[53.18055556, -2.47055556],
-        		[53.18055556, -2.54000000],
-        		[53.19166667, -2.62888889],
-        		[53.45222222, -2.62888889],
-				[53.50305556, -2.68972222],
-				[53.52333333, -2.51722222]
-        	];
-			var radarLynas1_points = [
-    			[53.37277778, -4.72472222],
-        		[53.35888889, -4.33250000],
-        		[53.64888889, -3.98583333],
-				[53.76277778, -4.26222222]
-        	];			
-			var radarLynas2_points = [
-    			[53.76277778, -4.26222222],
-        		[53.64888889, -3.98583333],
-				[53.78388889, -3.82222222],
-				[53.89805556, -4.09916667]
-        	];
-			var radarTilni_points = [
-    			[54.73222222, -2.00111111],
-        		[54.56833333, -2.05222222],
-				[54.52638889, -1.65805556],
-				[54.69027778, -1.60527778]
-        	];
-
-    		var radarSwindon = L.polygon(radarSwindon_points, radarStyle);
-    		var radarDaventry = L.polygon(radarDaventry_points, radarStyle);
-    		var radarDaventry2 = L.polygon(radarDaventry2_points, radarStyle);
-    		var radarDean = L.polygon(radarDean_points, radarStyle);
-    		var radarGamston = L.polygon(radarGamston_points, radarStyle);
-    		var radarLich = L.polygon(radarLich_points, radarStyle);
-    		var radarLich2 = L.polygon(radarLich2_points, radarStyle);
-    		var radarWestcott = L.polygon(radarWest_points, radarStyle);
-			var radarManSpec = L.polygon(radarManSpec_points, radarStyle);
-			var radarLynas1 = L.polygon(radarLynas1_points, radarStyle);
-			var radarLynas2 = L.polygon(radarLynas2_points, radarStyle);
-			var radarTilni = L.polygon(radarTilni_points, radarStyle);
-
-    		var radarGroup = L.layerGroup([radarSwindon, radarDaventry, radarDaventry2, radarDean, radarGamston, radarLich, radarLich2, radarWestcott, radarManSpec, radarLynas1, radarLynas2, radarTilni]);
-
-    // Add A2A refuelling areas
-	
-	    	var aara1_points = [
-    			[58.2, -4.5],
-        		[56.35, -4.5],
-        		[56.35, -5.083333],
-        		[58.2, -5.083333]
-        	];
-
-        	var aara2_points = [
-    			[59.31666, -0.51666],
-        		[59.4666, 0.0666],
-        		[58.21666, 1.25],
-        		[58.0666, 0.68333]
-        	];
-
-        	var aara3_points = [
-    			[57.883333, 0.83333],
-        		[58.016666666666666, 1.4],
-        		[56.416666666666664, 2.7666666666666666],
-        		[56.28333333333333, 2.216666666666667]
-        	];
-
-        	var aara4_points = [
-    			[58.266666666666666, 0.016666666666666666],
-        		[57.96666666666667, 0.25],
-        		[57.583333333333336, -1.4833333333333334],
-        		[57.88333333333333, -1.7166666666666668]
-        	];
-
-            var aara5_points = [
-    			[56.05, -0.25],
-        		[56.03333333333333, 1.6666666666666665],
-        		[55.7, 1.65],
-        		[55.71666666666667, -0.26666666666666666]
-        	];
-
-            var aara6_points = [
-    			[55.266666666666666, 0.18333333333333332],
-        		[54.68333333333333, -0.8833333333333333],
-        		[54.4, -0.4166666666666667],
-        		[55.0, 0.6166666666666667]
-        	];
-
-            var aara7_points = [
-    			[55.43333333333333, 1.2666666666666666],
-        		[55, 2.9833333333333334],
-        		[54.7, 2.75],
-        		[55.13333333333333, 1.0333333333333334]
-        	];
-
-            var aara8_points = [
-    			[53.6, 0.7166666666666667],
-        		[53.45, 2.5],
-        		[53.11666666666667, 2.4333333333333336],
-        		[53.266666666666666, 0.65]
-        	];
-			var aara9_points = [
-    			[52.666666666666664, 1.8333333333333335],
-        		[52.35, 1.8333333333333335],
-        		[52.35, 2.6666666666666665],
-        		[52.666666666666664, 2.9333333333333336]
-        	];
-
-        	var aara10E_points = [
-    			[51.28333333333333, -2.3833333333333333],
-        		[51, -2.0833333333333335],
-        		[50.46611111111111, -3.978888888888889],
-        		[50.86611111111111, -3.89]
-        	];
-
-        	var aara10W_points = [
-    			[50.86611111111111, -3.89],
-        		[50.46611111111111, -3.978888888888889],
-        		[49.612500000000004, -6.728611111111111],
-        		[49.93111111111111, -6.956388888888889]
-        	];
-
-        	var aara11_points = [
-    			[50.37555555555556, -5.673611111111112],
-        		[50.051111111111105, -5.5552777777777775],
-        		[49.69972222222222, -7.743055555555555],
-        		[50.021388888888886, -7.875277777777778]
-        	];
-
-            var aara12_points = [
-    			[50.4800000000000041, -7.916666666666667],
-        		[50.980000000000004, -5.581666666666666],
-        		[50.794999999999995, -4.761666666666667],
-        		[50.666666666666664, -5.421666666666667],
-        		[50.166666666666664, -7.743333333333333]
-        	];
-			
-			var aara13_points = [
-    			[53.983333333333334, -3.716666666666667],
-        		[54.7, -4.116666666666666],
-        		[54.63333333333333, -4.4],
-        		[53.93333333333333, -3.9833333333333334]
-        	];
-
-            var aara14_points = [
-    			[57.31666666666667, -6.483333333333333],
-        		[55.766666666666666, -7.283333333333333],
-        		[55.866666666666673, -7.883333333333333],
-        		[57.416666666666664, -7.083333333333333]
-        	];
-			
-			var aara1 = L.polygon(aara1_points, aaraStyle).bindTooltip("AARA 1", {direction: "center", permanent: true, className: 'arLabelstyle'});
-			var aara2 = L.polygon(aara2_points, aaraStyle).bindTooltip("AARA 2", {direction: "center", permanent: true, className: 'arLabelstyle'});
-			var aara3 = L.polygon(aara3_points, aaraStyle).bindTooltip("AARA 3", {direction: "center", permanent: true, className: 'arLabelstyle'});
-			var aara4 = L.polygon(aara4_points, aaraStyle).bindTooltip("AARA 4", {direction: "center", permanent: true, className: 'arLabelstyle'});
-			var aara5 = L.polygon(aara5_points, aaraStyle).bindTooltip("AARA 5", {direction: "center", permanent: true, className: 'arLabelstyle'});
-			var aara6 = L.polygon(aara6_points, aaraStyle).bindTooltip("AARA 6", {direction: "center", permanent: true, className: 'arLabelstyle'});
-			var aara7 = L.polygon(aara7_points, aaraStyle).bindTooltip("AARA 7", {direction: "center", permanent: true, className: 'arLabelstyle'});
-			var aara8 = L.polygon(aara8_points, aaraStyle).bindTooltip("AARA 8", {direction: "center", permanent: true, className: 'arLabelstyle'});
-			var aara9 = L.polygon(aara9_points, aaraStyle).bindTooltip("AARA 9", {direction: "center", permanent: true, className: 'arLabelstyle'});
-			var aara10E = L.polygon(aara10E_points, aaraStyle).bindTooltip("AARA 10E", {direction: "center", permanent: true, className: 'arLabelstyle'});
-			var aara10W = L.polygon(aara10W_points, aaraStyle).bindTooltip("AARA 10W", {direction: "center", permanent: true, className: 'arLabelstyle'});
-			var aara11 = L.polygon(aara11_points, aaraStyle).bindTooltip("AARA 11", {direction: "center", permanent: true, className: 'arLabelstyle'});
-			var aara12 = L.polygon(aara12_points, aaraStyle).bindTooltip("AARA 12", {direction: "center", permanent: true, className: 'arLabelstyle'});
-			var aara13 = L.polygon(aara13_points, aaraStyle).bindTooltip("AARA 13", {direction: "center", permanent: true, className: 'arLabelstyle'});
-			var aara14 = L.polygon(aara14_points, aaraStyle).bindTooltip("AARA 14", {direction: "center", permanent: true, className: 'arLabelstyle'});
-
-    		var aaraGroup = L.layerGroup([aara1, aara2, aara3, aara4, aara5, aara6, aara7, aara8, aara9, aara10E, aara10W, aara11, aara12, aara13, aara14]);
-
-// Add Open AIP airspace mapping v2
-		var openAIPairspacev2 = L.tileLayer('https://{s}.api.tiles.openaip.net/api/data/openaip/{z}/{x}/{y}.png?apiKey='+ OPENAIPKEY, {
-//		var openAIPairspacev2 = L.tileLayer('/mapproxy/tiles/openaip/openaip_grid/{z}/{x}/{y}.png', {   // using own local mapproxy. comment out the above line and uncomment this one
-			opacity: 0.7,
-			maxZoom: 19,
-			minZoom: 7,
-			id: 'OpenAIPas',
-			attribution: '<a href="https://www.openaip.net"> OpenAIP</a>',
-			transparent: true,
-		});
-
-		var openAIPairspacev2 = L.layerGroup([openAIPairspacev2]);
-		
-
-
-
-	
-	
-// Add OpenSeaMap Tiles
-   		var openSEA = L.tileLayer('https://tiles.openseamap.org/seamark/{z}/{x}/{y}.png', {
-//		var openSEA = L.tileLayer('/mapproxy/tiles/opensea/opensea_grid/{z}/{x}/{y}.png', {      // using own local mapproxy. comment out the above line and uncomment this one
-			opacity: 0.6,
-			maxZoom: 19,
-			minZoom: 1,
-			id: 'OpenSEA',
-			attribution: '<a href="http://www.openseamap.org">OpenSeaMap</a>',
-			transparent: true,
-                });		
-
-		var openSeaMap = L.layerGroup([openSEA]);
-		
-// Add open TrainMap Tiles
-		let trainFilter = [
-			'brightness:50%',
-			'contrast:80%',
-			'saturate:40%',
-	 	];
-		var OpenRailwayMap = L.tileLayer.colorFilter('https://{s}.tiles.openrailwaymap.org/standard/{z}/{x}/{y}.png', {
-//		var OpenRailwayMap = L.tileLayer.colorFilter('/mapproxy/tiles/openrailway/openrailway_grid/{z}/{x}/{y}.png', {          // using own local mapproxy. comment out the above line and uncomment this one
-			opacity: 0.6,
-			minzoon: 12,
-			maxZoom: 19,
-			attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors | Map style: &copy; <a href="https://www.OpenRailwayMap.org">OpenRailwayMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)',
-			id: 'OpenTRAIN',
-			transparent: true,
-			filter: trainFilter,
-		});	
-
-// Add OpenWeather Tiles
-                var openCloud = L.tileLayer('https://tilecache.rainviewer.com/v2/satellite/6074b8a0ad04/512/{z}/{x}/{y}/0/0_0.png', {
-                    subdomains: '1234',
-                    opacity: 0.6,
-    				attribution: '&copy; <a href="https://www.rainviewer.com/">RainViewer</a>'
-                });
-
-                var openRain = L.tileLayer('https://tilecache.rainviewer.com/v2/radar/1692910800/512/{z}/{x}/{y}/1/1_1.png', {
-                    subdomains: '1234',
-                    opacity: 0.6,
-    				attribution: '&copy; <a href="https://www.rainviewer.com/">RainViewer</a>'
-                });
-				
-				var openTemp = L.tileLayer('https://tile.openweathermap.org/map/temp_new/{z}/{x}/{y}.png?appid='+ OPENWXAPIKEY, {
-                    subdomains: '1234',
-                    opacity: 0.75,
-    				attribution: '&copy; OpenWeather'
-                });
-
-                var openPressure = L.tileLayer('https://tile.openweathermap.org/map/pressure_new/{z}/{x}/{y}.png?appid='+ OPENWXAPIKEY, {
-                    subdomains: '1234',
-					opacity: 0.5,
-    				attribution: '&copy; OpenWeather'
-                });
-
-                var openWind = L.tileLayer('https://tile.openweathermap.org/map/wind_new/{z}/{x}/{y}.png?appid='+ OPENWXAPIKEY, {
-                    subdomains: '1234',
-                    opacity: 0.5,
-    				attribution: '&copy; OpenWeather'
-                });
-
-// Add day night overlay
-			var dayNight = L.terminator();
-							setInterval(function() {
-							dayNight.setTime();
-							}, 5000); // Every 5sec
-
-//Some base layer fun??
-	let osm50CentBright = [
-      //  'grayscale:100%',
-		'brightness:50%',
-     //   'invert:100%',
-	 //   'blur:0px',
-	//	'contrast:130%',
-	//	'hue:290deg',
-	//	'opacity:100%',
-	//	'saturate:300%',
-	//	'sepia:10%',
-	 ];
-	 
-	 let osmDark = [
-       'grayscale:100%',
-	//	'brightness:50%',
-        'invert:100%',
-	 //   'blur:0px',
-	//	'contrast:130%',
-	//	'hue:290deg',
-	//	'opacity:100%',
-	//	'saturate:300%',
-	//	'sepia:10%',
-	 ];	
-	
-				var osm50 = L.tileLayer.colorFilter('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-//				var osm50 = L.tileLayer.colorFilter('/mapproxy/tiles/osm/osm_grid/{z}/{x}/{y}.png', {   // using own local mapproxy. comment out the above line and uncomment this one
-				filter: osm50CentBright,			
-				});
-				
-				var osmDarkMap = L.tileLayer.colorFilter('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-//				var osmDarkMap = L.tileLayer.colorFilter('/mapproxy/tiles/osm/osm_grid/{z}/{x}/{y}.png', {		// using own local mapproxy. comment out the above line and uncomment this one		
-				filter: osmDark,			
-				});
-
-				var topoMap = L.tileLayer.colorFilter('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
-				attribution: 'Map Data: &copy; OpenStreetMap contributors, SRTM | Map Style: &copy; OpenTopoMap (CC-BY-SA)',
-				filter: osm50CentBright,			
-				});
-
-				var watercolorMap = L.tileLayer.colorFilter('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg', {
-				attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.', 
-				filter: osm50CentBright,					
-				});	
-
-				var CartoDB_DarkMatter = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-				attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-				subdomains: 'abcd',
-				maxZoom: 20
-				});
-			    
-				var Stamen_Terrain = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}{r}.{ext}', {
-				attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-				subdomains: 'abcd',
-				filter: osm50CentBright,
-				minZoom: 0,
-				maxZoom: 18,
-				ext: 'png'
-				});
-				
-				var Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-				attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
-				});	
-
-				// Try Parsing External Config (Replaces Config Set Above)
-				try
-				{
-					config = JSON.parse('##EXTERNALCONFIG##');
-				}
-				catch (e) {}
-
-				// Set Default Map
-				switch(config['defaultMap'])
-				{
-					default:
-					case 1: osm50             .addTo(map); break; // OpenStreetMap
-					case 2: osmDarkMap        .addTo(map); break; // OpenStreetMap Dark
-					case 3: topoMap           .addTo(map); break; // OpenTopoMap
-					case 4: watercolorMap     .addTo(map); break; // WaterColour
-					case 5: CartoDB_DarkMatter.addTo(map); break; // CaTerrainoDark
-					case 6: Stamen_Terrain    .addTo(map); break; // Terrain
-					case 7: Esri_WorldImagery .addTo(map); break; // Satellite
-				}
-                
-				// Enable Layers
-				if (config['airspace'         ]) openAIPairspacev2.addTo(map);
-				if (config['navAids'          ]) tacanVOR       .addTo(map);
-				if (config['tfrUSA'           ]) tfrsgroup      .addTo(map);
-				if (config['seaMarkers'       ]) openSeaMap     .addTo(map);
-				if (config['trainMap'         ]) OpenRailwayMap .addTo(map);
-				if (config['clouds'           ]) openCloud      .addTo(map);
-				if (config['rain'             ]) openRain       .addTo(map);
-				if (config['temps'            ]) openTemp       .addTo(map);
-				if (config['wind'             ]) openWind       .addTo(map);
-				if (config['pressure'         ]) openPressure   .addTo(map);
-				if (config['dayNight'         ]) dayNight       .addTo(map);
-				if (config['civilAirfields'   ]) civilAirfields .addTo(map);
-				if (config['militaryAirfields']) milAirfields   .addTo(map);
-				if (config['heliports'        ]) civilHeliports .addTo(map);
-				if (config['glidingSpots'     ]) gliderSites    .addTo(map);
-
-// Define menu items
-	var baseLayers = {
-		"OSM": osm50,
-		"OSM Dark": osmDarkMap,
-		"Topo": topoMap,
-		"WaterColour": watercolorMap,
-		"CartoDark": CartoDB_DarkMatter,
-		"Terrain": Stamen_Terrain,
-		"Satellite": Esri_WorldImagery,
-		}
-	var groupedOverlays = {
-		"Global Airspace": {
-		"Airspace / Airports": openAIPairspacev2,
-		"Navaids": tacanVOR,
-		"Temp Flt Restrctions (US)": tfrsgroup,
-		"Sea space": openSeaMap,
-		"Train Map": OpenRailwayMap,
-		},
-		"Global Weather": {
-		"Cloud": openCloud,
-		"Rain radar": openRain,
-		"Temperature": openTemp,
-		"Wind": openWind,
-		"Air pressure (QNH)": openPressure,
-		"Daylight and Night": dayNight,
-		},
-		"Airport overlays": {
-		//"A2A refuelling areas": aaraGroup,
-		//"Military radar corridors": radarGroup,
-		"Civil airfields": civilAirfields,
-		"Military airfields": milAirfields,
-		"Civil heliports": civilHeliports,
-		"Gliding / Ultralight Sites": gliderSites,
-		},
-		};
-	// Add layers and overlay menu to OSM map
-	L.control.groupedLayers(baseLayers, groupedOverlays, {position: ((config['layerMenuPosition']) ? config['layerMenuPosition'] : 'bottomleft')}).addTo(map);
-	}
-   });
-  }
- });
 }
 </script>
