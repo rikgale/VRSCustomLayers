@@ -797,14 +797,14 @@ if(VRS && VRS.globalDispatch && VRS.serverConfig)
                     .then(oData =>
                     {
                         // Cloud
-                        var cloud = L.tileLayer(`https://tilecache.rainviewer.com${oData.satellite.infrared.slice(-1)[0].path}/512/{z}/{x}/{y}/0/0_0.png`,
+                        var cloud = L.tileLayer(`${oData.host}${oData.satellite.infrared.slice(-1)[0].path}/512/{z}/{x}/{y}/0/0_0.png`,
                         {
                             opacity: 0.6,
                             attribution: `&copy; <a href="https://www.rainviewer.com/">RainViewer</a>`
                         });
 
                         // Rain
-                        var rain = L.tileLayer(`https://tilecache.rainviewer.com${oData.radar.past.slice(-1)[0].path}/512/{z}/{x}/{y}/1/1_1.png`,
+                        var rain = L.tileLayer(`${oData.host}${oData.radar.past.slice(-1)[0].path}/512/{z}/{x}/{y}/1/1_1.png`,
                         {
                             opacity: 0.6,
                             attribution: `&copy; <a href="https://www.rainviewer.com/">RainViewer</a>`
