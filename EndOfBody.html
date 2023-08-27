@@ -728,8 +728,6 @@ if(VRS && VRS.globalDispatch && VRS.serverConfig)
                     if (config[`tfrUSA`           ]) tfrsgroup        .addTo(map);
                     if (config[`seaMarkers`       ]) openSeaMap       .addTo(map);
                     if (config[`trainMap`         ]) OpenRailwayMap   .addTo(map);
-                    if (config[`clouds`           ]) openCloud        .addTo(map);
-                    if (config[`rain`             ]) openRain         .addTo(map);
                     if (config[`temps`            ]) openTemp         .addTo(map);
                     if (config[`wind`             ]) openWind         .addTo(map);
                     if (config[`pressure`         ]) openPressure     .addTo(map);
@@ -799,6 +797,10 @@ if(VRS && VRS.globalDispatch && VRS.serverConfig)
                             opacity: 0.6,
                             attribution: `&copy; <a href="https://www.rainviewer.com/">RainViewer</a>`
                         });
+
+                        // Enable Layers
+                        if (config[`clouds`]) cloud.addTo(map);
+                        if (config[`rain`  ]) rain .addTo(map);
 
                         // Add Layers To Global Weather
                         layerControl.addOverlay(cloud, "Cloud", "Global Weather");
