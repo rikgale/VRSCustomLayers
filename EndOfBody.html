@@ -601,28 +601,6 @@ if(VRS && VRS.globalDispatch && VRS.serverConfig)
                         filter: trainFilter,
                     });
 
-                    // Add OpenWeather Tiles
-                    var openTemp = L.tileLayer(`https://tile.openweathermap.org/map/temp_new/{z}/{x}/{y}.png?appid=${OPENWXAPIKEY}`,
-                    {
-                        subdomains: `1234`,
-                        opacity: 0.75,
-                        attribution: `&copy; OpenWeather`
-                    });
-
-                    var openPressure = L.tileLayer(`https://tile.openweathermap.org/map/pressure_new/{z}/{x}/{y}.png?appid=${OPENWXAPIKEY}`,
-                    {
-                        subdomains: `1234`,
-                        opacity: 0.5,
-                        attribution: `&copy; OpenWeather`
-                    });
-
-                    var openWind = L.tileLayer(`https://tile.openweathermap.org/map/wind_new/{z}/{x}/{y}.png?appid=${OPENWXAPIKEY}`,
-                    {
-                        subdomains: `1234`,
-                        opacity: 0.5,
-                        attribution: `&copy; OpenWeather`
-                    });
-
                     // Add day night overlay
                     var dayNight = L.terminator();
                     setInterval(function()
@@ -728,9 +706,6 @@ if(VRS && VRS.globalDispatch && VRS.serverConfig)
                     if (config[`tfrUSA`           ]) tfrsgroup        .addTo(map);
                     if (config[`seaMarkers`       ]) openSeaMap       .addTo(map);
                     if (config[`trainMap`         ]) OpenRailwayMap   .addTo(map);
-                    if (config[`temps`            ]) openTemp         .addTo(map);
-                    if (config[`wind`             ]) openWind         .addTo(map);
-                    if (config[`pressure`         ]) openPressure     .addTo(map);
                     if (config[`dayNight`         ]) dayNight         .addTo(map);
                     if (config[`civilAirfields`   ]) civilAirfields   .addTo(map);
                     if (config[`militaryAirfields`]) milAirfields     .addTo(map);
@@ -760,10 +735,7 @@ if(VRS && VRS.globalDispatch && VRS.serverConfig)
                         },
                         "Global Weather":
                         {
-                            "Temperature"        : openTemp,
-                            "Wind"               : openWind,
-                            "Air pressure (QNH)" : openPressure,
-                            "Daylight and Night" : dayNight,
+                            "Daylight and Night" : dayNight
                         },
                         "Airport overlays":
                         {
@@ -779,6 +751,45 @@ if(VRS && VRS.globalDispatch && VRS.serverConfig)
                     // Add layers and overlay menu to OSM map
                     var layerControl = L.control.groupedLayers(baseLayers, groupedOverlays, {position: ((config[`layerMenuPosition`]) ? config[`layerMenuPosition`] : `bottomleft`)}).addTo(map);
 
+                    // Add OpenWeather Layers
+                    if
+                    (
+                        (OPENWXAPIKEY !== ``) &&
+                        (OPENWXAPIKEY !== (`##` + `OPENWXAPIKEY` + `##`))
+                    )
+                    {
+                        // Add OpenWeather Temp
+                        var temp = L.tileLayer(`https://tile.openweathermap.org/map/temp_new/{z}/{x}/{y}.png?appid=${OPENWXAPIKEY}`,
+                        {
+                            opacity: 0.75,
+                            attribution: `&copy; OpenWeather`
+                        });
+
+                        // Add OpenWeather Wind
+                        var wind = L.tileLayer(`https://tile.openweathermap.org/map/wind_new/{z}/{x}/{y}.png?appid=${OPENWXAPIKEY}`,
+                        {
+                            opacity: 0.5,
+                            attribution: `&copy; OpenWeather`
+                        });
+
+                        // Add OpenWeather Pressure
+                        var pressure = L.tileLayer(`https://tile.openweathermap.org/map/pressure_new/{z}/{x}/{y}.png?appid=${OPENWXAPIKEY}`,
+                        {
+                            opacity: 0.5,
+                            attribution: `&copy; OpenWeather`
+                        });
+
+                        // Enable Layers
+                        if (config[`temps`   ]) temp    .addTo(map);
+                        if (config[`wind`    ]) wind    .addTo(map);
+                        if (config[`pressure`]) pressure.addTo(map);
+
+                        // Add Layers To Global Weather
+                        layerControl.addOverlay(temp, "Temperature"       , "Global Weather");
+                        layerControl.addOverlay(wind, "Wind"              , "Global Weather");
+                        layerControl.addOverlay(wind, "Air pressure (QNH)", "Global Weather");
+                    }
+
                     // Add Rainviewer Layers
                     fetch('https://api.rainviewer.com/public/weather-maps.json')
                     .then(r => r.json())
@@ -792,7 +803,7 @@ if(VRS && VRS.globalDispatch && VRS.serverConfig)
                         });
 
                         // Rain
-                        var rain = L.tileLayer(`https://tilecache.rainviewer.com${oData.radar.past.slice(-1)[0].path}/512/{z}/{x}/{y}/0/0_0.png`,
+                        var rain = L.tileLayer(`https://tilecache.rainviewer.com${oData.radar.past.slice(-1)[0].path}/512/{z}/{x}/{y}/1/1_1.png`,
                         {
                             opacity: 0.6,
                             attribution: `&copy; <a href="https://www.rainviewer.com/">RainViewer</a>`
@@ -804,7 +815,7 @@ if(VRS && VRS.globalDispatch && VRS.serverConfig)
 
                         // Add Layers To Global Weather
                         layerControl.addOverlay(cloud, "Cloud", "Global Weather");
-                        layerControl.addOverlay(rain, "Rain", "Global Weather");
+                        layerControl.addOverlay(rain , "Rain" , "Global Weather");
                     })
                     .catch(e => console.error(e));
                 }
