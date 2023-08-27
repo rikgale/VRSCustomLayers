@@ -785,9 +785,9 @@ if(VRS && VRS.globalDispatch && VRS.serverConfig)
                         if (config[`pressure`]) pressure.addTo(map);
 
                         // Add Layers To Global Weather
-                        layerControl.addOverlay(temp, "Temperature"       , "Global Weather");
-                        layerControl.addOverlay(wind, "Wind"              , "Global Weather");
-                        layerControl.addOverlay(wind, "Air pressure (QNH)", "Global Weather");
+                        layerControl.addOverlay(temp    , "Temperature"       , "Global Weather");
+                        layerControl.addOverlay(wind    , "Wind"              , "Global Weather");
+                        layerControl.addOverlay(pressure, "Air pressure (QNH)", "Global Weather");
                     }
 
                     // Add Rainviewer Layers
