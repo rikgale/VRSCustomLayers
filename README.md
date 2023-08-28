@@ -4,6 +4,15 @@ This JavaScript code is a plugin for the ADSB aircraft tracking [Virtual Radar S
 
 This repo brings together and updates several scripts (`EndOfHead.html` and `EndOfBody.html`) written by others as well as adds new scripts (`Scale.html` and `Fullscreen.html`)  
 
+Features:
+1) 8 different base layer maps
+2) OpenAIP Airspace layer
+3) Funtional weather layers
+4) Moving Day/Night Terminator
+5) Airport information (depending if you region has been added)
+6) OpenSea and Open Train layers
+7) TFR (Temp Flt. Restrictions) - US only
+
 &nbsp; 
 
 #### `EndOfHead.html` and `EndOfBody.html`
