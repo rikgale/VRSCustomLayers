@@ -20,11 +20,11 @@ Features:
 These two files work in tandem to insert a icon with pop up at the bottom left of the map and allows the user to select airspace layers, weather layers and UK specific overlays which will be added to the base Leaflet map used in VRS.
 
 Users will need to sign up for API keys for some of the functionalty of this script to work properly.
-1) [Open Weather 1.0 API key](https://openweathermap.org/api/weathermaps) Please note: if you do not enter an API key the Pressure, Temperature and Wind layer will no show in the menu.
+1) [Open Weather 1.0 API key](https://openweathermap.org/api/weathermaps) Please note: if you do not enter an API key the Pressure, Temperature and Wind layer will not show in the menu.
 2) [OpenAIP Key](https://www.openaip.net/) Please note: if you do not enter an API key the Airspace layer will not show on the map.
-3) [Thunderforest](https://www.thunderforest.com/) Please note: if you do not enter an API key the [Spinal Map](https://www.thunderforest.com/maps/spinal-map/) will not display.
+3) [Thunderforest](https://www.thunderforest.com/) Please note: if you do not enter an API key the [Spinal Map](https://www.thunderforest.com/maps/spinal-map/) will not display if selected.
 
-This script is set up to work with VRS as a baremetal install and also to work with [SDR-Enthusiasts](https://github.com/sdr-enthusiasts) docker container for [VRS](https://github.com/sdr-enthusiasts/docker-virtualradarserver). For those working with a baremetal install of VRS the keys need to be inserted into the script here: (around line 50 ish) (Skip this if using the docker container VRS as these are all part of the compose for the container)
+This script is set up to work with VRS as a baremetal install (installed directly onto the OS, either windows or linux) and also to work with [SDR-Enthusiasts](https://github.com/sdr-enthusiasts) docker container for [VRS](https://github.com/sdr-enthusiasts/docker-virtualradarserver). For those working with a baremetal install of VRS the keys need to be inserted into the script here: (around line 50 ish) (Skip this if using the docker container VRS as these are all part of the compose for the container)
 
 ````
  // Add API Keys here
