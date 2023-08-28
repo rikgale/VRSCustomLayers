@@ -24,7 +24,7 @@ if(VRS && VRS.globalDispatch && VRS.serverConfig)
                     var config =
                     {
                         /* Map Config */
-                        defaultMap: 1,                      // 1: OpenStreetMap, 2: OpenStreetMap Dark, 3: OpenTopoMap, 4: WaterColour, 5: CartoDark, 6: Terrain, 7: Satellite
+                        defaultMap: 1,                      // 1: OpenStreetMap, 2: OpenStreetMap Dark, 3: OpenTopoMap, 4: WaterColour, 5: CartoDark, 6: Terrain, 7: Satellite, 8: Spinal Map
                         layerMenuPosition: `bottomleft`,    // Valid positions: `topleft`, `topright`, `bottomleft` or `bottomright`
 
                         /* Enable Layers */
@@ -708,6 +708,7 @@ if(VRS && VRS.globalDispatch && VRS.serverConfig)
                         case 5: CartoDB_DarkMatter.addTo(map); break; // CaTerrainoDark
                         case 6: Stamen_Terrain    .addTo(map); break; // Terrain
                         case 7: Esri_WorldImagery .addTo(map); break; // Satellite
+                        case 8: thunderforrestSpinalMap .addTo(map); break; // Satellite
                     }
 
                     // Enable Layers
