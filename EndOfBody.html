@@ -45,9 +45,9 @@ if(VRS && VRS.globalDispatch && VRS.serverConfig)
                         glidingSpots: 0
                     };
 
-                    //Add API Keys here
-                    var OPENWXAPIKEY = `##OPENWXAPIKEY##`;    // replace ##OPENWXAPIKEY## with your key and KEEP the ` `
-                    var OPENAIPKEY = `##OPENAIPKEY##`;    // replace ##OPENAIPKEY##  with your key and KEEP the ` `
+                    // Add API Keys here
+                    var OPENWXAPIKEY     = `##OPENWXAPIKEY##`;     // replace ##OPENWXAPIKEY## with your key and KEEP the ` `
+                    var OPENAIPKEY       = `##OPENAIPKEY##`;       // replace ##OPENAIPKEY##  with your key and KEEP the ` `
                     var THUNDERFORESTKEY = `##THUNDERFORESTKEY##`; // replace ##THUNDERFORESTKEY##  with your key and KEEP the ` `
 
                     // Add TACAN, VOR and NDB icons
@@ -676,17 +676,16 @@ if(VRS && VRS.globalDispatch && VRS.serverConfig)
                         ext: `png`
                     });
 
-					var Esri_WorldImagery = L.tileLayer(`https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}`,
+                    var Esri_WorldImagery = L.tileLayer(`https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}`,
                     // var Esri_WorldImagery = L.tileLayer(`/mapproxy/tiles/arcgis-world-imagery/awi_grid/{z}/{x}/{y}.png`,    // using own local mapproxy. comment out the above line and uncomment this one
                     {
                         attribution: `Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community`
                     });
-					
+
 					var thunderforrestSpinalMap = L.tileLayer(`https://tile.thunderforest.com/spinal-map/{z}/{x}/{y}.png?apikey=${THUNDERFORESTKEY}`,
 					// var thunderforrestSpinalMap = L.tileLayer(`/mapproxy/tiles/spinalmap/spinalmap_grid/{z}/{x}/{y}.png`,    // using own local mapproxy. comment out the above line and uncomment this one
                     {
                         attribution: `&copy; <a href="https://www.thunderforest.com/">Thunderforest</a>`,
-                        subdomains: `abcd`,
                         maxZoom: 20
                     });
 
@@ -701,14 +700,14 @@ if(VRS && VRS.globalDispatch && VRS.serverConfig)
                     switch(config[`defaultMap`])
                     {
                         default:
-                        case 1: osm50             .addTo(map); break; // OpenStreetMap
-                        case 2: osmDarkMap        .addTo(map); break; // OpenStreetMap Dark
-                        case 3: topoMap           .addTo(map); break; // OpenTopoMap
-                        case 4: watercolorMap     .addTo(map); break; // WaterColour
-                        case 5: CartoDB_DarkMatter.addTo(map); break; // CaTerrainoDark
-                        case 6: Stamen_Terrain    .addTo(map); break; // Terrain
-                        case 7: Esri_WorldImagery .addTo(map); break; // Satellite
-                        case 8: thunderforrestSpinalMap .addTo(map); break; // Satellite
+                        case 1: osm50                  .addTo(map); break; // OpenStreetMap
+                        case 2: osmDarkMap             .addTo(map); break; // OpenStreetMap Dark
+                        case 3: topoMap                .addTo(map); break; // OpenTopoMap
+                        case 4: watercolorMap          .addTo(map); break; // WaterColour
+                        case 5: CartoDB_DarkMatter     .addTo(map); break; // CaTerrainoDark
+                        case 6: Stamen_Terrain         .addTo(map); break; // Terrain
+                        case 7: Esri_WorldImagery      .addTo(map); break; // Satellite
+                        case 8: thunderforrestSpinalMap.addTo(map); break; // Spinal
                     }
 
                     // Enable Layers
@@ -733,7 +732,7 @@ if(VRS && VRS.globalDispatch && VRS.serverConfig)
                         "CartoDark"   : CartoDB_DarkMatter,
                         "Terrain"     : Stamen_Terrain,
                         "Satellite"   : Esri_WorldImagery,
-						"Spinal Map"  : thunderforrestSpinalMap,
+                        "Spinal Map"  : thunderforrestSpinalMap
                     }
                     var groupedOverlays =
                     {
@@ -802,34 +801,52 @@ if(VRS && VRS.globalDispatch && VRS.serverConfig)
                         layerControl.addOverlay(pressure, "Air pressure (QNH)", "Global Weather");
                     }
 
-                    // Add Rainviewer Layers
-                    fetch('https://api.rainviewer.com/public/weather-maps.json')
-                    .then(r => r.json())
-                    .then(oData =>
+                    // Rainviewer Cloud
+                    var cloud = L.tileLayer(``,
                     {
-                        // Cloud
-                        var cloud = L.tileLayer(`https://tilecache.rainviewer.com${oData.satellite.infrared.slice(-1)[0].path}/512/{z}/{x}/{y}/0/0_0.png`,
+                        opacity: 0.6,
+                        attribution: `&copy; <a href="https://www.rainviewer.com/">RainViewer</a>`
+                    });
+
+                    // Rainviewer Rain
+                    var rain = L.tileLayer(``,
+                    {
+                        opacity: 0.6,
+                        attribution: `&copy; <a href="https://www.rainviewer.com/">RainViewer</a>`
+                    });
+
+                    // Update Rainviewer Tiles
+                    function UpdateRainviewerTiles(init)
+                    {
+                        // Add Rainviewer Layers
+                        fetch('https://api.rainviewer.com/public/weather-maps.json')
+                        .then(r => r.json())
+                        .then(oData =>
                         {
-                            opacity: 0.6,
-                            attribution: `&copy; <a href="https://www.rainviewer.com/">RainViewer</a>`
-                        });
+                            // Update Tile URLs
+                            cloud.setUrl(`${oData.host}${oData.satellite.infrared.slice(-1)[0].path}/512/{z}/{x}/{y}/0/0_0.png`);
+                            rain .setUrl(`${oData.host}${oData.radar.past.slice(-1)[0].path}/512/{z}/{x}/{y}/1/1_1.png`);
 
-                        // Rain
-                        var rain = L.tileLayer(`https://tilecache.rainviewer.com${oData.radar.past.slice(-1)[0].path}/512/{z}/{x}/{y}/1/1_1.png`,
-                        {
-                            opacity: 0.6,
-                            attribution: `&copy; <a href="https://www.rainviewer.com/">RainViewer</a>`
-                        });
+                            // Init
+                            if (init)
+                            {
+                                // Enable Layers
+                                if (config[`clouds`]) cloud.addTo(map);
+                                if (config[`rain`  ]) rain .addTo(map);
 
-                        // Enable Layers
-                        if (config[`clouds`]) cloud.addTo(map);
-                        if (config[`rain`  ]) rain .addTo(map);
+                                // Add Layers To Global Weather
+                                layerControl.addOverlay(cloud, "Cloud", "Global Weather");
+                                layerControl.addOverlay(rain , "Rain" , "Global Weather");
 
-                        // Add Layers To Global Weather
-                        layerControl.addOverlay(cloud, "Cloud", "Global Weather");
-                        layerControl.addOverlay(rain , "Rain" , "Global Weather");
-                    })
-                    .catch(e => console.error(e));
+                                // Update Tiles Every 119s
+                                setInterval(UpdateRainviewerTiles, 119000);
+                            }
+                        })
+                        .catch(e => console.error(e));
+                    }
+
+                    // Initialize Rainviewer Tiles
+                    UpdateRainviewerTiles(true);
                 }
             });
         }
