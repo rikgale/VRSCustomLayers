@@ -47,7 +47,8 @@ if(VRS && VRS.globalDispatch && VRS.serverConfig)
 
                     //Add API Keys here
                     var OPENWXAPIKEY = `##OPENWXAPIKEY##`;    // replace ##OPENWXAPIKEY## with your key and KEEP the ` `
-                    var OPENAIPKEY = `##OPENAIPKEY##`;        // replace ##OPENAIPKEY##  with your key and KEEP the ` `
+                    var OPENAIPKEY = `##OPENAIPKEY##`;    // replace ##OPENAIPKEY##  with your key and KEEP the ` `
+					var THUNDERFORESTKEY = `##THUNDERFORESTKEY##`; // replace ##THUNDERFORESTKEY##  with your key and KEEP the ` `
 
                     // Add TACAN, VOR and NDB icons
                     var vorIcon = L.icon
@@ -559,7 +560,7 @@ if(VRS && VRS.globalDispatch && VRS.serverConfig)
 
                     // Add Open AIP airspace mapping v2
                     var openAIPairspacev2 = L.tileLayer(`https://{s}.api.tiles.openaip.net/api/data/openaip/{z}/{x}/{y}.png?apiKey=${OPENAIPKEY}`, {
-                    //var openAIPairspacev2 = L.tileLayer(`/mapproxy/tiles/openaip/openaip_grid/{z}/{x}/{y}.png`, {   // using own local mapproxy. comment out the above line and uncomment this one
+                    // var openAIPairspacev2 = L.tileLayer(`/mapproxy/tiles/openaip/openaip_grid/{z}/{x}/{y}.png`, {   // using own local mapproxy. comment out the above line and uncomment this one
                         opacity: 0.7,
                         maxZoom: 19,
                         minZoom: 7,
@@ -675,10 +676,18 @@ if(VRS && VRS.globalDispatch && VRS.serverConfig)
                         ext: `png`
                     });
 
-                    var Esri_WorldImagery = L.tileLayer(`https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}`,
+					var Esri_WorldImagery = L.tileLayer(`https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}`,
                     // var Esri_WorldImagery = L.tileLayer(`/mapproxy/tiles/arcgis-world-imagery/awi_grid/{z}/{x}/{y}.png`,    // using own local mapproxy. comment out the above line and uncomment this one
                     {
                         attribution: `Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community`
+                    });
+					
+					var thunderforrestSpinalMap = L.tileLayer(`https://tile.thunderforest.com/spinal-map/{z}/{x}/{y}.png?apikey=${THUNDERFORESTKEY}`,
+					// var thunderforrestSpinalMap = L.tileLayer(`/mapproxy/tiles/spinalmap/spinalmap_grid/{z}/{x}/{y}.png`,    // using own local mapproxy. comment out the above line and uncomment this one
+                    {
+                        attribution: `&copy; <a href="https://www.thunderforest.com/">Thunderforest</a>`,
+                        subdomains: `abcd`,
+                        maxZoom: 20
                     });
 
                     // Try Parsing External Config (Replaces Config Set Above)
@@ -723,6 +732,7 @@ if(VRS && VRS.globalDispatch && VRS.serverConfig)
                         "CartoDark"   : CartoDB_DarkMatter,
                         "Terrain"     : Stamen_Terrain,
                         "Satellite"   : Esri_WorldImagery,
+						"Spinal Map"  : thunderforrestSpinalMap,
                     }
                     var groupedOverlays =
                     {
@@ -740,8 +750,8 @@ if(VRS && VRS.globalDispatch && VRS.serverConfig)
                         },
                         "Airport overlays":
                         {
-                            //"A2A refuelling areas"       : aaraGroup,
-                            //"Military radar corridors"   : radarGroup,
+                            "A2A refuelling areas"       : aaraGroup,
+                            "Military radar corridors"   : radarGroup,
                             "Civil airfields"            : civilAirfields,
                             "Military airfields"         : milAirfields,
                             "Civil heliports"            : civilHeliports,
@@ -797,14 +807,14 @@ if(VRS && VRS.globalDispatch && VRS.serverConfig)
                     .then(oData =>
                     {
                         // Cloud
-                        var cloud = L.tileLayer(`${oData.host}${oData.satellite.infrared.slice(-1)[0].path}/512/{z}/{x}/{y}/0/0_0.png`,
+                        var cloud = L.tileLayer(`https://tilecache.rainviewer.com${oData.satellite.infrared.slice(-1)[0].path}/512/{z}/{x}/{y}/0/0_0.png`,
                         {
                             opacity: 0.6,
                             attribution: `&copy; <a href="https://www.rainviewer.com/">RainViewer</a>`
                         });
 
                         // Rain
-                        var rain = L.tileLayer(`${oData.host}${oData.radar.past.slice(-1)[0].path}/512/{z}/{x}/{y}/1/1_1.png`,
+                        var rain = L.tileLayer(`https://tilecache.rainviewer.com${oData.radar.past.slice(-1)[0].path}/512/{z}/{x}/{y}/1/1_1.png`,
                         {
                             opacity: 0.6,
                             attribution: `&copy; <a href="https://www.rainviewer.com/">RainViewer</a>`
