@@ -110,10 +110,10 @@ I am very grateful for the following resources which have been used in this code
 - Leaflet awesome markers from [Ivoogdt](https://github.com/lvoogdt/Leaflet.awesome-markers)
 - forked/copied from [M7SPI/vrs-overlays](https://github.com/M7SPI/vrs-overlays)
 - [johnex](https://github.com/Johnex) for tidying the code and proper implimentation of the rainviewer layers
-- [dziban](https://github.com/dziban303) for US TFR
+- [dziban](https://github.com/dziban303) for US TFR and other useful tweaks and updates.
 
 Screenshot of working example:
 
 ![Screenshot](screenshot.jpeg)
 
-Also can be seen working on my VRS page - [cornwallvrs.duckdns.org/vrs](https://www.cornwallvrs.duckdns.org/vrs).
+Also can be seen working on my VRS page - [cornwallvrs.duckdns.org/vrs](https://www.cornwallvrs.com/VirtualRadar/desktop.html).
