@@ -32,6 +32,7 @@ This script is set up to work with VRS as a baremetal install (installed directl
  var OPENWXAPIKEY     = `##OPENWXAPIKEY##`;     // replace ##OPENWXAPIKEY## with your key and KEEP the ` `
  var OPENAIPKEY       = `##OPENAIPKEY##`;       // replace ##OPENAIPKEY##  with your key and KEEP the ` `
  var THUNDERFORESTKEY = `##THUNDERFORESTKEY##`; // replace ##THUNDERFORESTKEY##  with your key and KEEP the ` `
+ var STADIAKEY        = `##STADIAKEY##`;        // replace ##STADIAKEY##  with your key and KEEP the ` `
 ````
 
 The user can set default options from within the script to allow a specific map and your choice of layers to be enabled by default. Just set the map number to which ever one you want, and for the layers change those that you want on start up from a 0 to a 1. These options can be found near the top of the script.
