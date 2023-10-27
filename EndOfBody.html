@@ -50,6 +50,7 @@ if(VRS && VRS.globalDispatch && VRS.serverConfig)
                     var OPENWXAPIKEY     = `##OPENWXAPIKEY##`;     // replace ##OPENWXAPIKEY## with your key and KEEP the ` `
                     var OPENAIPKEY       = `##OPENAIPKEY##`;       // replace ##OPENAIPKEY##  with your key and KEEP the ` `
                     var THUNDERFORESTKEY = `##THUNDERFORESTKEY##`; // replace ##THUNDERFORESTKEY##  with your key and KEEP the ` `
+                    var STADIAKEY        = `##STADIAKEY##`;        // replace ##STADIAKEY##  with your key and KEEP the ` `
 
                     // Add TACAN, VOR and NDB icons
                     var vorIcon = L.icon
@@ -654,7 +655,7 @@ if(VRS && VRS.globalDispatch && VRS.serverConfig)
                         filter: osm50CentBright,
                     });
 
-                    var watercolorMap = L.tileLayer.colorFilter(`https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg`,
+                    var watercolorMap = L.tileLayer.colorFilter(`https://watercolormaps.collection.cooperhewitt.org/tile/watercolor/{z}/{x}/{y}.jpg`,
                     {
                         attribution: `Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.`,
                         filter: osm50CentBright,
@@ -667,13 +668,13 @@ if(VRS && VRS.globalDispatch && VRS.serverConfig)
                         maxZoom: 20
                     });
 
-                    var Stamen_Terrain = L.tileLayer(`https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}{r}.{ext}`,
+                    var Stamen_Terrain = L.tileLayer(`https://tiles.stadiamaps.com/tiles/stamen_terrain/{z}/{x}/{y}{r}.png?api_key=${STADIAKEY}`,
                     {
-                        attribution: `Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors`,
+                        attribution: '&copy; <a href="https://stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://stamen.com/" target="_blank">Stamen Design</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/about" target="_blank">OpenStreetMap</a> contributors',
                         subdomains: `abcd`,
                         filter: osm50CentBright,
                         minZoom: 0,
-                        maxZoom: 18,
+                        maxZoom: 20,
                         ext: `png`
                     });
 
