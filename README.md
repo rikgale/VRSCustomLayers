@@ -116,4 +116,4 @@ Screenshot of working example:
 
 ![Screenshot](screenshot.jpeg)
 
-Also can be seen working on my VRS page - [cornwallvrs.duckdns.org/vrs](https://www.cornwallvrs.com/VirtualRadar/desktop.html).
+Also can be seen working on my VRS page - [cornwallvrs.com/VirtualRadar](https://www.cornwallvrs.com/VirtualRadar/desktop.html).
