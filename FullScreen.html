@@ -2,9 +2,7 @@
 <script type="text/javascript">
 
 
-    const API_KEY = '24686ac993a39c8e443fa22f16a661d8';
-
-    if(VRS && VRS.globalDispatch && VRS.serverConfig) {
+        if(VRS && VRS.globalDispatch && VRS.serverConfig) {
         VRS.globalDispatch.hook(VRS.globalEvent.bootstrapCreated, function (bootStrap) {
             if (bootStrap.hookMapInitialised) {
                 bootStrap.hookMapInitialised(function (pageSettings) {
