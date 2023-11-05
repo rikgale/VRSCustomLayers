@@ -649,21 +649,21 @@ if(VRS && VRS.globalDispatch && VRS.serverConfig)
                         filter: osmDark,
                     });
 
-                    var topoMap = L.tileLayer.colorFilter(`https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png`,
-                    {
+                    var topoMap = L.tileLayer.colorFilter(`https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png`, {
+                    // var topoMap = L.tileLayer.colorFilter(`/mapproxy/tiles/opentopo/opentopo_grid/{z}/{x}/{y}.png`, { // using own local mapproxy. comment out the above line and uncomment this one
                         attribution: `Map Data: &copy; OpenStreetMap contributors, SRTM | Map Style: &copy; OpenTopoMap (CC-BY-SA)`,
                         filter: osm50CentBright,
                     });
 
-                    var watercolorMap = L.tileLayer.colorFilter(`https://watercolormaps.collection.cooperhewitt.org/tile/watercolor/{z}/{x}/{y}.jpg`,
-                    {
+                    var watercolorMap = L.tileLayer.colorFilter(`https://watercolormaps.collection.cooperhewitt.org/tile/watercolor/{z}/{x}/{y}.jpg`, {
+                    // var watercolorMap = L.tileLayer.colorFilter(`/mapproxy/tiles/watercolour/watercolour_grid/{z}/{x}/{y}.png`, {  // using own local mapproxy. comment out the above line and uncomment this one  
                         attribution: `Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.`,
                         filter: osm50CentBright,
                     });
 
-                    var CartoDB_DarkMatter = L.tileLayer(`https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png`,
-                    {
-                        attribution: `&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>`,
+                    var CartoDB_DarkMatter = L.tileLayer(`https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png`, {
+                    // var CartoDB_DarkMatter = L.tileLayer(`/mapproxy/tiles/cartodark/cartodark_grid/{z}/{x}/{y}.png`, {  // using own local mapproxy. comment out the above line and uncomment this one
+                        attribution: `contributors &copy; <a href="https://carto.com/attributions">CARTO</a>`,
                         subdomains: `abcd`,
                         maxZoom: 20
                     });
@@ -685,8 +685,8 @@ if(VRS && VRS.globalDispatch && VRS.serverConfig)
                         attribution: `Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community`
                     });
 
-					var thunderforrestSpinalMap = L.tileLayer(`https://tile.thunderforest.com/spinal-map/{z}/{x}/{y}.png?apikey=${THUNDERFORESTKEY}`,
-					// var thunderforrestSpinalMap = L.tileLayer(`/mapproxy/tiles/spinalmap/spinalmap_grid/{z}/{x}/{y}.png`,    // using own local mapproxy. comment out the above line and uncomment this one
+                    var thunderforrestSpinalMap = L.tileLayer(`https://tile.thunderforest.com/spinal-map/{z}/{x}/{y}.png?apikey=${THUNDERFORESTKEY}`,
+                    // var thunderforrestSpinalMap = L.tileLayer(`/mapproxy/tiles/spinalmap/spinalmap_grid/{z}/{x}/{y}.png`,    // using own local mapproxy. comment out the above line and uncomment this one
                     {
                         attribution: `&copy; <a href="https://www.thunderforest.com/">Thunderforest</a>`,
                         maxZoom: 20
@@ -753,8 +753,8 @@ if(VRS && VRS.globalDispatch && VRS.serverConfig)
                         },
                         "Airport overlays":
                         {
-                         //    "A2A refuelling areas"       : aaraGroup,
-                         //    "Military radar corridors"   : radarGroup,
+                        //    "A2A refuelling areas"       : aaraGroup,
+                        //    "Military radar corridors"   : radarGroup,
                             "Civil airfields"            : civilAirfields,
                             "Military airfields"         : milAirfields,
                             "Civil heliports"            : civilHeliports,
