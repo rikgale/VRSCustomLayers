@@ -19,6 +19,8 @@ Features:
 
 These two files work in tandem to insert a icon with pop up at the bottom left of the map and allows the user to select airspace layers, weather layers and UK specific overlays which will be added to the base Leaflet map used in VRS.
 
+### API Keys
+
 Users will need to sign up for API keys for some of the functionalty of this script to work properly.
 1) [Open Weather 1.0 API key](https://openweathermap.org/api/weathermaps) Please note: if you do not enter an API key the Pressure, Temperature and Wind layer will not show in the menu.
 2) [OpenAIP Key](https://www.openaip.net/) Please note: if you do not enter an API key the Airspace layer will not show on the map.
@@ -34,6 +36,8 @@ This script is set up to work with VRS as a baremetal install (installed directl
  var THUNDERFORESTKEY = `##THUNDERFORESTKEY##`; // replace ##THUNDERFORESTKEY##  with your key and KEEP the ` `
  var STADIAKEY        = `##STADIAKEY##`;        // replace ##STADIAKEY##  with your key and KEEP the ` `
 ````
+
+### Default Options
 
 The user can set default options from within the script to allow a specific map and your choice of layers to be enabled by default. Just set the map number to which ever one you want, and for the layers change those that you want on start up from a 0 to a 1. These options can be found near the top of the script.
 
