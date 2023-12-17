@@ -1,0 +1,4 @@
+var Navaids = {
+  "type": "FeatureCollection",
+  "features": []
+}
