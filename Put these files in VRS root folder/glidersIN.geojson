@@ -1,0 +1,4 @@
+var gliders = {
+  "type": "FeatureCollection",
+  "features": []
+}
