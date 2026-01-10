@@ -115,6 +115,8 @@ I am very grateful for the following resources which have been used in this code
 - forked/copied from [M7SPI/vrs-overlays](https://github.com/M7SPI/vrs-overlays)
 - [johnex](https://github.com/Johnex) for tidying the code and proper implimentation of the rainviewer layers
 - [dziban](https://github.com/dziban303) for US TFR and other useful tweaks and updates.
+- Fullscreen Control from [brunob](https://github.com/brunob/leaflet.fullscreen)
+
 
 Screenshot of working example:
 
