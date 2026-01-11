@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+log() {
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] [$0] $*"
+}
+
+
 cd $(dirname ${BASH_SOURCE[0]})
 
    git pull
