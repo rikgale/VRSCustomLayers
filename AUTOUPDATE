@@ -10,8 +10,8 @@ cd $(dirname ${BASH_SOURCE[0]})
    git pull
 
 if [[ -n $(git status -s) ]]; then
-    echo "Changes found. Pushing changes..."
+    log "Changes found. Pushing changes..."
   git add -A && git commit -m 'Updated '$(date +%Y-%m-%d) && git push
 else
-    echo "No changes found. Skip pushing."
+    log "No changes found. Skip pushing."
 fi
